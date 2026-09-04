@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> <html lang=en style><!--
+ Page saved with SingleFile 
+ url: https://randombio.com/linuxsetup86.html 
+--><meta charset=utf-8>
+<title>
+Reverse ftp using netcat and wget
+</title>
+<style title=tktl>body{position:relative;margin:0;padding:0;color:rgb(0,0,0);background:rgb(242,242,242);font-size:15px;font-family:"Times New Roman",Times,serif}h2{font-size:133%}table{position:relative}img{position:relative;max-width:100%}pre{color:rgb(88,8,8);font-family:"Courier New",Courier,monospace;background-color:#efefef;font-size:95%}td{font-size:15px}small{font-size:87%}div#header{position:relative;border:1px dotted rgb(48,48,48);width:100%;border-top:1px solid rgb(128,128,128);border-bottom:1px solid rgb(128,128,128)}div.header{background-color:rgb(212,212,228);padding:0;margin:1em 0 0.5em 0}div#header td.idaddr{font-size:15px;padding:0.7em 2em 0.7em 2em;letter-spacing:0.1em;text-align:right;color:rgb(64,64,64)}div#links a:hover{color:rgb(255,255,255);background-color:rgb(62,60,151)}div#content{padding:10px;font-size:100%;border:1px dotted rgb(48,48,48);color:rgb(0,0,0);background:rgb(255,255,255);position:relative;line-height:1.05}div#content p{margin:0 1em 1em;padding:0;line-height:1.05em}div#content a:link{color:rgb(30,28,119)}div#content a:visited{color:rgb(80,80,100)}div#content a:link:hover{color:rgb(255,255,255);background-color:#0000ff}div#content a:visited:hover{color:rgb(255,255,255);background-color:#0000ff}div#content h2{color:rgb(64,64,64);background-color:rgb(225,225,225);padding:0.5em;margin:0.5em -11px 0.5em;border:1px solid rgb(128,128,128)}a[href^="http:"]{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAMAAABVLlSxAAADAFBMVEUAAACczPwAYMz8/PwwnMwAYPxgnMwEBAQICAgICAgICAgICAgMDAwMDAwMDAwMDAwQEBAQEBAQEBAQEBAUFBQUFBQUFBQUFBQYGBgYGBgYGBgYGBgcHBwcHBwcHBwcHBwgICAgICAgICAgICAkJCQkJCQkJCQkJCQoKCgoKCgoKCgoKCgsLCwsLCwsLCwsLCwwMDAwMDAwMDAwMDA0NDQ0NDQ0NDQ0NDQ4ODg4ODg4ODg4ODg8PDw8PDw8PDw8PDxAQEBAQEBAQEBAQEBERERERERERERERERISEhISEhISEhISEhMTExMTExMTExMTExQUFBQUFBQUFBQUFBUVFRUVFRUVFRUVFRYWFhYWFhYWFhYWFhcXFxcXFxcXFxcXFxgYGBgYGBgYGBgYGBkZGRkZGRkZGRkZGRoaGhoaGhoaGhoaGhsbGxsbGxsbGxsbGxwcHBwcHBwcHBwcHB0dHR0dHR0dHR0dHR4eHh4eHh4eHh4eHh8fHx8fHx8fHx8fHyAgICAgICAgICAgICEhISEhISEhISEhISIiIiIiIiIiIiIiIiMjIyMjIyMjIyMjIyQkJCQkJCQkJCQkJCUlJSUlJSUlJSUlJSYmJiYmJiYmJiYmJicnJycnJycnJycnJygoKCgoKCgoKCgoKCkpKSkpKSkpKSkpKSoqKioqKioqKioqKisrKysrKysrKysrKywsLCwsLCwsLCwsLC0tLS0tLS0tLS0tLS4uLi4uLi4uLi4uLi8vLy8vLy8vLy8vLzAwMDAwMDAwMDAwMDExMTExMTExMTExMTIyMjIyMjIyMjIyMjMzMzMzMzMzMzMzMzQ0NDQ0NDQ0NDQ0NDU1NTU1NTU1NTU1NTY2NjY2NjY2NjY2Njc3Nzc3Nzc3Nzc3Nzg4ODg4ODg4ODg4ODk5OTk5OTk5OTk5OTo6Ojo6Ojo6Ojo6Ojs7Ozs7Ozs7Ozs7Ozw8PDw8PDw8PDw8PD09PT09PT09PT09PT4+Pj4+Pj4+Pj4+Pj8/Pz8/Pz8/Pz8/Pz6kXGGAAAAN0lEQVQImS3KwQ0AQAgCQTnE/ks+FfdhJsTgpC2GWTuE97RfJ5z7gkh7KNUaBT0m9weaa3dn1/5W5wFb6KbXqgAAAABJRU5ErkJggg==)no-repeat right top;padding-right:10px}</style>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=referrer content=no-referrer><link type=image/x-icon rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AEiMpABISEAAjNTkAKyknAB4cHAACCg4AGi0xAC8xMwAOHB4ADAwGACAlIwAlLS8AFhYaAAQIAgAMEBYACg4OABoeIwAaIykAJSceAA4WGgAWHBYACAgKABYnLQAWHB4ABAIEABAQCAASEhYAIB4jABYWFAAnJSMAFB4jAAIGCgAcIyAABgYGACMrKwAOCgoAEA4OABoYHAASGhwABAQAABovNQAICgYABggOAAoMCgAgJycADAoOABwlJQAQEgwADA4SABQjJQAgIBwADhISABoeHAASHCAAJzU5AAQAAAAAAgQAAgYGAB4tMQAnKScAJyUnABonLQAWIykAFBIMABAOEgAWFhAAEhYUABIWHAAWGB4AFhoaAB4eIAAaHCAABAgIAAwICAAjJSMAAgIAAAYGAAAKCgQABgoKAAgKDAAKDggAICMlAA4OCAAQDgoADg4MAAwQDgAYHh4AEhAUAA4SFgAUEhIAGhwaABAUEgAQEhgAGBoWABgYGgAYFhgAEhgaABQWFgAAAgAAAAICAAQCAgACBgQABgYEAAQIBgAICAYABAgKAAgICAAcIyUACggIAAgKCAAKDAYACggKACAeIAAcHiMADAoKAAwKDAAKCg4AHB4gABoeIAAKDgwAHB4cAAwODgAaHB4ADhAMABgcHgAQEAwAGhwcAAwOEAASDg4ADA4UABAOEAAODhIAGhgaABQYHgAYGBwAEhIOABYYHAAOGBoAEBIWABIWGgAWFhYAFBYYABIWFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVRlxPztsZEaLbmdvVnEtFH9PSiFEbByNEFAxGisPVk9/jyIRYxgENYNrGnVMVlxPC31fOFmGFReBLGMjRAOMalZqgoYHeXGBO4GEcTWFJyhLC1ZpdCY6SI5gY0IRMklYglRkboosAo4wURwcDoA9eH9/EVcvhyR8dpB8SHczNww3FQ0KQG1TiIiABkd+H0wJFEM1egWIfhITLhl6RXMqDYkbVCYeCHN8Ljx1HWEZPV1BiRuJhI0SEnwneyllMElUXlZBd2BNfIh4cz5yOSBbcDFaNg51dA6KfF4DUmZuTFJPVIkmQ3BrYn8lc00lNH1OJn90UlR0dSZuaG5mKSNOFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="><link rel=canonical href=https://randombio.com/linuxsetup86.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"></head>
+<body bgcolor=#FFFFFF>
+<div id=header class=HEADER>
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tbody><tr>
+<td bgcolor=#FFFFFF valign=TOP>
+</td>
+<td valign=MIDDLE class=IDADDR>
+<b>
+Linux Setup Notes<br>
+</b>
+<br>
+<img src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAAAgCAYAAADNAODsAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABYdJREFUeNrsW7uW4kYQba83cCY2cyacORP+AuEvEH8A+wViQkcwoSPkzBls5mxw5gwIHQGZN0KT2dFA5oxVH98yd2paQjCzw+xu1zl1kPpRXV1VqupHYYwHDx48fEkQF9j1YrgsvCpwUOC+BOMj/W3f2ZE2tv6uwMBRPqjBY7vAnlfV5Q3lusCvgPMCh/S+eMKxhl7cn7ahPAdM4BWqPJT1OCm8THhGuwAhypYnDs9nqD72qn+ZhrItMAOWKT8vsFlgo8BVhTLnCEcWOvgN0UfK+wUuKdxZbzYqsAX6c28sp8HrZxwrg1cZINzpuozKcyh74VjYtmAQO9XfKv8t3i2dDcb7hWjKcwN1C28CL8ujGCi2BwMIHQvWJoxoAGPoOGgs4DlWaifUQXjT4Y5prOhZvJeHF2gooui5Y2GrlZZXLH5/QF0f4cTDCwg9Adz0bUl9E0qt09bQ+mEFgxGYgs51Tb7fob2lcYX+HEoCvGdexc9jKBOEhTdUFkIJEudbFW1dcAuPkFE4GELpbHg5DIIhQTjJ8Zup/obqeE3i4ZHwtaNsRV7hLyjgvfIi3xf4LwzlfUVbF00Lf9IOxpb/U+CvBX5b4DfYJf1BC1ar9HWBf6O+gfqfUS/9pe63An9y7JZ2KrytvQl48ODBgwcPHjx48ODBg4dqCMzDHJJzwJ6e+sSjx4FceUTmeP7PRwE+wo9U3cQ8vD85B+yBXNPr+mywKRVyMGnPiNqXYEJOZu2t7Nz8l6wk0P/CFdQ1h8tKCzlksntmPibm/nXHReAVPIkchc/M4aKtTcbSBSZoc+PwQF2qq8r1kPTJsQptCfrO8BUF5OlG+JX6hMLjTPFyA15iPOuxU+KVcaRo2NNhm7bwI9DKaKp47ip5cFiYIWSMieeA5j9QYT4lWpx4Za8jejWXCinNJ1ZeaUayMUqvXaUTkd09PcsAkiMbKYXK8xLCjEFwoxhZmkMi9B3FVRbKQLUzqjwhJpfk7TZkgMJrqPrq5wB8sNDlPQStGO97ascZcGy80jaltZfwLB/Qnsbak4Gk9C4f3B3JIKBxu475zUgW+xIjWZKMWI/88SakR6G9Ib0uFR2tZycDLkNhxvbEDBuGwQAjh6HcOL7ywDxM5GYlC2/8JS9JYYYmf6e8yxgoSt84hLxU3oTnPCYldlW95rnrMJSkYpyRQxaGFJaeYChpySJXDDJw6Dpw6DVRsv5fz6fko2zpeUeLqwi/E3J7bXO4VWYYonxDQpR2C0V/pWjsFC8NtZ7qIzzwRV9mDslLHYQO/TEIXxLm5uaQpvAW47bM/cSn2MFzfkRmW8d7gxQyhlKH5pASWhc6JesY4Ztlt1By3zr43Wk9P2Uq5LBCSAJWid/BSCaY4JaExRNqlNBwQQ8C6cE4djTeFl97RxleDONqK8MXIea0NW2DVgJjK+P5XOhj7DfKa53yETdqlgcV+qm1PTZnnpusIdQWrFVwXRJLLfxOfda0o2A33nR4AFPiXjtQZu4w2Ay0bd0t8TFFOfO5onk0ER4kb2aE9pMSnh+zS2yb+wlgdY4TAgpPkrilNxhTzCdW8liZE1MsXpM7kqwzS/z6xIl2iFmxYldy9FxZ+UT1Fw/TAq3bI0ILzOGvIJKTm4PWgsbI1M4hM4fEqx4ZyRWF0xYZTYDnK4e771D/cyEjpdalJd7T8vCOwsycZH2NdlPUNajvo05i45LVduiw1tjhgWJFQ+J+6GjjgshRFzjKhGZYUhep8TYl48SOXUJAuxmmUfZfI5GDXixr+Wg5aJnyXEJqGyre4opD0kDNRfMZOU58oyOyjqsiTYBJp5/4oVnk2CLX/Wj47CF1CCtSylyaen+R/WwggpHMzNPc9VwS7szHu2fqQk57jPNZ/yPggwADACkgrZlk4NVBAAAAAElFTkSuQmCC alt="name and address"><br>
+<small><i>Last updated July 8, 2006 </i></small><br>
+</td>
+<td bgcolor=#bbbbcc width=50>
+</td>
+</tr>
+</table>
+</div>
+<div id=content class=content>
+<h2>
+Reverse ftp using netcat and wget
+</h2>
+<p>
+If you're connected to the Internet by a DSL or cable modem, you have
+undoubtedly discovered that the world is still stuck in the old business 
+model where the ISP provides the information, and you are the consumer of
+the information. Instead of a two-way connection, many of them provide a 
+crippled connection with a NATed, unroutable IP address, like 192.168.1.1. 
+A computer with an unroutable IP can make outbound connections easily 
+enough, but incoming connection attempts just disappear into the ether. 
+So one day your job depends on a PowerPoint presentation, and you find 
+that the office secretary has used your only CD containing the file as 
+a Christmas tree decoration. Or your boss has taken your disk by mistake 
+and gone off to Costa Rica to bugger the local children. The only copy is 
+on your home computer. What to do?
+<p>
+This page describes two procedures for connecting to your home computer 
+and copying files. The first is an interactive method using netcat. 
+The second uses wput and wget, which are command-line utilities that
+send and retrieve files from a Web server or an ftp server non-interactively.
+Both of these methods also work for getting files from computers behind a 
+firewall. The netcat method requires a port that is not blocked by the 
+firewall. Usually, any port between 1024 and 65535, with a few specific 
+exceptions, is left open. If your work computer isn't running a Web server, 
+you can use 80 or 8080, which are rarely blocked by any firewall.
+<p>
+<h2>
+Building netcat
+</h2>
+<p>
+Download a copy of netcat from <a href=http://www.vulnwatch.org/netcat/>
+http://www.vulnwatch.org/netcat/</a> or other security site. If you're using 
+Linux, you may need to add the following lines to netcat.c after the line 
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>#include &lt;fcntl.h&gt;              /* O_WRONLY et al */</pre></table>
+before netcat will compile.
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>#include &lt;netinet/in.h&gt;
+#include &lt;arpa/nameser.h&gt;
+#include &lt;resolv.h&gt;</pre></table>
+On the remote home computer, change the cflags line in Makefile to
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>CFLAGS = -O -DGAPING_SECURITY_HOLE</pre></table>
+Do this step on the remote, firewalled version only, not on the version
+in the office. The GAPING_SECURITY_HOLE argument enables the -e option 
+in netcat that allows you to execute a program when the connection is made. 
+It's called a GAPING_SECURITY_HOLE for a very good reason, but since you 
+can't make connections to your home computer anyway (which is why you
+need netcat), it hopefully shouldn't be too much of a problem.
+<p>
+Compile netcat to produce the binary nc. In Linux:
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>make linux
+mv nc netcat</pre></table>
+<p>
+<h2>
+Testing netcat
+</h2>
+<p>
+Netcat is unique in that either end of the connection can act as
+a server or a client.
+First check to make sure it's possible to make a connection.
+On the server type:
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat -vv -l -p 15600</pre></table>
+Pick a port between 1024 and 65535, in this case 15600.
+<p> 
+On the remote (home) computer, type
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat -vv whatever.the.server.is.called.com 15600 </pre></table>
+This creates a two-way connection. Anything typed on one computer 
+should appear on the other. (Remember to hit Enter after typing if 
+you're used to Windows.) If it works, it means the port isn't blocked.
+So far so good, although all we have so far is a chat session between
+you and yourself.
+<p>
+Now we will prepare to send files. On the remote (home) computer, type
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat -vv whatever.the.server.is.called.com  15600 -e /bin/bash</pre></table>
+Everything that is typed on the server end, instead of being printed on the 
+remote home computer's screen, is now given to the shell on your home computer 
+and executed. It is now possible to execute Unix commands such as cat, ls, 
+and mv. The results will appear on the work computer, just as in a 
+telnet session. This is fine for transferring text files;
+however, binary files are difficult to transfer this way, because
+they mess up the terminal and may break the connection. 
+Although you can execute any command on your home computer from
+work, you can't use file transfer commands that use password exchange, 
+such as sftp and ftp, because the password still shows up only on the 
+remote home client. And if you should happen to type "exit", your 
+connection is gone.
+<p>
+<p>
+<h2>
+Configuring netcat for reverse telnet
+</h2>
+<p>
+Netcat is usually used with input redirection. To transfer file to 
+the server, on the server you would type:
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat -l -p 15600 &gt; carbon.txt</pre></table>
+and on the client you would type
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat whatever.the.server.is.called.com 15600 &lt; carbon.txt</pre></table>
+The file carbon.txt then goes from home to server.
+<p>
+ For remote access,
+it's necessary to set up a connection in advance and leave it connected.
+(If your ISP disconnects you after 15 minutes of inactivity, you can 
+add the remote command to your crontab. Or, you can configure netcat
+to use UDP instead of TCP, so that a continuous connection isn't needed).
+Type the following command and leave it running continuously on the server. 
+It will tie up an xterm, which is what you need in order to send commands.
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat -vv -l -p 15600 | tee stuff</pre></table>
+Before you go to work, start the following on the remote computer
+that is behind the DSL/firewall:
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>netcat -vv whatever.the.server.is.called.com 15600 -e /bin/bash</pre></table>
+This will make an outbound connection to your server at work.
+From work, type 
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>uuencode mypresentation.ppt mypresentation.ppt &gt; mypresentation.uu</pre></table>
+Uuencode is part of the uulib utilities. (It is getting hard to find 
+it as the Windoze mentality takes root among Linux users. However, 
+old versions of most Linux distributions still have it.)
+<p>
+From the remote (work) terminal, type
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>cat mypresentation.uu</pre></table>
+The uuencoded file from home will be sent both to your screen at work and 
+to the file on your work computer called "stuff". To retrieve it, simply type
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>uudecode stuff</pre></table>
+<i> et voilà</i>, mypresentation.ppt appears as if by magic. Yes, it's
+a pain. But if you don't like pain, why are you using computers?
+<p>
+<h2>
+Alternatives
+</h2>
+<p>
+The problem with using netcat is that many ISPs break your network 
+connection after a certain period of inactivity. It also ties up an
+xterm.
+<p>
+A more reliable way to transfer files to and from a computer behind a 
+crippled DSL line is with a command-line Web file utility such as w3c,
+curl, wget, or wput. You set the utility to connect from the crippled
+home computer to your Web server at work at regular intervals and download 
+a set of instructions from a list. To retrieve a file from your home 
+computer, you simply put the name of the file in the list. The file 
+will be automatically uploaded or downloaded the next time the 
+utility program connects.
+<p>
+<h2>
+Using wget and wput to communicate with a machine behind a firewall
+</h2>
+<p>
+For convenience we'll call the 
+machine on the crippled DSL line or restrictive firewall "computer B" and 
+the computer with a real network connection "computer A". Computer A must
+be running an ftp server. 
+<p>
+Save the script below in a file named "wftp" and make it executable.
+Set it to run on computer B as a cron job every 20 minutes or so. Every 
+20 minutes, computer B will then connect to computer A to determine whether 
+any file transfers are needed. When you need to transfer some files to or 
+from computer B, simply add the word "get" or "put" plus the filenames to 
+a file named "files.txt" in your home directory on computer A. This filename 
+can include wildcards. The next time computer B checks in, it will 
+read the list and upload or download the specified files. A typical
+files.txt file might look like this:
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>cd text/presentations
+put mypresentation.ppt
+get manuscript.pdf
+cd ../../images
+ls *.jpg
+put k*.jpg</pre></table>
+Notice that you use "put" if you want the remote computer to send you
+the file and "get" if you want it to retrieve a file. Change the script
+if this is confusing.
+<p>
+Here is the script:
+<table width=80%><tbody><tr><td bgcolor=#EEEEEE>
+<pre>#!/bin/bash
+username=$LOGNAME
+# put your password and the name of computer A here
+password=mypassword
+server=name_of_computer_A
+rm files.txt
+/usr/bin/wget ftp://$username:$password@$server/files.txt
+cat files.txt | \
+while read line
+do
+    whattodo=`echo $line | cut -d ' ' -f1`
+    filename=`echo $line | cut -d ' ' -f2`
+    echo 
+    echo next command: $whattodo $filename
+    echo
+    case ${whattodo} in
+    get)
+        echo getting $filename ...
+        /usr/bin/wget ftp://$username:$password@$server/$filename
+       ;;
+    put)
+        echo putting $filename ...
+        /usr/local/bin/wput $filename ftp://$username:$password@$server
+    ;;
+    cd)
+        cd  $filename 
+        pwd
+        ;;
+    ls)
+        ls -l &gt; results.txt
+        /usr/local/bin/wput results.txt ftp://$username:$password@$server
+        ;;
+    done)
+        echo finished
+        ;;
+    esac
+done
+echo done &gt; files.txt
+/usr/local/bin/wput files.txt ftp://$username:$password@$server
+rm files.txt
+</pre></table>
+<p>
+The last two lines replace the file list, so that the file transfer
+is not made repeatedly. The script needs a Bourne or Korn shell for 
+$LOGNAME and for the cat/while loop.
+<p>
+It is obvious that this method has a a couple of disadvantages.
+Your password will appear briefly in the clear in the process table 
+on computer A, and is in the script file. I know of no easy way to 
+avoid this without opening up anonymous file uploading--which creates 
+even worse problems. Also, you will have to wait an average of 10 
+minutes to get the file, depending on how frequently computer B checks 
+in. However, it works completely in the background and doesn't depend
+on a continuous network connection.
+<p>
+Of course, the best solution would be for ISPs to provide a fully
+functional network connection so that these tricks are not necessary.
+Unfortunately, that appears to be beyond their ability at present.
+Until companies like Verizon and Comcast learn that there's a market
+for creating functioning networks, these little utilities can provide 
+some of the necessary functionality.
+<hr>
+<a href=https://randombio.com/linuxsetup.html>Back </a>
+</div>
