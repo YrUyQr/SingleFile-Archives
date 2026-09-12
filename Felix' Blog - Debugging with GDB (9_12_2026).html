@@ -1,0 +1,183 @@
+<!DOCTYPE html> <html><!--
+ Page saved with SingleFile 
+ url: https://felix-knorr.net/posts/2022-02-27-direct-gdb.html 
+--><meta charset=utf-8>
+<meta name=description content="A blog, mostly about programming">
+<meta name=keywords content="Programming, Rust, C, Python">
+<meta name=author content="Felix Knorr">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name=google-site-verification content=nPdJMJTDyxfD2nSz55VURwJWrAb-Pv1DH0EEWvUxFlI>
+<style>@media all and (max-width:47em){.card-header .date{display:none}}body{line-height:1.4;font-size:16px!important;background-color:#282828;font-family:Helvetica;color:#ffffff;min-height:100vh;padding:0px;margin:0px}a:link{color:#00B000}a:visited{color:#B0B000}img{max-width:100%}#outer_head_row{width:100%;display:flex;align-items:baseline}#text_row{width:100%;display:flex;align-items:baseline;gap:1em;margin-bottom:-1em}#text_row a:not(:hover),#outer_head_row a:not(:hover){text-decoration:none}#text_row a,#outer_head_row a{color:#ffffff;display:inline-block}.spacer{flex-grow:1}#title:hover{text-decoration-color:#ffffff}.about_me{font-weight:bold}.about_me:hover{text-decoration-color:#ffffff}.card{display:flex;flex-direction:column;box-shadow:0.25em 0.25em 0.5em black}.card-header{line-height:1;background-color:#323232;margin-bottom:0;color:#ffffff;display:flex;align-items:center;padding:1em}.card-header .left-half{display:flex;flex-direction:column;gap:0.7em;width:100%}.card-header .title{font-weight:bold;font-size:22pt;padding-right:2em;margin:0}.card-header .date{min-width:6em;text-align:right}.card-header .tags{font-style:oblique 10deg;margin:0;font-size:12pt}a.header-a:not(:hover){text-decoration:none}a.header-a:hover{text-decoration-color:#ffffff}.card-content{margin-top:0;background-color:#4e4a48;padding-inline:1em}</style>
+<style>pre{line-height:125%;padding:0.5em}.codehilite{background:#272822;color:#f8f8f2}.codehilite .k{color:#66d9ef}.codehilite .n{color:#f8f8f2}.codehilite .o{color:#ff4689}.codehilite .p{color:#f8f8f2}.codehilite .cp{color:#959077}.codehilite .cpf{color:#959077}.codehilite .c1{color:#959077}.codehilite .kt{color:#66d9ef}.codehilite .s{color:#e6db74}.codehilite .nb{color:#f8f8f2}.codehilite .nf{color:#a6e22e}.codehilite .nv{color:#f8f8f2}.codehilite .w{color:#f8f8f2}.codehilite .mi{color:#ae81ff}.codehilite .s2{color:#e6db74}.codehilite .se{color:#ae81ff}</style>
+<style>@media all and (max-width:47em) and (min-width:37em){#business_header h1{font-size:34px!important}}@media all and (max-width:37em){#business_header{display:none!important}#business_header_m{width:100%;margin:auto;padding-top:5em;display:flex!important;flex-direction:column}#text_row{padding-top:2em;padding-bottom:2em}#text_row>a{text-decoration:underline!important}}body{display:flex;flex-direction:column}body>#wrapper{flex-grow:1}#wrapper{max-width:50em;height:100%;margin-inline:auto;padding-inline:2em}#business_header{width:100%;margin:auto;padding-top:5em}#business_header h1{display:inline-block;padding-left:0.5em;margin:0px;font-size:60px}.vblocker{display:block;height:5em}.small-vblocker{display:block;height:2.5em}footer{width:100%;height:4em;background-color:grey;border-top:3px solid black;display:flex;align-items:center;justify-content:space-around;margin:0px;padding:0px}footer>a:link,footer>a:visited{color:#ffffff}</style>
+<style>pre{overflow:auto}#rss_icon{max-width:2em}</style>
+<link rel=alternate title="Blog Posts" type=application/atom+xml href=https://felix-knorr.net/blog/feed.atom>
+<title>Felix' Blog - Debugging with GDB</title>
+<meta name=referrer content=no-referrer><link rel=icon href="data:image/png;base64,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" type=image/png><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://felix-knorr.net/posts/2022-02-27-direct-gdb.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"></head>
+<body><div id=wrapper><div id=business_header><div id=outer_head_row><a href=https://felix-knorr.net/><img src="data:image/png;base64,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" alt="Blog Logo" width=100></a>
+<div id=text_row><a href=https://felix-knorr.net/blog/index.html><h1>Felix' Blog</h1></a>
+<div class=spacer></div>
+<a href=https://felix-knorr.net/en/experience.html class=about_me>Experience</a>
+<a href=https://felix-knorr.net/en/projects.html class=about_me>Projects</a>
+<a href=https://felix-knorr.net/en/index.html class=about_me>About</a>
+<a href=https://felix-knorr.net/blog/feed.atom class=about_me><img id=rss_icon src=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPiANCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMjhweCIgaGVpZ2h0PSIxMjhweCIgaWQ9IlJTU2ljb24iIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4NCjxkZWZzPg0KPGxpbmVhckdyYWRpZW50IHgxPSIwLjA4NSIgeTE9IjAuMDg1IiB4Mj0iMC45MTUiIHkyPSIwLjkxNSIgaWQ9IlJTU2ciPg0KPHN0b3AgIG9mZnNldD0iMC4wIiBzdG9wLWNvbG9yPSIjRTM3MDJEIi8+PHN0b3AgIG9mZnNldD0iMC4xMDcxIiBzdG9wLWNvbG9yPSIjRUE3RDMxIi8+DQo8c3RvcCAgb2Zmc2V0PSIwLjM1MDMiIHN0b3AtY29sb3I9IiNGNjk1MzciLz48c3RvcCAgb2Zmc2V0PSIwLjUiIHN0b3AtY29sb3I9IiNGQjlFM0EiLz4NCjxzdG9wICBvZmZzZXQ9IjAuNzAxNiIgc3RvcC1jb2xvcj0iI0VBN0MzMSIvPjxzdG9wICBvZmZzZXQ9IjAuODg2NiIgc3RvcC1jb2xvcj0iI0RFNjQyQiIvPg0KPHN0b3AgIG9mZnNldD0iMS4wIiBzdG9wLWNvbG9yPSIjRDk1QjI5Ii8+DQo8L2xpbmVhckdyYWRpZW50Pg0KPC9kZWZzPg0KPHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHJ4PSI1NSIgcnk9IjU1IiB4PSIwIiAgeT0iMCIgIGZpbGw9IiNDQzVEMTUiLz4NCjxyZWN0IHdpZHRoPSIyNDYiIGhlaWdodD0iMjQ2IiByeD0iNTAiIHJ5PSI1MCIgeD0iNSIgIHk9IjUiICBmaWxsPSIjRjQ5QzUyIi8+DQo8cmVjdCB3aWR0aD0iMjM2IiBoZWlnaHQ9IjIzNiIgcng9IjQ3IiByeT0iNDciIHg9IjEwIiB5PSIxMCIgZmlsbD0idXJsKCNSU1NnKSIvPg0KPGNpcmNsZSBjeD0iNjgiIGN5PSIxODkiIHI9IjI0IiBmaWxsPSIjRkZGIi8+DQo8cGF0aCBkPSJNMTYwIDIxM2gtMzRhODIgODIgMCAwIDAgLTgyIC04MnYtMzRhMTE2IDExNiAwIDAgMSAxMTYgMTE2eiIgZmlsbD0iI0ZGRiIvPg0KPHBhdGggZD0iTTE4NCAyMTNBMTQwIDE0MCAwIDAgMCA0NCA3MyBWIDM4YTE3NSAxNzUgMCAwIDEgMTc1IDE3NXoiIGZpbGw9IiNGRkYiLz4NCjwvc3ZnPg0K alt="SVG image of RSS feed icon"></a></div></div></div>
+<div id=business_header_m class=sf-hidden>
+</div>
+<div class=small-vblocker></div>
+<div class=card><div class=card-header><div class=left-half><p class=title>Debugging with GDB</p>
+<p class=tags>C,
+GDB</p></div>
+<p class=date>2022-02-27</p></div>
+<div class=card-content><p><p>My first programming language was C++ and for a long time, I was using Visual
+Studio Express in Windows. When I had to debug something, I would click on the
+line number to set a breakpoint and press F5. Maybe I'd add some variables to
+the watch window, and press some F-keys a couple of times. Recently, I switched
+jobs and I'm now mostly developing firmware in C. Since I switched to using
+Linux and Vim ~7 years ago, I needed to update my debugging workflow. I
+actually didn't find a neat tutorial that covers the whole picture, so I
+figured I could write one myself.</p>
+<p>During the last 5 years, I mostly worked with Python, and I really like
+debugging in Python. You'd just put a <code>breakpoint()</code> function call into your
+code somewhere and repl into the program. I wanted to see how close I get to
+that in C. As C is not an interpreted language, my hopes weren't that high, but
+it turns out debugging in C is quite comfortable. As a bonus, you can use GDB
+not only to debug C and C++, but also Rust, Nim, and probably any language that
+respects the C-ABI (althoug I don't know this for a fact).</p>
+<h2>GDB Basics</h2>
+<p>First, we need a program to debug. Let's take this one:</p>
+<div class=codehilite><pre><span></span><code><span class=c1>// program.c</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdlib.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;time.h&gt;</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>print_product</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>product</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>b</span><span class=p>;</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>"Product: %d</span><span class=se>\n</span><span class=s>"</span><span class=p>,</span><span class=w> </span><span class=n>product</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>print_arguments</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>argc</span><span class=p>,</span><span class=w> </span><span class=kt>char</span><span class=w> </span><span class=o>**</span><span class=n>argv</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
+<span class=w>    </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>argc</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>"%s "</span><span class=p>,</span><span class=w> </span><span class=n>argv</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>"</span><span class=se>\n</span><span class=s>"</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>argc</span><span class=p>,</span><span class=w> </span><span class=kt>char</span><span class=w> </span><span class=o>**</span><span class=n>argv</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
+<span class=w>    </span><span class=n>print_arguments</span><span class=p>(</span><span class=n>argc</span><span class=p>,</span><span class=w> </span><span class=n>argv</span><span class=p>);</span>
+<span class=w>    </span><span class=n>srand</span><span class=p>(</span><span class=n>time</span><span class=p>(</span><span class=nb>NULL</span><span class=p>));</span>
+<span class=w>    </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=mi>10</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
+<span class=w>        </span><span class=n>print_product</span><span class=p>(</span><span class=n>rand</span><span class=p>(),</span><span class=w> </span><span class=n>rand</span><span class=p>());</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=w>    </span><span class=k>return</span><span class=w> </span><span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div>
+<p>To debug the program, it's important that it contains debugging symbols. To
+add debugging symbols when compiling with gcc add the <code>-g</code> flag. So let's
+compile this program:</p>
+<div class=codehilite><pre><span></span><code>gcc<span class=w> </span>-g<span class=w> </span>-o<span class=w> </span>program<span class=w> </span>program.c
+</code></pre></div>
+<p>We can now debug this program by running:</p>
+<div class=codehilite><pre><span></span><code>gdb<span class=w> </span>program
+</code></pre></div>
+<p>this will launch us into a
+<a href=https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop>repl</a>. To
+run the program until it hits the main function, type <code>start</code>. Now you have the
+typical debugger actions that you can execute by typing them into the repl. You
+can go to the next line by entering <code>n</code> (of course you have to press return
+too), <code>s</code> to step into the current function call, <code>r</code> to run until you hit a
+breakpoint, and 
+<a href=https://www.tutorialspoint.com/gnu_debugger/gdb_commands.htm>some more</a>. To
+set a breakpoint, type <code>b &lt;line&gt;</code> where <code>&lt;line&gt;</code> is the line number you want
+it in. If your project consists of multiple files, you'll have to type 
+<code>b &lt;filename&gt;:&lt;line&gt;</code> however, <code>&lt;filename&gt;</code> does not need to be a complete path,
+just the name is enough. Btw, gdb allows for tab completion. Alternatively you can
+set a breakpoint to a function like this <code>b &lt;functionname&gt;</code>.</p>
+<p>To see the context of a variable, we can use <code>p</code> like <code>p product</code> if we break
+at line 6. But we can also evaluate nearly arbitrary c expressions e.g. <code>p
+product * 5</code>.</p>
+<h2>Using gdb scripts</h2>
+<p>This is still not nice though, now we'd have to enter all breakpoints over and
+over again, when we restart the debugging session. But there is a
+way out of this: gdb scripts. If you invoke gdb with the -x option, you can
+pass it a file containing gdb commands, that it should execute.</p>
+<div class=codehilite><pre><span></span><code>gdb<span class=w> </span>-x<span class=w> </span>gdbscript<span class=w> </span>program
+</code></pre></div>
+<p>we can now write our breakpoints into the script, e.g. </p>
+<div class=codehilite><pre><span></span><code># gdbscript
+b 6
+b 11
+r
+</code></pre></div>
+<p>And now our breakpoints are stored. But there is more to it. Typically I want
+to check some variables, and I'm not very interested in running the program
+further than that. Let's say, we wanted to see the value of the product
+variable, for all loops, and dont care about the rest:</p>
+<div class=codehilite><pre><span></span><code>#<span class=w> </span><span class=nv>gdbscript</span>
+<span class=nv>b</span><span class=w> </span><span class=mi>6</span>
+<span class=nv>commands</span>
+<span class=w>    </span><span class=nv>p</span><span class=w> </span><span class=nv>product</span>
+<span class=w>    </span><span class=nv>c</span>
+<span class=k>end</span>
+
+<span class=nv>run</span>
+</code></pre></div>
+<p>and then run gdb with <code>--batch</code> like this:</p>
+<div class=codehilite><pre><span></span><code>gdb<span class=w> </span>-x<span class=w> </span>gdbscript<span class=w> </span>program<span class=w> </span>--batch
+</code></pre></div>
+<p>Now gdb will quickly print out the value of <code>product</code> for all iterations, and
+exit again. A <code>commands</code> statement after a breakpoint will execute all
+contained commands once a breakpoint is hit. The last command, the <code>c</code> means
+<code>continue</code> and will resume the program flow until the next breakpoint is hit,
+once the breakpoint was hit the last time, gdb will end execution thanks to the
+<code>--batch</code> parameter.</p>
+<p>Another cool example: let's say, for whatever reason, we are interested in the
+value of <code>product</code> only during the third call of <code>print_product()</code>. (Which is
+of course silly, since the program prints it anyway, but in real world
+debugging, a situation like this might arise)</p>
+<div class=codehilite><pre><span></span><code><span class=nv>set</span><span class=w> </span>$<span class=nv>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span>
+
+<span class=nv>b</span><span class=w> </span><span class=mi>6</span>
+<span class=nv>commands</span>
+<span class=w>    </span><span class=nv>set</span><span class=w> </span>$<span class=nv>n</span><span class=w> </span><span class=o>=</span><span class=w> </span>$<span class=nv>n</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span>
+<span class=w>    </span><span class=k>if</span><span class=w> </span>$<span class=nv>n</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mi>3</span>
+<span class=w>        </span><span class=nv>printf</span><span class=w> </span><span class=s2>"Product is: %d\n"</span>,<span class=w> </span><span class=nv>product</span>
+<span class=w>    </span><span class=k>else</span>
+<span class=w>        </span><span class=nv>c</span>
+<span class=w>    </span><span class=k>end</span>
+<span class=k>end</span>
+
+<span class=nv>run</span>
+</code></pre></div>
+<p>As you can see we define a variable <code>$n</code> and use it to count up, and print our
+required information in the third round. After the third round, gdb quits
+automatically thanks to <code>--batch</code>. For a more complete tour through gdb's
+scripting capabilities, I recommend the tutorial on adacore.com: 
+<a href=https://www.adacore.com/gems/gem-119-gdb-scripting-part-1>part 1</a> and
+<a href=https://www.adacore.com/gems/gem-120-gdb-scripting-part-2>part 2</a>.</p>
+<h2>The .gdbinit file</h2>
+<p>There is a script, that gdb will always implicitly load if it exists: ~/.gdbinit
+You can put functions you use often in there, or configuration. Mine looks like
+this:</p>
+<div class=codehilite><pre><span></span><code>set width 0
+set height 0
+set print pretty on
+set confirm off
+</code></pre></div>
+<p>Setting width and height to 0, will prevent gdb from paging long outputs, the
+third line makes gdb prettify the output, and the last line prevents it from
+asking if we really want to quit.</p>
+<h2>Conclusion</h2>
+<p>This is largely what I have. In general, I'm quite happy with the power and
+flexibility. It might be a little more work than placing a breakpoint in an
+IDE, but you get so much more out of it. Also, in IDEs I always found it
+annoying to call the debugger with arguments, because you'd have to find the
+right options dialog. Here you can simply append them to the debugger
+invocation:</p>
+<div class=codehilite><pre><span></span><code>gdb<span class=w> </span>-x<span class=w> </span>gdbscript<span class=w> </span>--batch<span class=w> </span>--args<span class=w> </span>program<span class=w> </span>--flags<span class=w> </span>and<span class=w> </span>some<span class=w> </span>args
+</code></pre></div>
+<p>Also, if you require a more complex setup for debugging, e.g. because you have
+to start other programs too, you can put all of that together in a bash script.</p>
+<p>Of course, there is much more to know about gdb, and this is barely an
+introduction.<p></p></div></div>
+<div class=vblocker></div></div>
+<footer><a href=https://felix-knorr.net/de/impressum.html>Impressum</a></footer>
