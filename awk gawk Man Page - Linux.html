@@ -1,0 +1,244 @@
+<!DOCTYPE html> <html lang=en data-darkreader-mode=dynamic data-darkreader-scheme=dark data-darkreader-proxy-injected=true><!--
+ Page saved with SingleFile 
+ url: https://ss64.com/bash/awk.html 
+ saved date: Wed Sep 23 2026 01:25:41 GMT-0400 (Eastern Daylight Time)
+--><meta charset=utf-8><style class="darkreader darkreader--user-agent" media=screen>@layer{html{background-color:var(--darkreader-background-ffffff,#181a1b)!important}html{color-scheme:dark!important}iframe{color-scheme:dark!important}html,body{border-color:var(--darkreader-border-4c4c4c,#736b5e);color:var(--darkreader-text-000000,#e8e6e3)}a{color:var(--darkreader-text-0040ff,#3391ff)}::placeholder{color:var(--darkreader-text-a9a9a9,#b2aba1)}input:-webkit-autofill{background-color:var(--darkreader-background-faffbd,#404400)!important;color:var(--darkreader-text-000000,#e8e6e3)!important}::selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}::-moz-selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}}</style><style class="darkreader darkreader--variables" media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3);--darkreader-background-ffffff:#181a1b;--darkreader-text-ffffff:#e8e6e3;--darkreader-border-404040:#776e62;--darkreader-text-000000:#e8e6e3;--darkreader-border-4c4c4c:#736b5e;--darkreader-text-0040ff:#3391ff;--darkreader-border-808080:#545b5e;--darkreader-text-a9a9a9:#b2aba1;--darkreader-background-faffbd:#404400;--darkreader-background-0060d4:#004daa;--darkreader-background-ffd76e:#684b00;--darkreader-background-c59d00:#9e7e00;--darkreader-text-302505:#d7d4cf;--darkreader-background-add8e6:#1b4958;--darkreader-background-cfecf5:#0f3a47;--darkreader-background-f5f5f5:#1e2021;--darkreader-background-faedda:#432c09;--darkreader-background-85c3d8:#245d70;--darkreader-background-e6e6e6:#26292b;--darkreader-background-f9f9f9:#1b1e1f;--darkreader-text-0715de:#488df9;--darkreader-text-0303e1:#4688fd;--darkreader-text-337fe8:#429aea;--darkreader-border-337fe8:#114a99;--darkreader-background-f4f4fa:#1d1f20;--darkreader-background-01af3f:#018c32;--darkreader-border-01af3f:#01c948;--darkreader-background-00ca70:#00a25a;--darkreader-text-0a22d0:#5295f7;--darkreader-text-141414:#dbd8d4;--darkreader-border-141414:#857c6e;--darkreader-background-dcdcdc:#2c2f31;--darkreader-text-680000:#ff8383;--darkreader-text-07572c:#cac6bf;--darkreader-text-1f6a0a:#9ef486;--darkreader-text-4d4d4d:#b7b1a8;--darkreader-text-888888:#9d9488;--darkreader-text-af0606:#f95353;--darkreader-text-991bc1:#c14be6;--darkreader-text-439bea:#4ea6eb;--darkreader-text-105dbe:#5eacf1;--darkreader-background-e1e1e1:#292c2e;--darkreader-border-c8c8c8:#404547;--darkreader-background-00000030:rgba(0,0,0,0.19);--darkreader-background-00000015:rgba(0,0,0,0.08);--darkreader-background-ffffff66:rgba(24,26,27,0.4);--darkreader-background-00000033:rgba(0,0,0,0.2);--darkreader-border-4b8df8:#063e98;--darkreader-text-229231:#6fde7e;--darkreader-border-339046:#339147;--darkreader-text-0230e8:#4194fd;--darkreader-text-fffefe:#ffcbcb;--darkreader-text-cccccc:#c8c3bc;--darkreader-border-adaeb1:#474c4f;--darkreader-background-dad9df:#2c2f31;--darkreader-background-0fc252:#0c9b42;--darkreader-border-3974dc:#1a4592;--darkreader-background-bdbdc6:#3b4042;--darkreader-background-ffcc33:#826200;--darkreader-background-bdebb0:#325816;--darkreader-background-ef5350:#98100e;--darkreader-background-f48fb1:#720b2e;--darkreader-background-7e57c2:#52328a;--darkreader-background-2196f3:#0a6ab6;--darkreader-background-26c6da:#1e9eae;--darkreader-background-43a047:#368039;--darkreader-background-929b35:#757c2a;--darkreader-background-f9a825:#b47105;--darkreader-background-ff5722:#b82c00;--darkreader-background-dfdffa:#222527;--darkreader-background-e8f5ff:#1e2122;--darkreader-text-af0000:#ff5252;--darkreader-background-eae772:#615f0e;--darkreader-background-bdbdbd:#3d4245;--darkreader-border-a6a6a6:#494f52;--darkreader-text-e8e8e8:#d9d6d1;--darkreader-background-b9b9b9:#404547;--darkreader-border-ababab:#484e51;--darkreader-text-7d129e:#cd63ed;--darkreader-text-5d1701:#cac6bf;--darkreader-background-f2f2f8:#1e2021;--darkreader-border-7c7c7c:#635c51;--darkreader-border-acb5be:#454b4e;--darkreader-background-cccccc:#35393b;--darkreader-text-000000cf:rgba(232,230,227,0.81);--darkreader-border-005fcc:#005ac2;--darkreader-background-5f95ee:#0f3f8e;--darkreader-background-91c0fc:#033574;--darkreader-border-969696:#4e5457;--darkreader-background-d6d6d6:#2f3335;--darkreader-text-0000ff:#337dff;--darkreader-background-e0e0e6:#282b2d;--darkreader-background-1166c0:#0e529a;--darkreader-text-f5f5f5:#e2dfdb;--darkreader-text-c7edfc:#a7e3fa;--darkreader-text-f7ddff:#edb4ff;--darkreader-background-bfbfbf:#3c4144;--darkreader-background-368bd6:#2166a3;--darkreader-text-368bd6:#489ada;--darkreader-background-eeeeee:#222426;--darkreader-text-055000:#cfcbc4;--darkreader-background-1c1b22:#17191a;--darkreader-text-eeeeee:#dddad6;--darkreader-text-7dc67d:#81c881;--darkreader-background-00000013:rgba(0,0,0,0.07);--darkreader-background-00000000:rgba(0,0,0,0);--darkreader-background-000000:#000000;--darkreader-border-a9a9a9:#484e51;--darkreader-background-696969:#4f5659}</style>
+<meta name=viewport content="width=1000, initial-scale=1">
+<style>html{font-size:100%;scroll-padding-top:45px}:root{--link:#0715DE;--link-dark:#0303E1;--link-active:#337FE8;--btn-col:#F4F4FA;--btn-col-active:#01AF3F;--btn-col-hov:#00CA70;--btn-link:#0A22D0;--txt-active:#1676F1;--txt-dark:#141414;--summary:#0C18D0;--font-monospace:Menlo,ui-monospace,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Mono","Source Code Pro","Fira Mono"}body{background-color:#DCDCDC;transition:background-color 1s;color:var(--txt-dark);font-family:"Helvetica Neue",Helvetica,Arial,Oxygen-Sans,Roboto,Ubuntu,sans-serif;font-size:1rem;font-weight:400;margin:15px}p,ul,h1,h3{font-weight:400;line-height:1.3rem}p,hr,ul{max-width:1030px}hr{color:#FFF;margin-left:0;text-align:left}pre,.code{font-family:var(--font-monospace),monospace}pre{font-size:1rem;color:#000;line-height:1.125rem}h1{clear:both;font-size:1.5rem;line-height:1.563rem}h3{color:var(--txt-dark);font-size:1.125rem;line-height:1.3rem;font-weight:700}input{font-family:"Helvetica Neue",Helvetica,Arial,Oxygen-Sans,Roboto,Ubuntu,Sans-Serif;font-weight:400}blockquote{margin-right:0;margin-left:40px}i{color:#07572C}.quote{color:#07572C;font-family:Charter,Palatino,Georgia,FreeSerif,Serif;font-style:italic}.wrapq{width:400px;max-width:100%;position:relative;box-sizing:border-box;margin-left:150px;top:2.7px;transition:margin-left 0.7s,width 1s}.wrapq input{height:37.25px;padding:0.4rem 1rem;padding-right:4rem;width:100%;text-decoration:none;box-sizing:border-box;font-size:1.0625rem}.wrapq svg{filter:drop-shadow(0.75px 0.75px 0 white)}.wrapq:hover svg{filter:none}a:link{color:var(--link);text-decoration:none}a:visited{color:#991BC1;text-decoration:none}a:hover{color:var(--link);text-decoration:underline;text-underline-offset:0.25em}a:active{color:var(--link-active);text-decoration:none;border-bottom:1px solid var(--link-active)}p a:active{padding-bottom:2px}#bl{float:left;max-width:515px;width:50%}#br{font-size:0.75rem;float:left;margin-bottom:15px;max-width:515px;text-align:right;width:50%}#tnav{background-color:#DCDCDC;background:linear-gradient(180deg,#DCDCDC 0%,#E1E1E1 100%);border-bottom:solid 1px #c8c8c8;height:45px;width:1030px;position:sticky;top:0;z-index:10}#tnav>ul{list-style:none;margin:0;padding:0}#tnav>ul>li{display:block;float:left;margin:0 .3em 0 0;outline:none;align-content:center;text-align:center}.space{line-height:1.3em}@media (pointer:coarse) and (hover:none){.space{line-height:2.1rem}p{line-height:1.5rem;font-size:1.2rem}H1{font-size:2rem}#tnav{position:static}}.tbtn{background-color:var(--btn-col);border-color:gray;border-radius:0.5rem;border-style:solid;border-width:1px;box-shadow:0px 1px 2px #00000030,0px 6px 12px #00000015;cursor:pointer;-webkit-user-select:none;user-select:none;font-family:Helvetica,Arial,Oxygen-Sans,Roboto,Ubuntu,sans-serif;font-size:1.125rem;font-weight:400;height:40px;transition:background-color 0.25s;width:140px!important;line-height:40px!important}.tbtn a{display:block;text-decoration:none;border-radius:7px;background-color:var(--btn-col);transition:background-color 0.25s}.tbtn a:link{color:var(--btn-link)}.tbtn a:visited{color:var(--btn-link)}.tbtn a:hover{background-color:var(--btn-col-hov);color:var(--txt-dark);transition:background-color 0.25s;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 1px rgba(0,0,0,.2)}.tbtn:focus{border:1px solid #4B8DF8;outline:none;color:#229231}.tbtn:active{border:1px solid #339046;outline:none;transition:background-color 0.25s}.tbtn a:active{background-color:var(--btn-col-active)}.tbtn a:hover:active{box-shadow:none}#tnav a{border-bottom:none}.tbtn svg{fill:#0230E8}.tbtn:hover svg{fill:#FFFEFE}.tbtn:active svg{fill:#CCC}#sherlock{border:none;border-radius:0 40px 40px 0;border-left:1px solid #ADAEB1;cursor:pointer;aspect-ratio:1;height:34.5px;width:64px;position:absolute;top:1.3px;background-color:#DAD9DF;transition:background-color 0.2s ease-in,opacity 0.2s ease-in;right:1.2px}#sherlock:hover{opacity:0.8;background-color:#0FC252;transition:background-color 0.2s ease-in,opacity 0.2s ease-in}#sherlock:focus{outline:2.5px solid #3974DC;border-left:none}#sherlock:active{opacity:0.8;outline:none;background-color:#BDBDC6;transition:background-color 0.1s ease-in,opacity 0.1s ease-in}@media (prefers-color-scheme:dark){body{background-color:#BDBDBD;transition:background-color 1s}hr{color:#E8E8E8}#tnav{background-color:#BDBDBD;background:linear-gradient(180deg,#BDBDBD 40%,rgb(185,185,185) 100%);border-bottom:solid 1px #ababab}a:link,a:hover{color:var(--link-dark)}a:visited{color:#7D129E}:root{--btn-col:#F2F2F8}}#qu{border-top:1px solid #7C7C7C;border-left:1px solid #ACB5BE;border-right:1px solid #ACB5BE;border-bottom:1px solid #ACB5BE;border-radius:40px;box-shadow:inset #CCC 0px 1px 0px;color:rgba(0,0,0,0.81);transition:border 0.33s ease-in}#qu:focus{border:1px solid #005FCC;border-bottom:1.5px solid #005FCC;box-shadow:0px 0px 5px 0px #5F95EE;outline:none;transition:border 0.2s ease-out,box-shadow 0.2s}@media (max-width:1200px){.wrapq{margin-left:50px;transition:margin-left 0.7s,width 0.5s}}@media (max-width:950px){.wrapq{margin-left:25px;transition:margin-left 0.5s,width 0.5s}}@media (max-width:900px){.wrapq{width:300px;transition:width 0.5s}#sherlock{width:64px;transition:width 0.5s}}@media (max-width:800px){.wrapq{width:210px;transition:width 0.5s}#sherlock{width:50px;transition:width 0.5s}}</style><style class="darkreader darkreader--sync" media=screen>:root{--darkreader-text--link:var(--darkreader-text-0715de,#488df9);--darkreader-text--link-dark:var(--darkreader-text-0303e1,#4688fd);--darkreader-text--link-active:var(--darkreader-text-337fe8,#429aea);--darkreader-border--link-active:var(--darkreader-border-337fe8,#114a99);--darkreader-bg--btn-col:var(--darkreader-background-f4f4fa,#1d1f20);--darkreader-bg--btn-col-active:var(--darkreader-background-01af3f,#018c32);--darkreader-border--btn-col-active:var(--darkreader-border-01af3f,#01c948);--darkreader-bg--btn-col-hov:var(--darkreader-background-00ca70,#00a25a);--darkreader-text--btn-link:var(--darkreader-text-0a22d0,#5295f7);--txt-active:#1676F1;--darkreader-text--txt-dark:var(--darkreader-text-141414,#dbd8d4);--darkreader-border--txt-dark:var(--darkreader-border-141414,#857c6e);--summary:#0C18D0;--font-monospace:Menlo,ui-monospace,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Mono","Source Code Pro","Fira Mono"}body{background-color:var(--darkreader-background-dcdcdc,#2c2f31);color:var(--darkreader-text--txt-dark,var(--darkreader-text-000000,#e8e6e3))}hr{color:var(--darkreader-text-ffffff,#e8e6e3)}pre{color:var(--darkreader-text-000000,#e8e6e3)}h3{color:var(--darkreader-text--txt-dark,var(--darkreader-text-000000,#e8e6e3))}i{color:var(--darkreader-text-07572c,#cac6bf)}.quote{color:var(--darkreader-text-07572c,#cac6bf)}.wrapq input{text-decoration-color:initial}a:link{color:var(--darkreader-text--link,var(--darkreader-text-000000,#e8e6e3));text-decoration-color:initial}a:visited{color:var(--darkreader-text-991bc1,#c14be6);text-decoration-color:initial}a:hover{color:var(--darkreader-text--link,var(--darkreader-text-000000,#e8e6e3));text-decoration-color:initial}a:active{border-bottom:1px solid var(--darkreader-border--link-active);color:var(--darkreader-text--link-active,var(--darkreader-text-000000,#e8e6e3));text-decoration-color:initial}#tnav{background-image:linear-gradient(var(--darkreader-background-dcdcdc,#2c2f31) 0%,var(--darkreader-background-e1e1e1,#292c2e) 100%);background-color:initial;border-bottom-color:var(--darkreader-border-c8c8c8,#404547)}#tnav>ul{list-style-image:initial}#tnav>ul>li{outline-color:initial}.tbtn{background-color:var(--darkreader-bg--btn-col,var(--darkreader-background-ffffff,#181a1b));border-top-color:var(--darkreader-border-808080,#545b5e);border-right-color:var(--darkreader-border-808080,#545b5e);border-bottom-color:var(--darkreader-border-808080,#545b5e);border-left-color:var(--darkreader-border-808080,#545b5e);box-shadow:var(--darkreader-background-00000030,rgba(0,0,0,0.19)) 0px 1px 2px,var(--darkreader-background-00000015,rgba(0,0,0,0.08)) 0px 6px 12px}.tbtn a{text-decoration-color:initial;background-color:var(--darkreader-bg--btn-col,var(--darkreader-background-ffffff,#181a1b))}.tbtn a:link{color:var(--darkreader-text--btn-link,var(--darkreader-text-000000,#e8e6e3))}.tbtn a:visited{color:var(--darkreader-text--btn-link,var(--darkreader-text-000000,#e8e6e3))}.tbtn a:hover{background-color:var(--darkreader-bg--btn-col-hov,var(--darkreader-background-ffffff,#181a1b));color:var(--darkreader-text--txt-dark,var(--darkreader-text-000000,#e8e6e3));box-shadow:var(--darkreader-background-ffffff66,rgba(24,26,27,0.4)) 0px 1px 0px inset,var(--darkreader-background-00000033,rgba(0,0,0,0.2)) 0px 1px 1px}.tbtn:focus{border-top-color:var(--darkreader-border-4b8df8,#063e98);border-right-color:var(--darkreader-border-4b8df8,#063e98);border-bottom-color:var(--darkreader-border-4b8df8,#063e98);border-left-color:var(--darkreader-border-4b8df8,#063e98);outline-color:initial;color:var(--darkreader-text-229231,#6fde7e)}.tbtn:active{border-top-color:var(--darkreader-border-339046,#339147);border-right-color:var(--darkreader-border-339046,#339147);border-bottom-color:var(--darkreader-border-339046,#339147);border-left-color:var(--darkreader-border-339046,#339147);outline-color:initial}.tbtn a:active{background-color:var(--darkreader-bg--btn-col-active,var(--darkreader-background-ffffff,#181a1b))}.tbtn a:hover:active{box-shadow:none}#tnav a{border-bottom:none}.tbtn svg{fill:var(--darkreader-text-0230e8,#4194fd)}.tbtn:hover svg{fill:var(--darkreader-text-fffefe,#ffcbcb)}.tbtn:active svg{fill:var(--darkreader-text-cccccc,#c8c3bc)}#sherlock{border-top:none;border-right:none;border-bottom:none;border-left-color:var(--darkreader-border-adaeb1,#474c4f);background-color:var(--darkreader-background-dad9df,#2c2f31)}#sherlock:hover{background-color:var(--darkreader-background-0fc252,#0c9b42)}#sherlock:focus{outline-color:var(--darkreader-border-3974dc,#1a4592);border-left:none}#sherlock:active{outline-color:initial;background-color:var(--darkreader-background-bdbdc6,#3b4042)}@media (prefers-color-scheme:dark){body{background-color:var(--darkreader-background-bdbdbd,#3d4245)}hr{color:var(--darkreader-text-e8e8e8,#d9d6d1)}#tnav{background-image:linear-gradient(var(--darkreader-background-bdbdbd,#3d4245) 40%,var(--darkreader-background-b9b9b9,#404547) 100%);background-color:initial;border-bottom-color:var(--darkreader-border-ababab,#484e51)}a:link,a:hover{color:var(--darkreader-text--link-dark,var(--darkreader-text-000000,#e8e6e3))}a:visited{color:var(--darkreader-text-7d129e,#cd63ed)}:root{--darkreader-bg--btn-col:var(--darkreader-background-f2f2f8,#1e2021)}}#qu{border-top-color:var(--darkreader-border-7c7c7c,#635c51);border-left-color:var(--darkreader-border-acb5be,#454b4e);border-right-color:var(--darkreader-border-acb5be,#454b4e);border-bottom-color:var(--darkreader-border-acb5be,#454b4e);box-shadow:var(--darkreader-background-cccccc,#35393b) 0px 1px 0px inset;color:var(--darkreader-text-000000cf,rgba(232,230,227,0.81))}#qu:focus{border-top-color:var(--darkreader-border-005fcc,#005ac2);border-right-color:var(--darkreader-border-005fcc,#005ac2);border-left-color:var(--darkreader-border-005fcc,#005ac2);border-bottom-color:var(--darkreader-border-005fcc,#005ac2);box-shadow:var(--darkreader-background-5f95ee,#0f3f8e) 0px 0px 5px 0px;outline-color:initial}</style>
+<title>awk gawk Man Page - Linux</title>
+<link rel=canonical href=https://ss64.com/bash/awk.html>
+<meta name=darkreader content=4894f9b809344a498e0a384718563747><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}:host{--d2l-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-button-icon-background-color-hover:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-color-ferrite:var(--darkreader-neutral-text)!important;--d2l-color-sylvite:var(--darkreader-bg--d2l-color-sylvite)!important;--d2l-dropdown-background-color:var(--darkreader-neutral-background)!important;--d2l-dropdown-border-color:var(--darkreader-border--d2l-color-mica)!important;--d2l-input-backgroud-color:var(--darkreader-neutral-background)!important;--d2l-menu-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-tooltip-background-color:var(--darkreader-neutral-background)!important;--d2l-tooltip-border-color:var(--darkreader-bg--d2l-color-gypsum)!important}</style><meta name=referrer content=no-referrer><link rel=icon href="data:image/x-icon;base64,AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMPDwyLGwMBaxMDAj8S+wMfEvr//xL6//8S+v//Evr//xL6//8S+v//Ev7/IxMDAj8bAwFrMvb0jAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMzAXHv79gxL7A08S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL7A08W9wmHMzMwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC5ubkLxr6+dsS+v+jEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//DvsDjw8DAb7m5uQsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv7+/DMS/wXXEvsDrxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+wOvGvr52v7+/DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMv78oxL7A38S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xb6/2MTExCcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMTAwErFvr/yxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8W+v/LEwMBKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxr+/cMS+v/zEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr/8xr+/bAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADGv79wxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8PBwWsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMW/v0zEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//HwMBJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzL+/KMS+wPXEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr/wzL+/KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxb6/2MS+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL7A1QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDvb+AxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8O9v4AAAAAAAAAAAAAAAAAAAAAAAAAAAMW9vR/Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Fvb0fAAAAAAAAAAAAAAAAAAAAAMa9v4jEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Gvb+IAAAAAAAAAAAAAAAAv7+/EMS+wO3Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr/uyLa2DgAAAAAAAAAAxr+/cMS+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL+/aAAAAAAAAAAAxL7A08S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL7A0wAAAADHv78gxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//7+/vxjFv79YxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8K/v1DDv8GJxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8O/wYnDv7+4xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8O/v7jEvr/gxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8W+v9zEvr/wxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v+jEvr/4xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v/jEvr/4xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v/jEvr/oxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v+jFvr/cxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8W+v9zDv7+4xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8O/v7jDv8GJxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8O/wYnCv79QxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8K/v1C/v78YxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//7+/vxgAAAAAxL6/0MS+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6/0AAAAAAAAAAAxL+/aMS+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL+/aAAAAAAAAAAAw8PDEcS+v+7Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//EvsDtzMzMCgAAAAAAAAAAAAAAAMa9v4jEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Gvb+IAAAAAAAAAAAAAAAAAAAAAMHBwR3Evr/4xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v/jBwcEdAAAAAAAAAAAAAAAAAAAAAAAAAADDvb+AxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8O9v4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMu7sPxL7A18S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL7A18y7uw8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzL+/KMS+v/DEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr/wzL+/KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMTAwE7EvsD9xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+wP3DwMBRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADGv79wxL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8a/v3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxr+/bMS+v/zEvr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr//xL6//8S+v//Evr/8xr+/cAAA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" sizes=48x48><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:; form-action 'none'; base-uri 'none';"><body><div id=tnav><ul>
+<li class=tbtn><a href=https://ss64.com/>SS64</a></li>
+<li class=tbtn><a href=https://ss64.com/bash/>Linux <svg viewBox="0 0 13 20.1" width=13 height=13 style=transform:rotate(0deg)><path d="M0 2.9l7.2 7.2-7.1 7.1L3 20.1l7.1-7.1 2.9-2.9L2.9 0 0 2.9"></path></svg></a></li>
+<li class=tbtn><a href=https://ss64.com/bash/syntax.html>How-to <svg viewBox="0 0 13 20.1" width=13 height=13 style=transform:rotate(0deg)><path d="M0 2.9l7.2 7.2-7.1 7.1L3 20.1l7.1-7.1 2.9-2.9L2.9 0 0 2.9"></path></svg></a></li>
+<li><form action=https://www.google.com/search>
+<div class=wrapq>
+<input type=text name=q id=qu maxlength=255 placeholder=Search class=mousetrap aria-label="Search text" inputmode=search required value>
+<button id=sherlock type=submit>
+<svg xmlns=http://www.w3.org/2000/svg aria-hidden=true style=display:inherit;width:100%;height:100% viewBox="0 0 26 26"><path d="M11 2a9 9 0 1 0 5.641 16.01 1 1 0 0 0 .152.197l3.5 3.5a1 1 0 1 0 1.414-1.414l-3.5-3.5a1 1 0 0 0-.197-.153A8.96 8.96 0 0 0 20 11a9 9 0 0 0-9-9m0 2a7 7 0 1 1 0 14 7 7 0 0 1 0-14"></path></svg>
+</button>
+</div>
+</form></li>
+</ul></div><h1>awk or gawk (gnu awk)</h1> 
+<p>Find and Replace text, database sort/validate/index.</p>
+<pre>Syntax
+
+      awk &lt;<i>options</i>&gt; '<i>Program</i>' <i>Input-File1 Input-File2</i> ...
+
+      awk -f <i>PROGRAM-FILE</i> &lt;<i>options</i>&gt; <i>Input-File1 Input-File2</i> ...
+
+Key
+ -F <i>FS</i>
+ --field-separator <i>FS</i>
+     Use FS for the input field separator (the value of the '<i>FS</i>' predefined variable).
+
+ -f <i>PROGRAM-FILE</i>
+ --file <i>PROGRAM-FILE</i>
+     Read the awk program source from the file <i>PROGRAM-FILE</i>, instead of from the first
+     command line argument.
+
+ -mf<i> NNN</i>
+ -mr<i> NNN</i>
+     The 'f' flag sets the maximum number of fields, and the 'r' flag sets the maximum
+     record size.  These options are ignored by 'gawk', since 'gawk' has no predefined limits;
+     they are only for compatibility with the Bell Labs research version of Unix awk.
+
+ -v <i>VAR</i>=<i>VAL</i>
+ --assign <i>VAR</i>=<i>VAL</i>
+     Assign the variable <i>VAR</i> the value <i>VAL</i> before program execution begins.
+
+ -W traditional
+ -W compat
+ --traditional
+ --compat
+     Use compatibility mode, in which 'gawk' extensions are turned off.
+
+ -W lint
+ --lint
+     Give warnings about dubious or non-portable awk constructs.
+
+ -W lint-old
+ --lint-old
+     Warn about constructs that are not available in the original V.7 Unix version of awk.
+
+ -W posix
+ --posix
+     Use POSIX compatibility mode, 'gawk' extensions are turned off and additional restrictions apply.
+
+ -W re-interval
+ --re-interval
+     Allow interval expressions, in regexps.
+
+ -W source=<i>PROGRAM-TEXT</i>
+ --source <i>PROGRAM-TEXT</i>
+     Use <i>PROGRAM-TEXT</i> as awk program source code.
+     This option allows mixing command line source code with source code from files, and is
+     particularly useful for mixing command line programs with library functions.
+
+ --
+     Signal the end of options. This is useful to allow further arguments to the awk program
+     itself to start with a '-'. This is mainly for consistency with POSIX argument parsing conventions.
+
+'<i>Program</i>'
+     A series of patterns and actions: see below
+
+<i>Input-File</i>
+     If no Input-File is specified then awk applies the <i>Program</i> to "standard input",
+     (piped output of some other command or the terminal.
+     Typed input will continue until end-of-file (typing 'Control-d')</pre>
+<p>The basic function of awk is to search files for lines (or other units of text) that contain a pattern.<br>
+When a line matches, awk performs a specific action on that line.</p>
+<p>Suppose we have a file in which each line is a name followed by a phone number. Let’s say the file contains the line "Audrey 5550164."<br>
+In AWK, the first field is referred to as <span class=code>$1</span>, the second as <span class=code>$2</span> and so on.<br>
+So an AWK program to retrieve Audrey’s phone number is:<br>
+<span class=code>awk '$1 == "Audrey" {print $2}' numbers.txt</span><br>
+which means if the first field matches Audrey, then print the second field.</p>
+<p>In awk, <span class=code>$0</span> is the whole line of arguments.</p>
+<p>The <i>Program</i> statement that tells awk what to do; consists of a series of "rules". 
+ Each rule specifies one pattern to search for, and one action to perform when that pattern is found.<br><br>
+For ease of reading, each line in an awk program is normally a separate <i>Program </i>statement , like this:</p>
+<pre>     <i>pattern</i> { <i>action</i> }
+     <i>pattern</i> { <i>action</i> }
+     ...</pre>
+<p>e.g. Display lines from samplefile containing the string "123" or "abc" or "some text":</p>
+<pre>awk '/123/ { print $0 } 
+     /abc/ { print $0 }
+     /some text/ { print $0 }' samplefile</pre>
+<p>A regular expression enclosed in slashes (/) is an awk pattern that matches every input record whose text belongs to that set. e.g. the pattern /foo/ matches any input record containing the three characters 'foo', *anywhere* in the record.</p>
+<p>awk patterns can be one of the following:</p>
+<pre><b>/</b>Regular Expression<b>/</b>        - Match =
+Pattern <b>&amp;&amp;</b> Pattern          - AND
+Pattern <b>||</b> Pattern          - OR
+<b>!</b> Pattern                   - NOT
+Pattern <b>?</b> Pattern <b>:</b> Pattern - If, Then, Else
+Pattern1<b>,</b> Pattern2          - Range Start - end
+<b>BEGIN</b>                       - Perform action BEFORE input file is read
+<b>END</b>                         - Perform action AFTER input file is read</pre>
+<p>The special patterns BEGIN and END can be used to capture control before the first input line is read and after the last. BEGIN and END do not combine with other patterns.<br><br>
+Variable names with special meanings:</p>
+<pre>     CONVFMT  conversion  format  used  when  converting  numbers
+              (default %.6g)
+
+     FS       regular  expression  used  to separate fields; also
+              settable by option -Ffs.
+
+     NF       number of fields in the current record
+
+     NR       ordinal number of the current record
+
+     FNR      ordinal number of the current record in the current
+              file
+
+     FILENAME the name of the current input file
+
+     RS       input record separator (default newline)
+
+     OFS      output field separator (default blank)
+
+     ORS      output record separator (default newline)
+
+     OFMT     output format for numbers (default %.6g)
+
+     SUBSEP   separates multiple subscripts (default 034)
+
+     ARGC     argument count, assignable
+
+     ARGV     argument  array,  assignable;  non-null members are
+              taken as filenames
+
+     ENVIRON  array  of  environment  variables;  subscripts  are
+              names.</pre>
+<p>In addition to simple pattern matching awk has a huge range 
+of text and arithmetic Functions, Variables and Operators.</p>
+<p>'gawk' will ignore newlines after any of the following:</p>
+<pre>    , { ? : || &amp;&amp; do else</pre>
+<p>Comments - start with a '#', and continue to the end of the line:</p>
+<pre> # This program prints a nice friendly message</pre>
+<p>The AWK language was named after its authors, Al Aho, Peter Weinberger and Brian Kernighan.</p>
+<h3 id=e>Examples</h3>
+<p>From an <a href=https://ss64.com/bash/ls.html>ls - l</a> listing, return the fifth item ($5) from each line of the output:</p>
+<blockquote>
+<p class=code>$ ls -l | awk '{print $5}'</p>
+</blockquote>
+<p>Print the Row Number (NR), then a dash and space <span class=code>("- "</span>) and then the first item ($1) from each line in samplefile.txt:</p>
+<blockquote>
+<p class=code>$ awk '{print NR "- " $1 }' samplefile.txt</p>
+</blockquote>
+<p>Print the first item ($1) and then the third last item<span class=code> $(NF-2)</span> from each line in samplefile.txt:</p>
+<blockquote>
+<p class=code>$ awk '{print $1, $(NF-2) }' samplefile.txt</p>
+</blockquote>
+<p>Print every line that has at least one field. This is an easy way to delete blank lines from a file (or rather, to<br>
+create a new file similar to the old file but from which the blank lines have been deleted)</p>
+<blockquote>
+<p class=code> awk 'NF &gt; 0' data.txt</p>
+</blockquote>
+<p>Comparison with <a href=https://ss64.com/bash/grep.html>grep</a>:</p>
+<blockquote>
+<p>Running <span class=code>grep Dec</span> against the following file listing would return the 3 rows shown in bold as it matches text in different places:</p>
+<p><span class=code>-rw-r--r-- 7 simon simon 12043 Jan 31 09:36 <b>Dec</b>ember.pdf<br>
+-rw-r--r-- 3 simon simon 1024 <b>Dec</b> 01 11:59 README<br>
+-rw-r--r-- 3 simon simon 5096 Nov 14 18:22 <b>Dec</b>ision.txt </span></p>
+<p>Running <span class=code>awk '$6 == "Dec"'</span>against the same file listing, the relational operator $6 matches the exact field (column 6 = Month) so it will list only the December file:</p>
+<p class=code> $ ls -l /tmp/demo | awk '$6 == "Dec"'</p>
+</blockquote>
+<p>Print the length of the longest input line:</p>
+<blockquote>
+<p class=code>awk '{ if (length($0) &gt; max) max = length($0) }<br>
+&nbsp;&nbsp;END { print max }' data</p>
+</blockquote>
+<p>Print seven random numbers from zero to 100,
+inclusive:</p>
+<blockquote>
+<p class=code>awk 'BEGIN { for (i = 1; i &lt;= 7; i++) print int(101 * rand()) }'</p>
+</blockquote>
+<p>Print the total number of bytes used by <i>FILES</i>:</p>
+<blockquote>
+<p class=code>ls -lg <i>FILES</i> | awk '{ x += $5 } ; END { print "total bytes: " x }'</p>
+</blockquote>
+<p>Print the average file size of all .PNG files within a directory:</p>
+<blockquote>
+<p class=code>ls -l *.png | gawk '{sum += $5; n++;} END {print sum/n;}'</p>
+</blockquote>
+<p>Print a sorted list of the login names of all users:</p>
+<blockquote>
+<p class=code>awk -F: '{ print $1 }' /etc/passwd | sort</p>
+</blockquote>
+<p>Count the lines in a file:</p>
+<blockquote>
+<p class=code>awk 'END { print NR }' data</p>
+</blockquote>
+<p>Print the even numbered lines in the data file:</p>
+<blockquote>
+<p class=code>awk 'NR % 2 == 0' data</p>
+<p>If you were to use the expression '<span class=code>NR % 2 == 1</span>' instead, it would
+print the odd numbered lines.</p>
+</blockquote>
+<p class=quote>“When the Last of the Great Auks Died, It Was by the Crush of a Fisherman’s Boot” ~ Samantha Galasso (<a href=https://www.smithsonianmag.com/smithsonian-institution/with-crush-fisherman-boot-the-last-great-auks-died-180951982/>Smithsonian</a>)</p>
+<h3>Related Linux commands</h3>
+<p class=space><a href=https://github.com/onetrueawk/awk>One True AWK</a> - Github repo with a unicode version of awk (patched in 2022 by Brian Kernighan).<br>
+<a href=https://www.cs.princeton.edu/courses/archive/spr08/cos333/awk.help>AWK Help page</a> - Brian Kernighan.<br>
+<a href=https://gregable.com/2010/09/why-you-should-know-just-little-awk.html>Why you should learn just a little Awk</a> - Gregable.<br>
+<a href=https://github.com/thewhitetulip/awk-anti-textbook/>Multiversity</a> - Tutorial aimed at beginners.<br>
+<a href=https://www.grymoire.com/Unix/Awk.html>AWK tutorial and introduction</a> - Bruce Barnett.<br>
+<a href=https://github.com/learnbyexample/Command-line-text-processing/blob/master/gnu_awk.md>Learn By Example</a> - AWK text processing.<br>
+<a href=https://www.gnu.org/software/gawk/manual/gawk.html>GNU Awk User Guide</a> - Full guide with examples.<br>
+Book: <a href=https://archive.org/download/pdfy-MgN0H1joIoDVoIC7/The_AWK_Programming_Language.pdf>The Awk Programming Language</a>(pdf) 1988, Archive.org by <b>A</b>ho, <b>K</b>ernighan, and <b>W</b>einberger<br>
+<a href=https://www.pement.org/awk/awk1line.txt>awk one liners</a> - Eric Pement.<br>
+<a href=https://catonmat.net/awk-one-liners-explained-part-one>awk one liners explained</a> &amp; <a href=https://catonmat.net/awk-one-liners-explained-part-two>pt2</a> - Peteris Krumin (CatOnMat.net)<br>
+<a href=https://web.archive.org/web/20191020151644/http://sparky.rice.edu/~hartigan/awk.html>Patrick Hartigan</a> - How to use awk.<br><br>
+awk, 'oawk', and 'nawk' - Alternative, older and newer versions of awk.<br>
+<a href=https://ss64.com/bash/expr.html>expr</a> - Evaluate expressions.<br>
+<a href=https://ss64.com/bash/eval.html>eval</a> - Evaluate several commands/arguments.<br>
+<a href=https://ss64.com/bash/for.html>for</a> - Expand <i>words</i>, and execute <i>commands</i><br>
+<a href=https://ss64.com/bash/grep.html>grep</a> - Search file(s) for lines that match a given pattern.<br>
+<a href=https://ss64.com/bash/m4.html>m4</a> - Macro processor.<br>
+<a href=https://ss64.com/bash/tr.html>tr</a> - Translate, squeeze, and/or delete characters.<br>
+Equivalent Windows command: 
+<a href=https://ss64.com/nt/for.html>FOR</a> - Conditionally perform a command several times.</p>
+<ins class="adsbygoogle sf-hidden" style=display:inline-block;width:336px;height:280px data-ad-client=ca-pub-6140977852749469 data-ad-slot=4615356305 data-adsbygoogle-status=done data-ad-status=filled></ins>
+<hr>
+<div id=bl>&nbsp;</div>
+<div id=br>Copyright © 1999-2026 <a href=https://ss64.com/>SS64.com</a><br>
+Some rights reserved</div>
+<iframe name=__tcfapiLocator style=display:none></iframe><iframe name=__gppLocator style=display:none></iframe>
