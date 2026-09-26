@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html data-darkreader-mode=dynamic data-darkreader-scheme=dark data-darkreader-proxy-injected=true style><!--
+ Page saved with SingleFile 
+ url: https://lartc.org/howto/lartc.kernel.obscure.html 
+ saved date: Sat Sep 26 2026 13:25:54 GMT-0400 (Eastern Daylight Time)
+--><meta charset=utf-8><style class="darkreader darkreader--user-agent" media=screen>@layer{html{background-color:var(--darkreader-background-ffffff,#181a1b)!important}html{color-scheme:dark!important}html,body{border-color:var(--darkreader-border-4c4c4c,#736b5e);color:var(--darkreader-text-000000,#e8e6e3)}a{color:var(--darkreader-text-0040ff,#3391ff)}table{border-color:var(--darkreader-border-808080,#545b5e)}::placeholder{color:var(--darkreader-text-a9a9a9,#b2aba1)}::selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}::-moz-selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}}</style><style class="darkreader darkreader--inline" media=screen>[data-darkreader-inline-bgcolor]{background-color:var(--darkreader-inline-bgcolor)!important}</style><style class="darkreader darkreader--variables" media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3);--darkreader-background-ffffff:#181a1b;--darkreader-text-ffffff:#e8e6e3;--darkreader-border-404040:#776e62;--darkreader-text-000000:#e8e6e3;--darkreader-border-4c4c4c:#736b5e;--darkreader-text-0040ff:#3391ff;--darkreader-border-808080:#545b5e;--darkreader-text-a9a9a9:#b2aba1;--darkreader-background-faffbd:#404400;--darkreader-background-0060d4:#004daa;--darkreader-background-ffd76e:#684b00;--darkreader-background-c59d00:#9e7e00;--darkreader-text-302505:#d7d4cf;--darkreader-background-add8e6:#1b4958;--darkreader-background-cfecf5:#0f3a47;--darkreader-background-f5f5f5:#1e2021;--darkreader-background-faedda:#432c09;--darkreader-background-85c3d8:#245d70;--darkreader-background-e6e6e6:#26292b;--darkreader-background-f9f9f9:#1b1e1f;--darkreader-text-055000:#cfcbc4;--darkreader-background-1c1b22:#17191a;--darkreader-text-eeeeee:#dddad6;--darkreader-text-7dc67d:#81c881;--darkreader-background-00000013:rgba(0,0,0,0.07);--darkreader-background-00000000:rgba(0,0,0,0);--darkreader-background-000000:#000000;--darkreader-border-a9a9a9:#484e51;--darkreader-background-696969:#4f5659}</style><title>Obscure settings</title><meta name=GENERATOR content="Modular DocBook HTML Stylesheet Version 1.79"><link rel=HOME title="Linux Advanced Routing &amp; Traffic Control HOWTO" href=https://lartc.org/howto/index.html><link rel=UP title="Kernel network parameters " href=https://lartc.org/howto/lartc.kernel.html><link rel=PREVIOUS title="Kernel network parameters " href=https://lartc.org/howto/lartc.kernel.html><link rel=NEXT title="Advanced &amp; less common queueing disciplines" href=https://lartc.org/howto/lartc.adv-qdisc.html><meta name=darkreader content=75c57091a6c248549727ad81698226e6><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}:host{--d2l-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-button-icon-background-color-hover:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-color-ferrite:var(--darkreader-neutral-text)!important;--d2l-color-sylvite:var(--darkreader-bg--d2l-color-sylvite)!important;--d2l-dropdown-background-color:var(--darkreader-neutral-background)!important;--d2l-dropdown-border-color:var(--darkreader-border--d2l-color-mica)!important;--d2l-input-backgroud-color:var(--darkreader-neutral-background)!important;--d2l-menu-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-tooltip-background-color:var(--darkreader-neutral-background)!important;--d2l-tooltip-border-color:var(--darkreader-bg--d2l-color-gypsum)!important}</style><meta name=referrer content=no-referrer><link rel=canonical href=https://lartc.org/howto/lartc.kernel.obscure.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:; form-action 'none'; base-uri 'none';"><body class=SECT1 bgcolor=#FFFFFF text=#000000 link=#0000FF vlink=#840084 alink=#0000FF data-darkreader-inline-bgcolor style=--darkreader-inline-bgcolor:var(--darkreader-background-ffffff,#181a1b)><div class=NAVHEADER><table summary="Header navigation table" width=100% border=0 cellpadding=0 cellspacing=0><tbody><tr><th colspan=3 align=center><a href=http://www.powerdns.com/>Made possible by PowerDNS</a><tr><td width=10% align=left valign=bottom><a href=https://lartc.org/howto/lartc.kernel.html accesskey=P>Prev</a><td width=80% align=center valign=bottom>Chapter 13. Kernel network parameters<td width=10% align=right valign=bottom><a href=https://lartc.org/howto/lartc.adv-qdisc.html accesskey=N>Next</a></table><hr align=LEFT width=100%></div><div class=SECT1><h1 class=SECT1><a name=LARTC.KERNEL.OBSCURE>13.2. Obscure settings</a></h1><p>Ok, there are a lot of parameters which can be modified. We try to list them
+all. Also documented (partly) in Documentation/ip-sysctl.txt.<p>Some of these settings have different defaults based on whether you 
+answered 'Yes' to 'Configure as router and not host' while compiling your
+kernel.<p>Oskar Andreasson also has a page on all these flags and it appears to be
+better than ours, so also check 
+<a href=http://ipsysctl-tutorial.frozentux.net/ target=_top>http://ipsysctl-tutorial.frozentux.net/</a>.<div class=SECT2><h2 class=SECT2><a name=AEN1492>13.2.1. Generic ipv4</a></h2><p>As a generic note, most rate limiting features don't work on loopback, so
+don't test them locally. The limits are supplied in 'jiffies', and are
+enforced using the earlier mentioned token bucket filter.<p>The kernel has an internal clock which runs at 'HZ' ticks (or 'jiffies') per
+second. On Intel, 'HZ' is mostly 100. So setting a *_rate file to, say 50,
+would allow for 2 packets per second. The token bucket filter is also
+configured to allow for a burst of at most 6 packets, if enough tokens have
+been earned.<p>Several entries in the following list have been copied from
+/usr/src/linux/Documentation/networking/ip-sysctl.txt, written by Alexey
+Kuznetsov &lt;kuznet@ms2.inr.ac.ru&gt; and Andi Kleen &lt;ak@muc.de&gt;
+<p><div class=VARIABLELIST><dl><dt>/proc/sys/net/ipv4/icmp_destunreach_rate<dd><p>If the kernel decides that it can't deliver a packet, it will drop it, and
+send the source of the packet an ICMP notice to this effect.</p><dt>/proc/sys/net/ipv4/icmp_echo_ignore_all<dd><p>Don't act on echo packets at all. Please don't set this by default, but if
+you are used as a relay in a DoS attack, it may be useful.</p><dt>/proc/sys/net/ipv4/icmp_echo_ignore_broadcasts [Useful]<dd><p>If you ping the broadcast address of a network, all hosts are supposed to
+respond. This makes for a dandy denial-of-service tool. Set this to 1 to
+ignore these broadcast messages.</p><dt>/proc/sys/net/ipv4/icmp_echoreply_rate<dd><p>The rate at which echo replies are sent to any one destination.</p><dt>/proc/sys/net/ipv4/icmp_ignore_bogus_error_responses<dd><p>Set this to ignore ICMP errors caused by hosts in the network reacting badly
+to frames sent to what they perceive to be the broadcast address.</p><dt>/proc/sys/net/ipv4/icmp_paramprob_rate<dd><p>A relatively unknown ICMP message, which is sent in response to incorrect
+packets with broken IP or TCP headers. With this file you can control the
+rate at which it is sent.</p><dt>/proc/sys/net/ipv4/icmp_timeexceed_rate<dd><p>This is the famous cause of the 'Solaris middle star' in traceroutes. Limits
+the rate of ICMP Time Exceeded messages sent. </p><dt>/proc/sys/net/ipv4/igmp_max_memberships<dd><p>Maximum number of listening igmp (multicast) sockets on the host.
+FIXME: Is this true?</p><dt>/proc/sys/net/ipv4/inet_peer_gc_maxtime<dd><p>FIXME: Add a little explanation about the inet peer storage?
+Miximum interval between garbage collection passes. This interval is in
+effect under low (or absent) memory pressure on the pool. Measured in
+jiffies.</p><dt>/proc/sys/net/ipv4/inet_peer_gc_mintime<dd><p>Minimum interval between garbage collection passes. This interval is in
+effect under high memory pressure on the pool. Measured in jiffies.</p><dt>/proc/sys/net/ipv4/inet_peer_maxttl<dd><p>Maximum time-to-live of entries. Unused entries will expire after this
+period of time if there is no memory pressure on the pool (i.e. when the
+number of entries in the pool is very small). Measured in jiffies.</p><dt>/proc/sys/net/ipv4/inet_peer_minttl<dd><p>Minimum time-to-live of entries. Should be enough to cover fragment
+time-to-live on the reassembling side. This minimum time-to-live
+is guaranteed if the pool size is less than inet_peer_threshold.
+Measured in jiffies.</p><dt>/proc/sys/net/ipv4/inet_peer_threshold<dd><p>The approximate size of the INET peer storage. Starting from this threshold
+entries will be thrown aggressively. This threshold also determines
+entries' time-to-live and time intervals between garbage collection passes. 
+More entries, less time-to-live, less GC interval.</p><dt>/proc/sys/net/ipv4/ip_autoconfig<dd><p>This file contains the number one if the host received its IP configuration by
+RARP, BOOTP, DHCP or a similar mechanism. Otherwise it is zero.</p><dt>/proc/sys/net/ipv4/ip_default_ttl<dd><p>Time To Live of packets. Set to a safe 64. Raise it if you have a huge
+network. Don't do so for fun - routing loops cause much more damage that
+way. You might even consider lowering it in some circumstances.</p><dt>/proc/sys/net/ipv4/ip_dynaddr<dd><p>You need to set this if you use dial-on-demand with a dynamic interface
+address. Once your demand interface comes up, any local TCP sockets which haven't seen replies will be rebound to have the right address. This solves the problem that the
+connection that brings up your interface itself does not work, but the
+second try does.</p><dt>/proc/sys/net/ipv4/ip_forward<dd><p>If the kernel should attempt to forward packets. Off by default.</p><dt>/proc/sys/net/ipv4/ip_local_port_range<dd><p>Range of local ports for outgoing connections. Actually quite small by
+default, 1024 to 4999.</p><dt>/proc/sys/net/ipv4/ip_no_pmtu_disc<dd><p>Set this if you want to disable Path MTU discovery - a technique to
+determine the largest Maximum Transfer Unit possible on your path. See also
+the section on Path MTU discovery in the 
+<i class=CITETITLE><a href=https://lartc.org/howto/lartc.cookbook.html>Cookbook</a></i> chapter.</p><dt>/proc/sys/net/ipv4/ipfrag_high_thresh<dd><p>Maximum memory used to reassemble IP fragments. When 
+ipfrag_high_thresh bytes of memory is allocated for this purpose,
+the fragment handler will toss packets until ipfrag_low_thresh
+is reached.</p><dt>/proc/sys/net/ipv4/ip_nonlocal_bind<dd><p>Set this if you want your applications to be able to bind to an address
+which doesn't belong to a device on your system. This can be useful when
+your machine is on a non-permanent (or even dynamic) link, so your services
+are able to start up and bind to a specific address when your link is down.</p><dt>/proc/sys/net/ipv4/ipfrag_low_thresh<dd><p>Minimum memory used to reassemble IP fragments.</p><dt>/proc/sys/net/ipv4/ipfrag_time<dd><p>Time in seconds to keep an IP fragment in memory.</p><dt>/proc/sys/net/ipv4/tcp_abort_on_overflow<dd><p>A boolean flag controlling the behaviour under lots of incoming connections.
+When enabled, this causes the kernel to actively send RST packets when a
+service is overloaded.</p><dt>/proc/sys/net/ipv4/tcp_fin_timeout<dd><p>Time to hold socket in state FIN-WAIT-2, if it was closed by our side. Peer
+can be broken and never close its side, or even died unexpectedly. Default
+value is 60sec. Usual value used in 2.2 was 180 seconds, you may restore it,
+but remember that if your machine is even underloaded WEB server, you risk
+to overflow memory with kilotons of dead sockets, FIN-WAIT-2 sockets are
+less dangerous than FIN-WAIT-1, because they eat maximum 1.5K of memory, but
+they tend to live longer. Cf. tcp_max_orphans.</p><dt>/proc/sys/net/ipv4/tcp_keepalive_time<dd><p>How often TCP sends out keepalive messages when keepalive is enabled. 
+Default: 2hours.</p><dt>/proc/sys/net/ipv4/tcp_keepalive_intvl<dd><p>How frequent probes are retransmitted, when a probe isn't acknowledged. 
+Default: 75 seconds.</p><dt>/proc/sys/net/ipv4/tcp_keepalive_probes<dd><p>How many keepalive probes TCP will send, until it decides that the
+connection is broken. 
+Default value: 9. 
+Multiplied with tcp_keepalive_intvl, this gives the time a link can be
+non-responsive after a keepalive has been sent.</p><dt>/proc/sys/net/ipv4/tcp_max_orphans<dd><p>Maximal number of TCP sockets not attached to any user file handle, held by
+system. If this number is exceeded orphaned connections are reset
+immediately and warning is printed. This limit exists only to prevent simple
+DoS attacks, you _must_ not rely on this or lower the limit artificially,
+but rather increase it (probably, after increasing installed memory), if
+network conditions require more than default value, and tune network
+services to linger and kill such states more aggressively. Let me remind you
+again: each orphan eats up to &nbsp;64K of unswappable memory.</p><dt>/proc/sys/net/ipv4/tcp_orphan_retries<dd><p>How may times to retry before killing TCP connection, closed by our side.
+Default value 7 corresponds to &nbsp;50sec-16min depending on RTO. If your machine
+is a loaded WEB server, you should think about lowering this value, such
+sockets may consume significant resources. Cf. tcp_max_orphans.</p><dt>/proc/sys/net/ipv4/tcp_max_syn_backlog<dd><p>Maximal number of remembered connection requests, which still did not
+receive an acknowledgment from connecting client. Default value is 1024 for
+systems with more than 128Mb of memory, and 128 for low memory machines. If
+server suffers of overload, try to increase this number. Warning! If you
+make it greater than 1024, it would be better to change TCP_SYNQ_HSIZE in
+include/net/tcp.h to keep TCP_SYNQ_HSIZE*16&lt;=tcp_max_syn_backlog and to
+recompile kernel.</p><dt>/proc/sys/net/ipv4/tcp_max_tw_buckets<dd><p>Maximal number of timewait sockets held by system simultaneously. If this
+number is exceeded time-wait socket is immediately destroyed and warning is
+printed. This limit exists only to prevent simple DoS attacks, you _must_
+not lower the limit artificially, but rather increase it (probably, after
+increasing installed memory), if network conditions require more than
+default value.</p><dt>/proc/sys/net/ipv4/tcp_retrans_collapse<dd><p>Bug-to-bug compatibility with some broken printers.
+On retransmit try to send bigger packets to work around bugs in
+certain TCP stacks.</p><dt>/proc/sys/net/ipv4/tcp_retries1<dd><p>How many times to retry before deciding that something is wrong
+and it is necessary to report this suspicion to network layer.
+Minimal RFC value is 3, it is default, which corresponds
+to &nbsp;3sec-8min depending on RTO.</p><dt>/proc/sys/net/ipv4/tcp_retries2<dd><p>How may times to retry before killing alive TCP connection.
+<a href=http://www.ietf.org/rfc/rfc1122.txt target=_top>RFC 1122</a>
+says that the limit should be longer than 100 sec.
+It is too small number. Default value 15 corresponds to &nbsp;13-30min
+depending on RTO.</p><dt>/proc/sys/net/ipv4/tcp_rfc1337<dd><p>This boolean enables a fix for 'time-wait assassination hazards in tcp', described
+in RFC 1337. If enabled, this causes the kernel to drop RST packets for
+sockets in the time-wait state.
+Default: 0</p><dt>/proc/sys/net/ipv4/tcp_sack<dd><p>Use Selective ACK which can be used to signify that specific packets are
+missing - therefore helping fast recovery.</p><dt>/proc/sys/net/ipv4/tcp_stdurg<dd><p>Use the Host requirements interpretation of the TCP urg pointer
+field. 
+Most hosts use the older BSD interpretation, so if you turn this on
+Linux might not communicate correctly with them. 
+Default: FALSE </p><dt>/proc/sys/net/ipv4/tcp_syn_retries<dd><p>Number of SYN packets the kernel will send before giving up on the new
+connection.</p><dt>/proc/sys/net/ipv4/tcp_synack_retries<dd><p>To open the other side of the connection, the kernel sends a SYN with a
+piggybacked ACK on it, to acknowledge the earlier received SYN. This is part
+2 of the threeway handshake. This setting determines the number of SYN+ACK
+packets sent before the kernel gives up on the connection.</p><dt>/proc/sys/net/ipv4/tcp_timestamps<dd><p>Timestamps are used, amongst other things, to protect against wrapping
+sequence numbers. A 1 gigabit link might conceivably re-encounter a previous
+sequence number with an out-of-line value, because it was of a previous
+generation. The timestamp will let it recognize this 'ancient packet'.</p><dt>/proc/sys/net/ipv4/tcp_tw_recycle<dd><p>Enable fast recycling TIME-WAIT sockets. Default value is 1.
+It should not be changed without advice/request of technical experts.</p><dt>/proc/sys/net/ipv4/tcp_window_scaling<dd><p>TCP/IP normally allows windows up to 65535 bytes big. For really fast
+networks, this may not be enough. The window scaling options allows for
+almost gigabyte windows, which is good for high bandwidth*delay products.</p></dl></div><p></p></div><div class=SECT2><h2 class=SECT2><a name=AEN1673>13.2.2. Per device settings</a></h2><p>DEV can either stand for a real interface, or for 'all' or 'default'.
+Default also changes settings for interfaces yet to be created.
+<p><div class=VARIABLELIST><dl><dt>/proc/sys/net/ipv4/conf/DEV/accept_redirects<dd><p>If a router decides that you are using it for a wrong purpose (ie, it needs
+to resend your packet on the same interface), it will send us a ICMP
+Redirect. This is a slight security risk however, so you may want to turn it
+off, or use secure redirects.</p><dt>/proc/sys/net/ipv4/conf/DEV/accept_source_route<dd><p>Not used very much anymore. You used to be able to give a packet a list of
+IP addresses it should visit on its way. Linux can be made to honor this IP
+option.</p><dt>/proc/sys/net/ipv4/conf/DEV/bootp_relay<dd><p>Accept packets with source address 0.b.c.d with destinations not to this host
+as local ones. It is supposed that a BOOTP relay daemon will catch and forward
+such packets.<p>The default is 0, since this feature is not implemented yet (kernel version
+2.2.12).</p><dt>/proc/sys/net/ipv4/conf/DEV/forwarding<dd><p>Enable or disable IP forwarding on this interface.</p><dt>/proc/sys/net/ipv4/conf/DEV/log_martians<dd><p>See the section on 
+<i class=CITETITLE><a href=https://lartc.org/howto/lartc.kernel.html#LARTC.KERNEL.RPF>Reverse Path Filtering</a></i>.</p><dt>/proc/sys/net/ipv4/conf/DEV/mc_forwarding<dd><p>If we do multicast forwarding on this interface</p><dt>/proc/sys/net/ipv4/conf/DEV/proxy_arp<dd><p>If you set this to 1, this interface will respond to ARP requests for
+addresses the kernel has routes to. Can be very useful when building 'ip
+pseudo bridges'. Do take care that your netmasks are very correct before
+enabling this! Also be aware that the rp_filter, mentioned elsewhere, also
+operates on ARP queries!</p><dt>/proc/sys/net/ipv4/conf/DEV/rp_filter<dd><p>See the section on 
+<i class=CITETITLE><a href=https://lartc.org/howto/lartc.kernel.html#LARTC.KERNEL.RPF>Reverse Path Filtering</a></i>.</p><dt>/proc/sys/net/ipv4/conf/DEV/secure_redirects<dd><p>Accept ICMP redirect messages only for gateways, listed in default gateway
+list. Enabled by default.</p><dt>/proc/sys/net/ipv4/conf/DEV/send_redirects<dd><p>If we send the above mentioned redirects.</p><dt>/proc/sys/net/ipv4/conf/DEV/shared_media<dd><p>If it is not set the kernel does not assume that different subnets on this
+device can communicate directly. Default setting is 'yes'.</p><dt>/proc/sys/net/ipv4/conf/DEV/tag<dd><p>FIXME: fill this in</p></dl></div><p></p></div><div class=SECT2><h2 class=SECT2><a name=AEN1730>13.2.3. Neighbor policy</a></h2><p>Dev can either stand for a real interface, or for 'all' or 'default'.
+Default also changes settings for interfaces yet to be created.
+<p><div class=VARIABLELIST><dl><dt>/proc/sys/net/ipv4/neigh/DEV/anycast_delay<dd><p>Maximum for random delay of answers to neighbor solicitation messages in
+jiffies (1/100 sec). Not yet implemented (Linux does not have anycast support
+yet).</p><dt>/proc/sys/net/ipv4/neigh/DEV/app_solicit<dd><p>Determines the number of requests to send to the user level ARP daemon. Use 0
+to turn off.</p><dt>/proc/sys/net/ipv4/neigh/DEV/base_reachable_time<dd><p>A base value used for computing the random reachable time value as specified
+in RFC2461.</p><dt>/proc/sys/net/ipv4/neigh/DEV/delay_first_probe_time<dd><p>Delay for the first time probe if the neighbor is reachable. (see
+gc_stale_time)</p><dt>/proc/sys/net/ipv4/neigh/DEV/gc_stale_time<dd><p>Determines how often to check for stale ARP entries. After an ARP entry is
+stale it will be resolved again (which is useful when an IP address migrates
+to another machine). When ucast_solicit is greater than 0 it first tries to
+send an ARP packet directly to the known host When that fails and
+mcast_solicit is greater than 0, an ARP request is broadcast.</p><dt>/proc/sys/net/ipv4/neigh/DEV/locktime<dd><p>An ARP/neighbor entry is only replaced with a new one if the old is at least
+locktime old. This prevents ARP cache thrashing.</p><dt>/proc/sys/net/ipv4/neigh/DEV/mcast_solicit<dd><p>Maximum number of retries for multicast solicitation.</p><dt>/proc/sys/net/ipv4/neigh/DEV/proxy_delay<dd><p>Maximum time (real time is random [0..proxytime]) before answering to an ARP
+request for which we have an proxy ARP entry. In some cases, this is used to
+prevent network flooding.</p><dt>/proc/sys/net/ipv4/neigh/DEV/proxy_qlen<dd><p>Maximum queue length of the delayed proxy arp timer. (see proxy_delay).</p><dt>/proc/sys/net/ipv4/neigh/DEV/retrans_time<dd><p>The time, expressed in jiffies (1/100 sec), between retransmitted Neighbor
+Solicitation messages. Used for address resolution and to determine if a
+neighbor is unreachable.</p><dt>/proc/sys/net/ipv4/neigh/DEV/ucast_solicit<dd><p>Maximum number of retries for unicast solicitation.</p><dt>/proc/sys/net/ipv4/neigh/DEV/unres_qlen<dd><p>Maximum queue length for a pending arp request - the number of packets which
+are accepted from other layers while the ARP address is still resolved.</p></dl></div><p></p></div><div class=SECT2><h2 class=SECT2><a name=AEN1782>13.2.4. Routing settings</a></h2><p><p><div class=VARIABLELIST><dl><dt>/proc/sys/net/ipv4/route/error_burst and /proc/sys/net/ipv4/route/error_cost<dd><p>This parameters are used to limit the warning messages written to the kernel
+log from the routing code. The higher the error_cost factor is, the fewer
+messages will be written. Error_burst controls when messages will be dropped.
+The default settings limit warning messages to one every five seconds.</p><dt>/proc/sys/net/ipv4/route/flush<dd><p>Writing to this file results in a flush of the routing cache.</p><dt>/proc/sys/net/ipv4/route/gc_elasticity<dd><p>Values to control the frequency and behavior of the garbage collection
+algorithm for the routing cache. This can be important for when doing
+fail over. At least gc_timeout seconds will elapse before Linux will skip
+to another route because the previous one has died. By default set to 300,
+you may want to lower it if you want to have a speedy fail over.<p>Also see <a href=http://mailman.ds9a.nl/pipermail/lartc/2002q1/002667.html target=_top>this post</a> by Ard van Breemen.</p><dt>/proc/sys/net/ipv4/route/gc_interval<dd><p>See /proc/sys/net/ipv4/route/gc_elasticity.</p><dt>/proc/sys/net/ipv4/route/gc_min_interval<dd><p>See /proc/sys/net/ipv4/route/gc_elasticity.</p><dt>/proc/sys/net/ipv4/route/gc_thresh<dd><p>See /proc/sys/net/ipv4/route/gc_elasticity.</p><dt>/proc/sys/net/ipv4/route/gc_timeout<dd><p>See /proc/sys/net/ipv4/route/gc_elasticity.</p><dt>/proc/sys/net/ipv4/route/max_delay<dd><p>Maximum delay for flushing the routing cache.</p><dt>/proc/sys/net/ipv4/route/max_size<dd><p>Maximum size of the routing cache. Old entries will be purged once the cache
+reached has this size.</p><dt>/proc/sys/net/ipv4/route/min_adv_mss<dd><p>FIXME: fill this in</p><dt>/proc/sys/net/ipv4/route/min_delay<dd><p>Minimum delay for flushing the routing cache.</p><dt>/proc/sys/net/ipv4/route/min_pmtu<dd><p>FIXME: fill this in</p><dt>/proc/sys/net/ipv4/route/mtu_expires<dd><p>FIXME: fill this in</p><dt>/proc/sys/net/ipv4/route/redirect_load<dd><p>Factors which determine if more ICMP redirects should be sent to a specific
+host. No redirects will be sent once the load limit or the maximum number of
+redirects has been reached.</p><dt>/proc/sys/net/ipv4/route/redirect_number<dd><p>See /proc/sys/net/ipv4/route/redirect_load.</p><dt>/proc/sys/net/ipv4/route/redirect_silence<dd><p>Timeout for redirects. After this period redirects will be sent again, even if
+this has been stopped, because the load or number limit has been reached.</p></dl></div><p></p></div></div><div class=NAVFOOTER><hr align=LEFT width=100%><table summary="Footer navigation table" width=100% border=0 cellpadding=0 cellspacing=0><tbody><tr><td width=33% align=left valign=top><a href=https://lartc.org/howto/lartc.kernel.html accesskey=P>Prev</a><td width=34% align=center valign=top><a href=https://lartc.org/howto/index.html accesskey=H>Home</a><td width=33% align=right valign=top><a href=https://lartc.org/howto/lartc.adv-qdisc.html accesskey=N>Next</a><tr><td width=33% align=left valign=top>Kernel network parameters<td width=34% align=center valign=top><a href=https://lartc.org/howto/lartc.kernel.html accesskey=U>Up</a><td width=33% align=right valign=top>Advanced &amp; less common queueing disciplines</table></div>
