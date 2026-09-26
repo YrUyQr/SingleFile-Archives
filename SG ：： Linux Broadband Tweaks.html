@@ -1,0 +1,595 @@
+<!DOCTYPE html> <html data-darkreader-mode=dynamic data-darkreader-scheme=dark data-darkreader-proxy-injected=true style><!--
+ Page saved with SingleFile 
+ url: https://www.speedguide.net/articles/linux-broadband-tweaks-121 
+ saved date: Sat Sep 26 2026 13:26:56 GMT-0400 (Eastern Daylight Time)
+--><meta charset=utf-8><style>:root{--sf-img-0: url("data:image/gif;base64,R0lGODlhtAABAIAAADpITP///ywAAAAAtAABAAACD4SPqcvtD6OctK6As967AAA7");--sf-img-1: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArwAAADICAMAAAA9SMKPAAABgFBMVEV7la////8AAAClWFhFpgTLbW7dnGzaEQqOj4xfc4eysq+Xt9c3NzeTbSp4Whh/R0ZSlsr/zTz5yKFvb2/xp5I6SEwPJCoZYwBZWFZnMgDcUAX3mDgdnN/p6un/7ji2xdXU19z/3Hbjciza3OPJysrHy9T0tQFHVmZ9fX3y0MJ9iY+m2nmgIwOPpLd4yUq7vL7z8/Pf4+ishYH/3TUXGBcnrKQkOEI/Y3vs8fbWkzSVmZv/xxU2WWlcX2Tx4dnDmJbXtjXP0tkWOwDcZCL/WjEJHABEbo1vaj3i5/H5Owtey9yyjzzxhyPz5+b/4SWKdT5OCXlEORdyxI/48OzCYWFnZ2hqeYeNqsjz9/ibsL83AgBucXsAAAj8/Pz4+fqwSzvjgR8DDgDldHSJu+/u7u7/dlT49/ikpaadl+H//v/9+/z8/P/9/f3+/v3+/v7dUx/deRf29vYdZK55fNt+VVJuoGAmKCr6+/wHCA1/vcvzwzv/0ijijEjipRdWr5kAAADuvM6wAAAAgHRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ADgFS2cAABBNSURBVHja7Z2JQ9tGFof1lNYcwUlscAIkHMF2a2ioIeSgKTmcHoSWNmmbtIVuE9KS0t3NNtvdlm26dP2vr+55c0iWbBGO/j7A4LE0Go8+PT2NJGyRvU9QW5BLhfnUd/C1ZJk37+m0Jhzu/mubGPJx/rLsr07uCwO8h77Kt8Ie6jv4WrLMG0yb23RaE/a19T3XMmC0d+iiiy/vSWtfkOQ9mW+FPdR38LVkmTeUMq/ptCbsa+t7riVO3lKpVIS8HvNTUxuQ94jLS94PddUafb4jI+9Ga6q+PNVrLeQgd4j8Ow95Se3zdNPpsxxGeYnULuxCXmu/5A2qpyyVGlaQ0m1kdVhfyst6LYut+a/ry5ZRQZMoMfLGNKKzvNKcJM+ZVspc5PXefKgQRb0hSxUrL59M6US/lk4bf4bIW3SIi7wUWUNBs/y6/XLW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");--sf-img-2: url("data:image/gif;base64,R0lGODlhDgAqAMQYAOfezvfnxrWEMaVzIe+cEPfv3t7Ore/ezs6MEP/397uRWvfv5861hPe1MffGUvf37//nxu/n1syQM+/nzvfn3v/31v/vzvfnzvf37wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABgALAAAAAAOACoAAAXHICaOZGkupvkASUpGAOWKCQABKnwAwTUBu8mIMglAKhZj4IAaLXiBSiAAaJIWU8iykCpMoTgTABBJ6Ew1K4VVejxKifdsTjcZ6oBBa64YcGcFAgQHYgoCAgMSDT9BIwyCDQ4OSkwkBgIIkV9WIwYIBARbKQwICANfKYgKGGclBQN3Imt7I2NwcnW5c7FzeX8zfQxzgQQChYeJDRIDh6sijwSRDqDFvBiXmdOm1iKe1BLCJqSmCBLOJaoYfcausI5+JbYkBWG6IQA7")}</style><style class="darkreader darkreader--user-agent" media=screen>@layer{html{background-color:var(--darkreader-background-ffffff,#181a1b)!important}html{color-scheme:dark!important}html,body{border-color:var(--darkreader-border-4c4c4c,#736b5e);color:var(--darkreader-text-000000,#e8e6e3)}a{color:var(--darkreader-text-0040ff,#3391ff)}::placeholder{color:var(--darkreader-text-a9a9a9,#b2aba1)}input:-webkit-autofill,select:-webkit-autofill{background-color:var(--darkreader-background-faffbd,#404400)!important;color:var(--darkreader-text-000000,#e8e6e3)!important}::selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}::-moz-selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}}</style><style class="darkreader darkreader--inline" media=screen>[data-darkreader-inline-bgcolor]{background-color:var(--darkreader-inline-bgcolor)!important}[data-darkreader-inline-bgimage]{background-image:var(--darkreader-inline-bgimage)!important}[data-darkreader-inline-border-bottom]{border-bottom-color:var(--darkreader-inline-border-bottom)!important}[data-darkreader-inline-border-left]{border-left-color:var(--darkreader-inline-border-left)!important}[data-darkreader-inline-border-right]{border-right-color:var(--darkreader-inline-border-right)!important}[data-darkreader-inline-border-top]{border-top-color:var(--darkreader-inline-border-top)!important}[data-darkreader-inline-color]{color:var(--darkreader-inline-color)!important}</style><style class="darkreader darkreader--variables" media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3);--darkreader-background-ffffff:#181a1b;--darkreader-text-ffffff:#e8e6e3;--darkreader-border-404040:#776e62;--darkreader-text-000000:#e8e6e3;--darkreader-border-4c4c4c:#736b5e;--darkreader-text-0040ff:#3391ff;--darkreader-border-808080:#545b5e;--darkreader-text-a9a9a9:#b2aba1;--darkreader-background-faffbd:#404400;--darkreader-background-0060d4:#004daa;--darkreader-background-ffd76e:#684b00;--darkreader-background-c59d00:#9e7e00;--darkreader-text-302505:#d7d4cf;--darkreader-background-add8e6:#1b4958;--darkreader-background-cfecf5:#0f3a47;--darkreader-background-f5f5f5:#1e2021;--darkreader-background-faedda:#432c09;--darkreader-background-85c3d8:#245d70;--darkreader-background-e6e6e6:#26292b;--darkreader-background-f9f9f9:#1b1e1f;--darkreader-background-3a484c:#2e3a3d;--darkreader-background-1e6a8e:#185572;--darkreader-border-000000:#8c8273;--darkreader-border-f2f2f2:#34383a;--darkreader-border-aaaaaa:#484e51;--darkreader-text-1d4d70:#93c2e3;--darkreader-text-ff9900:#ffa31a;--darkreader-text-aaaaaa:#b2aca2;--darkreader-background-aaaaaa:#484e51;--darkreader-text-ee0000:#ff2525;--darkreader-text-04b404:#4ffb4f;--darkreader-text-b4bdbf:#bcb6ae;--darkreader-text-8b999c:#a49c90;--darkreader-text-f9f9f9:#e4e2de;--darkreader-text-666666:#a8a095;--darkreader-text-ffc73b:#ffc943;--darkreader-text-9e0000:#ff5d5d;--darkreader-text-222222:#d3cfc9;--darkreader-text-016a96:#63d0fe;--darkreader-text-ffcc33:#ffcf3d;--darkreader-text-990000:#ff6161;--darkreader-text-444444:#bdb7af;--darkreader-text-f4ab00:#ffbd21;--darkreader-border-696969:#696257;--darkreader-background-fefefe:#191b1c;--darkreader-border-cccccc:#3e4446;--darkreader-background-7f888a:#5d6569;--darkreader-background-7b95af:#43596f;--darkreader-border-f5f5f5:#333739;--darkreader-border-7b95af:#3e5367;--darkreader-background-9db0c4:#37485b;--darkreader-background-000000:#000000;--darkreader-text-cccccc:#c8c3bc;--darkreader-background-567889:#45606e;--darkreader-background-e6eff1:#1b2c30;--darkreader-border-666666:#6a6357;--darkreader-border-eeeeee:#35393b;--darkreader-border-a5bdc9:#364f5b;--darkreader-border-e5e5e5:#373c3e;--darkreader-border-555555:#70685c;--darkreader-text-4d7a9a:#719bb8;--darkreader-background-f0f6f7:#17272a;--darkreader-border-ffffff:#303436;--darkreader-background-f8f8f8:#1c1e1f;--darkreader-border-d5d5d5:#3c4143;--darkreader-border-e2e2e2:#383d3f;--darkreader-border-576267:#6d6559;--darkreader-background-dddddd:#2b2f31;--darkreader-background-f2f2f2:#1f2223;--darkreader-background-fcfcfc:#1a1c1d;--darkreader-background-395d6e:#2e4a58;--darkreader-border-6e8ea5:#51585b;--darkreader-background-677e86:#52656b;--darkreader-background-777777:#5a6165;--darkreader-text-555555:#b2aca2;--darkreader-background-e5e5e5:#272a2c;--darkreader-background-555555:#404548;--darkreader-background-3b5998:#2f477a;--darkreader-background-00aced:#008abe;--darkreader-background-dd4b39:#a22b1c;--darkreader-background-cb2027:#a21a1f;--darkreader-background-ff5700:#cc4600;--darkreader-background-bb0000:#960000;--darkreader-background-007bb6:#006292;--darkreader-background-f26522:#b5410b;--darkreader-text-808080:#988f81;--darkreader-background-2c3436:#25282a;--darkreader-background-999999:#52585c;--darkreader-background-687880:#575f62;--darkreader-border-2c3436:#7c7366;--darkreader-border-999999:#4d5356;--darkreader-background-808080:#60686c;--darkreader-text-f3f3f3:#e0deda;--darkreader-background-333333:#262a2b;--darkreader-text-c3c3c3:#c2bdb5;--darkreader-background-f3f3f3:#1f2123;--darkreader-background-666666:#4d5356;--darkreader-background-444444:#33373a;--darkreader-text-999999:#a8a095;--darkreader-border-c0c0c0:#42474a;--darkreader-text-055000:#cfcbc4;--darkreader-background-1c1b22:#17191a;--darkreader-text-eeeeee:#dddad6;--darkreader-text-7dc67d:#81c881;--darkreader-background-00000013:rgba(0,0,0,0.07);--darkreader-background-00000000:rgba(0,0,0,0);--darkreader-border-a9a9a9:#484e51;--darkreader-background-696969:#4f5659}</style>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta http-equiv=Content-Language content=en>
+<meta name=robots content=all>
+<meta name=Author content=SpeedGuide>
+<meta name=dcterms.rightsHolder content="(c) Speed Guide Inc">
+<meta name=dcterms.rights content="(c) Speed Guide Inc. All Rights Reserved.">
+<meta property=og:site_name content=SpeedGuide>
+<meta name=Keywords content=broadband,speed,tweak,optimizer,cable,dsl,adsl,voip,satellite,fiber,wireless,wifi,802.11,wpa,wpa2,enterprise,psk,buffering,streaming,arris,cable,modem,docsis,uncap,router,nas,nat,dmz,port,security,database,firewall,test,vpn,patch,registry,latency,ping,rtt,lag,network,lan,wan,bandwidth,analyzer,throughput,fast,optimize,boost,rwin,mtu,mss,header,tcp,ip,ipv4,ipv6,dns,windows,NT,XP,firmware,rfc,comcast,zoom,nat-t>
+<meta name=Description content="SpeedGuide: The TCP/IP parameters for tweaking a Linux-based machine for fast internet connections are located in /proc/sys/net/... (assuming 2.1+ kernel).">
+<title>SG :: Linux Broadband Tweaks</title>
+<meta property=og:type content=article>
+<meta property=og:title content="Linux Broadband Tweaks">
+<meta property=og:description content="The TCP/IP parameters for tweaking a Linux-based machine for fast internet connections are located in /proc/sys/net/... (assuming 2.1+ kernel).">
+<meta property=og:url content=https://www.speedguide.net/articles/linux-broadband-tweaks-121>
+<style>html,body{background:#3a484c;margin:0;padding:0;height:100%;scrollbar-base-color:#3a484c;scrollbar-face-color:#576267;scrollbar-track-color:#3a484c;scrollbar-arrow-color:#9faaac;scrollbar-highlight-color:#9faaac;scrollbar-3dlight-color:#576267;scrollbar-shadow-color:#000000;scrollbar-darkshadow-color:#000000}::selection{color:#ffffff;background:#1e6a8e}::-moz-selection{color:#ffffff;background:#1e6a8e}body,p,table,td,div,ul{font:normal 15px Arial,Helvetica,sans-serif}table,td{margin:0;padding:0;border:0;border-spacing:0;border-collapse:collapse}td{text-align:left;vertical-align:top}select,input,option{font:normal 11px Arial,Helvetica,sans-serif}a img{border:0}a:link,a:visited{text-decoration:none;color:#1d4d70}a:hover,a:active{text-decoration:underline;color:#ff9900}h1,h3{padding:0px;margin:0 0 .2em 0;font:bold 16px Arial,Helvetica,sans-serif}h1{font-size:2em}h3{font-size:1.5em}p{margin:0 0 1em 0}strong{font-weight:bold}#leftnav{width:160px;padding:0 0 0 5px;margin:0;background:#3a484c var(--sf-img-0) repeat-y fixed left top}#content{background:#FFFFFF;padding:0 15px}#footer{width:99%;height:33px;color:#b4bdbf;margin:5px auto;padding:0;overflow:hidden;text-align:center;font:12px Arial,Helvetica,sans-serif}#footer a:link,#footer a:visited{text-decoration:none;color:#8b999c}#footer a:hover,#footer a:active{text-decoration:underline;color:#f9f9f9}#breadcrumb{height:18px;line-height:18px;margin:4px 0;font-size:11px;color:#666666}#breadcrumb a:link,#breadcrumb a:visited{text-decoration:none;color:#1D4D70;font-size:11px}#breadcrumb a:hover,#breadcrumb a:active{text-decoration:none;color:#FFC73B;background-color:#3A484C}#related{margin:10px 0;padding:5px;text-align:left;background-color:#F5F5F5;border-top:1px solid #f2f2f2;border-left:1px solid #f2f2f2;border-bottom:1px solid #aaaaaa;border-right:1px solid #aaaaaa}div.buttons{margin:10px 0;text-align:right}h1.title{color:#9E0000}.subtitle1{color:#222;font:italic 16px Times New Roman,Times,serif}.subtitle{font:normal 11px Arial,Helvetica,sans-serif;color:#666666}.subtitle a:link,.subtitle a:visited{text-decoration:none;color:#666666}.subtitle a:hover,.subtitle a:active{text-decoration:underline;color:#1d4d70}.link1{text-decoration:none;color:#FFFFFF;font-size:12px}.link2{text-decoration:none;color:#FFFFFF;font:12px Arial,Helvetica,sans-serif}.link7{text-decoration:none;color:#666666}a.link1:link,a.link1:visited{text-decoration:none;color:#FFFFFF}a.link1:hover,a.link1:active{text-decoration:none;color:#FFCC33}a.link2:link,a.link2:visited{text-decoration:none;color:#FFFFFF}a.link2:hover,a.link2:active{text-decoration:underline;color:#FFCC33}a.link7:link,a.link7:visited{text-decoration:none;color:#444444}a.link7:hover,a.link7:active{text-decoration:underline;color:#F4AB00}a.term1:link,a.term1:visited{cursor:help;text-decoration:none;color:#1D4D70}a.term1:hover,a.term1:active{cursor:help;text-decoration:underline;color:#F4AB00}div.heading1{height:18px;vertical-align:middle;color:#FFFFFF;background-color:#567889;font:bold 14px sans-serif;line-height:18px;margin:0;padding:0 1px;border:1px solid;border-color:#a5bdc9 #000000 #000000 #a5bdc9}.heading1 a:link,.heading1 a:visited{text-decoration:none;color:#FFFFFF}.heading1 a:hover,.heading1 a:active{text-decoration:none;color:#FFCC33}.heading1 img{margin:0 3px 0 1px}a.button img{vertical-align:middle;opacity:1.0;border:0px}a.button:hover img{opacity:0.6;border:0px}ul.sgy{list-style-type:none;padding:5px 0;margin:0}ul.sgy li{background:var(--sf-img-1) no-repeat -688px 3px;padding:0 0 4px 14px;line-height:1em}div.comment{clear:both;margin:5px 0;padding:1px;border:1px solid;border-color:#f2f2f2 #aaaaaa #aaaaaa #f2f2f2}div.comment-head{background:#f2f2f2;margin:0px;padding:2px}div.comment-body{background:#fcfcfc;padding:3px}div.twrap1{border:1px solid #000000;margin:0 0 10px 0}div.thead1{background-color:#395D6E;padding:2px;color:#ffffff;height:18px;border-top:1px solid #6E8EA5;border-left:1px solid #6E8EA5;font-weight:bold}div.tbody1{background:#677E86;color:#ffffff;padding:3px;font:11px/1.2em Arial,Helvetica,sans-serif}img.stars-0{width:14px;height:14px;background:var(--sf-img-2) no-repeat 0 0}img.stars-1{width:14px;height:14px;background:var(--sf-img-2) no-repeat 0-28px}img.sprite{background:var(--sf-img-1) no-repeat 0 0}img.sprite.advanced{background-position:-180px 0}img.sprite.btn-search{background-position:-250px 0}img.sprite.comment{height:13px;width:97px;background-position:0-40px;margin:0 5px}img.sprite.discuss{height:13px;width:61px;background-position:-100px -40px;margin:0 5px}img.sprite.print{height:13px;width:49px;background-position:-240px -40px;margin:0 5px}img.sprite.top{height:13px;width:41px;background-position:-400px -40px;margin:0 0 0 5px}img.sprite.ico-news{height:14px;width:14px;background-position:0px -60px}img.sprite.ico-location{height:14px;width:14px;background-position:-40px -60px}img.sprite.ico-head{background-position:-160px -60px;margin:2px 0-2px 0}img.sprite.comment-post{height:16px;width:16px;background-position:-280px -60px}img.sprite.user{height:12px;width:12px;background-position:-320px -60px}img.sprite.anon{height:12px;width:12px;background-position:-340px -60px}@font-face{font-family:"sg-icons";src:url(data:font/woff;base64,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)format("woff");font-weight:normal;font-style:normal}[class^="icon-"]{font-family:"sg-icons"!important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-facebook:before{content:""}.icon-twitter:before{content:""}.icon-rss:before{content:""}.icon-reddit:before{content:""}.icon-linkedin:before{content:""}.icon-pinterest:before{content:""}div.sg-social{font-size:0.9em;float:left;overflow:hidden}div.sg-social span{display:inline-block;text-align:center;line-height:1.3;width:1.5em;margin:0.05em;border-radius:0.1em;color:#fff;overflow:hidden}div.sg-social span:hover,div.sg-social span:active{opacity:0.6}div.sg-social span.icon-facebook{background-color:#3b5998}div.sg-social span.icon-twitter{background-color:#00aced}div.sg-social span.icon-pinterest{background-color:#cb2027}div.sg-social span.icon-reddit{background-color:#ff5700}div.sg-social span.icon-linkedin{background-color:#007bb6}div.sg-social span.icon-rss{background-color:#f26522}@media (max-width:992px){body,p,table,td,div,ul{font:normal 16px Arial,Helvetica,sans-serif}}div.sgmenu_h,div.sgmenu_v{font-family:Arial,Helvetica,sans-serif;margin:0}div.sgmenu_h a,div.sgmenu_h a:visited,div.sgmenu_v a,div.sgmenu_v a:visited{color:#fff;text-decoration:none}div.sgmenu_h a:hover,div.sgmenu_v a:hover{color:#F4AB00;text-decoration:none}.rootVoices{background-color:#3A484C;padding:0}.rootVoices div.rootVoice{float:left;vertical-align:middle;width:110px;font-family:Arial,Helvetica,sans-serif;text-shadow:#000 1px 1px 1px;color:gray;font-size:16px;line-height:18px;padding:2px 7px;cursor:pointer}.rootVoices.vertical{width:160px}.rootVoices.vertical div.rootVoice{width:147px;-moz-border-radius:4px 0 0 4px;-webkit-border-top-right-radius:0px;-webkit-border-top-left-radius:4px;-webkit-border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:4px;border-top-right-radius:0;border-top-left-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:4px}.boxMenu{color:#f3f3f3;padding-bottom:1px}#colorbox,#cboxOverlay{position:absolute;top:0;left:0;z-index:999999;overflow:hidden}#cboxOverlay{position:fixed;width:100%;height:100%}#colorbox{box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box}#cboxOverlay{background:#444}#colorbox{outline:0;background:#fff;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:2px 2px 6px 2px #444;-moz-box-shadow:2px 2px 6px 2px #444;box-shadow:2px 2px 6px 2px #444}</style><style class="darkreader darkreader--sync" media=screen>html,body{background-image:initial;background-color:var(--darkreader-background-3a484c,#2e3a3d)}::selection{color:var(--darkreader-text-ffffff,#e8e6e3);background-image:initial;background-color:var(--darkreader-background-1e6a8e,#185572)}table,td{border-width:0px;border-style:initial;border-color:initial}a img{border-width:0px;border-style:initial;border-color:initial}a:link,a:visited{text-decoration-color:initial;color:var(--darkreader-text-1d4d70,#93c2e3)}a:hover,a:active{text-decoration-color:initial;color:var(--darkreader-text-ff9900,#ffa31a)}#leftnav{background-image:var(--sf-img-0);background-repeat:repeat-y;background-color:var(--darkreader-background-3a484c,#2e3a3d)}#content{background-image:initial;background-color:var(--darkreader-background-ffffff,#181a1b)}#footer{color:var(--darkreader-text-b4bdbf,#bcb6ae)}#footer a:link,#footer a:visited{text-decoration-color:initial;color:var(--darkreader-text-8b999c,#a49c90)}#footer a:hover,#footer a:active{text-decoration-color:initial;color:var(--darkreader-text-f9f9f9,#e4e2de)}#breadcrumb{color:var(--darkreader-text-666666,#a8a095)}#breadcrumb a:link,#breadcrumb a:visited{text-decoration-color:initial;color:var(--darkreader-text-1d4d70,#93c2e3)}#breadcrumb a:hover,#breadcrumb a:active{text-decoration-color:initial;color:var(--darkreader-text-ffc73b,#ffc943);background-color:var(--darkreader-background-3a484c,#2e3a3d)}#related{background-color:var(--darkreader-background-f5f5f5,#1e2021);border-top-color:var(--darkreader-border-f2f2f2,#34383a);border-left-color:var(--darkreader-border-f2f2f2,#34383a);border-bottom-color:var(--darkreader-border-aaaaaa,#484e51);border-right-color:var(--darkreader-border-aaaaaa,#484e51)}h1.title{color:var(--darkreader-text-9e0000,#ff5d5d)}.subtitle1{color:var(--darkreader-text-222222,#d3cfc9)}.subtitle{color:var(--darkreader-text-666666,#a8a095)}.subtitle a:link,.subtitle a:visited{text-decoration-color:initial;color:var(--darkreader-text-666666,#a8a095)}.subtitle a:hover,.subtitle a:active{text-decoration-color:initial;color:var(--darkreader-text-1d4d70,#93c2e3)}.link1{text-decoration-color:initial;color:var(--darkreader-text-ffffff,#e8e6e3)}.link2{text-decoration-color:initial;color:var(--darkreader-text-ffffff,#e8e6e3)}.link7{text-decoration-color:initial;color:var(--darkreader-text-666666,#a8a095)}a.link1:link,a.link1:visited{text-decoration-color:initial;color:var(--darkreader-text-ffffff,#e8e6e3)}a.link1:hover,a.link1:active{text-decoration-color:initial;color:var(--darkreader-text-ffcc33,#ffcf3d)}a.link2:link,a.link2:visited{text-decoration-color:initial;color:var(--darkreader-text-ffffff,#e8e6e3)}a.link2:hover,a.link2:active{text-decoration-color:initial;color:var(--darkreader-text-ffcc33,#ffcf3d)}a.link7:link,a.link7:visited{text-decoration-color:initial;color:var(--darkreader-text-444444,#bdb7af)}a.link7:hover,a.link7:active{text-decoration-color:initial;color:var(--darkreader-text-f4ab00,#ffbd21)}a.term1:link,a.term1:visited{text-decoration-color:initial;color:var(--darkreader-text-1d4d70,#93c2e3)}a.term1:hover,a.term1:active{text-decoration-color:initial;color:var(--darkreader-text-f4ab00,#ffbd21)}div.heading1{color:var(--darkreader-text-ffffff,#e8e6e3);background-color:var(--darkreader-background-567889,#45606e);border-top-color:var(--darkreader-border-a5bdc9,#364f5b);border-right-color:var(--darkreader-border-000000,#8c8273);border-bottom-color:var(--darkreader-border-000000,#8c8273);border-left-color:var(--darkreader-border-a5bdc9,#364f5b)}.heading1 a:link,.heading1 a:visited{text-decoration-color:initial;color:var(--darkreader-text-ffffff,#e8e6e3)}.heading1 a:hover,.heading1 a:active{text-decoration-color:initial;color:var(--darkreader-text-ffcc33,#ffcf3d)}a.button img{border-width:0px;border-style:initial;border-color:initial}a.button:hover img{border-width:0px;border-style:initial;border-color:initial}ul.sgy li{background-image:var(--sf-img-1);background-repeat:no-repeat;background-color:initial}div.comment{border-top-color:var(--darkreader-border-f2f2f2,#34383a);border-right-color:var(--darkreader-border-aaaaaa,#484e51);border-bottom-color:var(--darkreader-border-aaaaaa,#484e51);border-left-color:var(--darkreader-border-f2f2f2,#34383a)}div.comment-head{background-image:initial;background-color:var(--darkreader-background-f2f2f2,#1f2223)}div.comment-body{background-image:initial;background-color:var(--darkreader-background-fcfcfc,#1a1c1d)}div.twrap1{border-top-color:var(--darkreader-border-000000,#8c8273);border-right-color:var(--darkreader-border-000000,#8c8273);border-bottom-color:var(--darkreader-border-000000,#8c8273);border-left-color:var(--darkreader-border-000000,#8c8273)}div.thead1{background-color:var(--darkreader-background-395d6e,#2e4a58);color:var(--darkreader-text-ffffff,#e8e6e3);border-top-color:var(--darkreader-border-6e8ea5,#51585b);border-left-color:var(--darkreader-border-6e8ea5,#51585b)}div.tbody1{background-image:initial;background-color:var(--darkreader-background-677e86,#52656b);color:var(--darkreader-text-ffffff,#e8e6e3)}img.stars-0{background-image:var(--sf-img-2);background-repeat:no-repeat;background-color:initial}img.stars-1{background-image:var(--sf-img-2);background-repeat:no-repeat;background-color:initial}img.sprite{background-image:var(--sf-img-1);background-repeat:no-repeat;background-color:initial}div.sg-social span{color:var(--darkreader-text-ffffff,#e8e6e3)}div.sg-social span.icon-facebook{background-color:var(--darkreader-background-3b5998,#2f477a)}div.sg-social span.icon-twitter{background-color:var(--darkreader-background-00aced,#008abe)}div.sg-social span.icon-pinterest{background-color:var(--darkreader-background-cb2027,#a21a1f)}div.sg-social span.icon-reddit{background-color:var(--darkreader-background-ff5700,#cc4600)}div.sg-social span.icon-linkedin{background-color:var(--darkreader-background-007bb6,#006292)}div.sg-social span.icon-rss{background-color:var(--darkreader-background-f26522,#b5410b)}div.sgmenu_h a,div.sgmenu_h a:visited,div.sgmenu_v a,div.sgmenu_v a:visited{color:var(--darkreader-text-ffffff,#e8e6e3);text-decoration-color:initial}div.sgmenu_h a:hover,div.sgmenu_v a:hover{color:var(--darkreader-text-f4ab00,#ffbd21);text-decoration-color:initial}.rootVoices{background-color:var(--darkreader-background-3a484c,#2e3a3d)}.rootVoices div.rootVoice{text-shadow:var(--darkreader-background-000000,#000000) 1px 1px 1px;color:var(--darkreader-text-808080,#988f81)}.boxMenu{color:var(--darkreader-text-f3f3f3,#e0deda)}#cboxOverlay{background-image:initial;background-color:var(--darkreader-background-444444,#33373a)}#colorbox{outline-color:initial;background-image:initial;background-color:var(--darkreader-background-ffffff,#181a1b);box-shadow:var(--darkreader-background-444444,#33373a) 2px 2px 6px 2px}</style>
+<meta name=darkreader content=dc924fdd5d72477f9ef3637af77c1576><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}select{--darkreader-bg--form-control-background-color:rgba(22,22,22,0)!important}:host{--d2l-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-button-icon-background-color-hover:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-color-ferrite:var(--darkreader-neutral-text)!important;--d2l-color-sylvite:var(--darkreader-bg--d2l-color-sylvite)!important;--d2l-dropdown-background-color:var(--darkreader-neutral-background)!important;--d2l-dropdown-border-color:var(--darkreader-border--d2l-color-mica)!important;--d2l-input-backgroud-color:var(--darkreader-neutral-background)!important;--d2l-menu-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-tooltip-background-color:var(--darkreader-neutral-background)!important;--d2l-tooltip-border-color:var(--darkreader-bg--d2l-color-gypsum)!important}</style>
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/g/html5shiv@3.7.3,respond@1.4.2"></script>
+<![endif]-->
+<meta name=referrer content=no-referrer><link rel="shortcut icon" href="data:image/x-icon;base64,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" type=image/x-icon><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://www.speedguide.net/articles/linux-broadband-tweaks-121><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:; form-action 'none'; base-uri 'none';"></head>
+<body>
+<div id=top style="position:absolute;top:0px;left:0;text-align:center;width:100%;min-width:400px;_width:910px;z-index:100;padding:2px 0 0 0"> 
+<div class="sgmenu_h rootVoices" id=sgmenu1>
+ <div style=float:left;width:12%;margin-left:159px;display:inline><div class=rootVoice menu=bmenu-main style=white-space:nowrap><a href=#>Main</a></div></div>
+ <div style=float:left;width:14%><div class=rootVoice menu=bmenu-broadband style=white-space:nowrap><a href=#>Broadband</a></div></div>
+ <div style=float:left;width:13%><div class=rootVoice menu=bmenu-articles style=white-space:nowrap><a href=https://www.speedguide.net/articles.php>Articles</a></div></div>
+ <div style=float:left;width:12%><div class=rootVoice menu=bmenu-forums style=white-space:nowrap><a href=https://www.speedguide.net/forums/>Forums</a></div></div>
+ <div style=float:left;width:11%><div class=rootVoice menu=bmenu-info style=white-space:nowrap><a href=#>Info</a></div></div>
+ <div style=clear:both;display:none></div>
+</div>
+</div>
+<div style="position:relative;left:0px;top:20px;height:50px;margin:0px 0px 16px;background:url(data:image/gif;base64,R0lGODlhFADIAJEDAFdiZyUpK56kpwAAACH5BAEAAAMALAAAAAAUAMgAAAJqnI+py+0PYxO02nuB3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+zwoIh8RiUYJMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoePhXAAA7)repeat-x rgb(58,72,76);--darkreader-inline-bgcolor:var(--darkreader-background-3a484c,#2e3a3d)" data-darkreader-inline-bgcolor>
+<div style=float:left>
+<a href=https://www.speedguide.net/><img src="data:image/gif;base64,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" alt="The Broadband Guide" style=width:290px;height:50px;border:0px;--darkreader-inline-border-top:0px;--darkreader-inline-border-right:0px;--darkreader-inline-border-bottom:0px;--darkreader-inline-border-left:0px data-darkreader-inline-border-top data-darkreader-inline-border-right data-darkreader-inline-border-bottom data-darkreader-inline-border-left></a>
+</div>
+<div style=float:right>
+ <form name=global_search method=GET action=/search_process.php style=display:inline><input type=text size=15 value=" Search site" name=seek id=seek maxlength=255 style="width:140px;height:14px;font:10px Verdana,Arial,Helvetica,sans-serif;border:1px solid rgb(0,0,0);margin:17px 0px 0px;vertical-align:middle;padding:0px;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273);--darkreader-inline-border-right:var(--darkreader-border-000000,#8c8273);--darkreader-inline-border-bottom:var(--darkreader-border-000000,#8c8273);--darkreader-inline-border-left:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top data-darkreader-inline-border-right data-darkreader-inline-border-bottom data-darkreader-inline-border-left>
+ <a href=javascript:void(0) title="Site Search" class=button><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt=search class="sprite btn-search" style="width:61px;height:17px;margin:17px 5px 0 5px"></a>
+ <a href=javascript:void(0) title="Advanced Search" class=button><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt=advanced class="sprite advanced" style="width:61px;height:17px;margin:17px 7px 0 0"></a></form>
+</div>
+</div>
+<div style=padding:0px;margin:0px;height:20px;text-align:center;color:rgb(170,170,170);font-size:9px;clear:both;display:block;--darkreader-inline-color:var(--darkreader-text-aaaaaa,#b2aca2) data-darkreader-inline-color> </div>
+<div style=position:relative;margin:auto;padding:0px;width:728px;height:100px;text-align:center>
+<div id=div-gpt-ad-1386904470027-7 style=width:728px;height:90px class=sf-hidden>
+ 
+</div>
+</div>
+<table width=100% style=height:85%>
+<tbody><tr>
+<td id=leftnav> 
+<div class="sgmenu_v rootVoices vertical" style="position:relative;margin:-5px 0px 10px;background:rgb(104,120,128);border:1px solid rgb(44,52,54);--darkreader-inline-bgimage:initial;--darkreader-inline-bgcolor:var(--darkreader-background-687880,#575f62);--darkreader-inline-border-top:var(--darkreader-border-2c3436,#7c7366);--darkreader-inline-border-right:var(--darkreader-border-2c3436,#7c7366);--darkreader-inline-border-bottom:var(--darkreader-border-2c3436,#7c7366);--darkreader-inline-border-left:var(--darkreader-border-2c3436,#7c7366)" data-darkreader-inline-bgimage data-darkreader-inline-bgcolor data-darkreader-inline-border-top data-darkreader-inline-border-right data-darkreader-inline-border-bottom data-darkreader-inline-border-left id=menu_453>
+ <div class=rootVoice menu=menu-main style=white-space:nowrap><a style=margin-left:5px href=#>Main</a></div>
+ <div class=rootVoice menu=menu-broadband style=white-space:nowrap><a style=margin-left:5px href=#>Broadband</a></div>
+ <div class=rootVoice menu=menu-articles style=white-space:nowrap><a style=margin-left:5px href=https://www.speedguide.net/articles.php>Articles</a></div>
+ <div class=rootVoice menu=menu-forums style=white-space:nowrap><a style=margin-left:5px href=https://www.speedguide.net/forums/>Forums</a></div>
+ <div class=rootVoice menu=menu-info style=white-space:nowrap><a style=margin-left:5px href=#>Info</a></div>
+ <div style=clear:both></div>
+</div>
+<div style="margin:0 0 10px 0;text-align:center;max-width:160px">
+<a href=http://www.coinscatalog.com/ target=_blank><img src=data:image/gif;base64,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 alt="The Roman Coins Catalog" title="The Roman Coins Catalog" width=120 height=60></a>
+</div>
+<div class=twrap1>
+ <div class=thead1>
+ <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt class="sprite ico-head" style=width:15px;height:14px>
+ <a href=javascript:void(0) class=link1>Login</a>
+ </div>
+ <div class=tbody1 style=font-size:11px;color:rgb(255,255,255);--darkreader-inline-color:var(--darkreader-text-ffffff,#e8e6e3) data-darkreader-inline-color>
+ <a href="https://www.speedguide.net/forums/ucp.php?mode=login" style=color:rgb(255,255,255);--darkreader-inline-color:var(--darkreader-text-ffffff,#e8e6e3) data-darkreader-inline-color>Please Login</a>
+ </div>
+</div>
+<div class=twrap1>
+ <div class=thead1>
+ <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt class="sprite ico-head" style=width:15px;height:14px>
+ Shortcuts 
+ </div>
+ <div class=tbody1>
+ <ul class=sgy>
+ <li><a href=https://www.speedguide.net/broadband-list.php title="Specs and passwords for broadband routers, modems and gateways" class=link2>5400+ Routers</a></li>
+<li><a href=https://www.speedguide.net/ports.php title="TCP/UDP port assignments, known vulnerabilities and more - a comprehensive best in class database" class=link2>65535 Ports</a></li>
+<li><a href=https://www.speedguide.net/faq.php title="Frequently Asked Questions" class=link2>FAQs</a></li>
+<li><a href=https://www.speedguide.net/glossary.php title="Glossary of Terms" class=link2>Glossary</a></li>
+<li><a href=https://www.speedguide.net/sg_tools.php title="SG Broadband Tools" class=link2>SG Broadband Tools</a></li>
+<li><a href=https://www.speedguide.net/ip/ title="SG IP Addess Locator and network tools" class=link2>SG IP Locator</a></li>
+<li><a href=https://www.speedguide.net/networktools.php title="Ping, Traceroute, Whois &amp; more..." class=link2>SG Network Tools</a></li>
+<li><a href=https://www.speedguide.net/scan.php title="SG Security scanner" class=link2>SG Security Scan</a></li>
+<li><a href=https://www.speedguide.net/speedtest/ title="Bandwidth Speed Test" class=link2>SG Speed Test</a></li>
+<li><a href=https://www.speedguide.net/analyzer.php title="SG TCP/IP Analyzer" class=link2>TCP/IP Analyzer</a></li>
+<li><a href=https://www.speedguide.net/downloads.php title="The SG Optimizer" class=link2>TCP/IP Optimizer</a></li>
+ </ul>
+ </div>
+</div>
+<div style="position:relative;margin:0 0 10px 1px">
+<div id=div-gpt-ad-1492594643992-0 style=height:600px;width:160px class=sf-hidden>
+ </div>
+</div>
+</td>
+<td id=content> 
+<div id=breadcrumb><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite ico-location" alt style="margin:-1px 2px 0 3px;vertical-align:middle"><a href=https://www.speedguide.net/index.php> Home </a> » <a href=https://www.speedguide.net/articles.php> Articles </a> » <a href="https://www.speedguide.net/articles.php?category=93">Registry Tweaks</a></div>
+<div class=heading1><a class=button href=#><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title=Articles alt=articles class="sprite ico-news">Articles</a></div>
+<br>
+<div itemscope itemtype=http://schema.org/Article>
+<h1 class=title itemprop=name>Linux Broadband Tweaks</h1>
+<span class=subtitle1>Raising network limits for high speed, high latency networks under Linux<br></span>
+<span class=subtitle>2003-04-01 (updated: 2021-01-07) by <span itemprop=author content=Philip>Philip</span>
+<br>Tags: <a href="https://www.speedguide.net/tags.php?tag=tcpwindow" rel=tag>TCP Window</a>, <a href="https://www.speedguide.net/tags.php?tag=wan" rel=tag>WAN</a>, <a href="https://www.speedguide.net/tags.php?tag=tcpip" rel=tag>TCP/IP</a>, <a href="https://www.speedguide.net/tags.php?tag=tweak" rel=tag>tweak</a>, <a href="https://www.speedguide.net/tags.php?tag=linux" rel=tag>Linux</a></span>
+<br>
+<div style="float:right;margin:0 0 10px 10px;text-align:right;z-index:9999;position:relative">
+<div id=div-gpt-ad-1386904470027-4 style=width:300px;height:250px class=sf-hidden>
+ 
+</div>
+</div>
+<p>The <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> parameters for tweaking a Linux-based machine for fast internet connections are located in /proc/sys/net/... (assuming 2.1+ kernel). This location is volatile, and changes are reset at reboot. There are a couple of methods for reapplying the changes at <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=BOOT" title="What is boot ?" rel=sg-term>boot</a> time, ilustrated below.<p><br><h3>Locating the <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> parameters </h3><p> All <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> tunning parameters are located under /proc/sys/net/...&nbsp; For example, here is a list of the most important tunning parameters, along with short description of their meaning:<p><strong>/proc/sys/net/core/rmem_max</strong> - Maximum <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP%20RECEIVE%20WINDOW" title="What is TCP Receive Window ?" rel=sg-term>TCP Receive Window</a><br><strong> /proc/sys/net/core/wmem_max</strong> - Maximum TCP Send Window<br><strong> /proc/sys/net/ipv4/tcp_rmem</strong> - memory reserved for TCP receive buffers<br><strong> /proc/sys/net/ipv4/tcp_wmem</strong> - memory reserved for TCP send buffers<br><strong> /proc/sys/net/ipv4/tcp_timestamps</strong> - <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TIMESTAMPS" title="What is Timestamps ?" rel=sg-term>Timestamps</a> (<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=RFC" title="What is RFC ?" rel=sg-term>RFC</a> 1323) add 12 bytes to the TCP <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=HEADER" title="What is header ?" rel=sg-term>header</a>...<br><strong> /proc/sys/net/ipv4/tcp_sack</strong> - TCP Selective Acknowledgements. They can reduce retransmissions, however make servers more prone to <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=DDOS" title="What is DDoS ?" rel=sg-term>DDoS</a> Attacks and increase CPU utilization.<br><strong> /proc/sys/net/ipv4/tcp_window_scaling</strong> - support for large TCP Windows (<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=RFC" title="What is RFC ?" rel=sg-term>RFC</a> 1323). Needs to be set to 1 if the Max TCP Window is over 65535. <p>Keep in mind everything under /proc is volatile, so any changes you make are lost after reboot. &nbsp; There are some additional internal memory buffers for the TCP Window, allocated for each connection:<p><strong>/proc/sys/net/ipv4/tcp_rmem</strong> - memory reserved for TCP rcv buffers (reserved memory per connection default)<br><strong>/proc/sys/net/ipv4/tcp_wmem</strong>&nbsp; - memory reserved for TCP snd buffers (reserved memory per connection default)<p><br><p>The tcp_rmem and tcp_wmem contain arrays of three parameter values: the 3 numbers represent minimum, default and maximum memory values. Those 3 values are used to bound autotunning and balance memory usage while under global memory stress.<p><br><h3>Applying <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> Parameters at System <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=BOOT" title="What is Boot ?" rel=sg-term>Boot</a> </h3><p><a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> parameters in Linux are located in /proc/sys/net/ipv4 and /proc/sys/net/core . This is part of the Virtual filesystem which resides in system memory (RAM), and any changes to it are volatile, they are reset when the machine is rebooted.<p>There are two methods that we can use to apply the settings at each reboot. First, we can edit /etc/sysctl.conf (or /etc/sysctl.d/sysctl.conf, depending on your distribution). The syntax for setting parameters in this file is by issuing sysctl commands, as follows::<p style=margin-left:20px>net.core.rmem_default = 256960<br> net.core.rmem_max = 256960<br> net.core.wmem_default = 256960<br> net.core.wmem_max = 256960<br> net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_timestamps = 0<br> net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_sack = 0<br> net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_window_scaling = 1<p>You can see a list of all tweakable parameters by executing the following in your terminal: <em>sysctl -a | grep tcp</em> &nbsp;(or simply <em>sysctl -a</em> for a full list).<p>Alternatively, you can apply the settings at <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=BOOT" title="What is boot ?" rel=sg-term>boot</a> time by editing the /etc/rc.local, /etc/rc.d/rc.local, or /etc/boot.local depending on your distribution. Note the difference in syntax, you simply echo the appropriate value in the virtual file system. The <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> parameters should be self-explanatory: we're basically setting the TCP Window to 256960, disabling <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TIMESTAMPS" title="What is timestamps ?" rel=sg-term>timestamps</a> (to avoid 12 byte <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=HEADER" title="What is header ?" rel=sg-term>header</a> overhead), enabling tcp window scaling, and selective acknowledgements:<p style=margin-left:20px>echo 256960 &gt; /proc/sys/net/core/rmem_default<br> echo 256960 &gt; /proc/sys/net/core/rmem_max<br> echo 256960 &gt; /proc/sys/net/core/wmem_default<br> echo 256960 &gt; /proc/sys/net/core/wmem_max<br> echo 0 &gt; /proc/sys/net/ipv4/tcp_timestamps<br> echo 0 &gt; /proc/sys/net/ipv4/tcp_sack<br> echo 1 &gt; /proc/sys/net/ipv4/tcp_window_scaling<p>You can change the above example values as desired, depending on your internet connection and maximum <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=BANDWIDTH" title="What is bandwidth ?" rel=sg-term>bandwidth</a>/latency. There are other parameters you can change from the default if you're confident in what you're doing - just find the correct syntax of the values in /proc/sys/net/... and add a line in the above code analogous to the others. To revert to the default parameters, you can just comment or delete the above code from /etc/rc.local and restart.<p><em>Note: To manually set the <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=MTU" title="What is MTU ?" rel=sg-term>MTU</a> value under Linux, use the command: <strong>ifconfig eth0 <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=MTU" title="What is mtu ?" rel=sg-term>mtu</a> 1500</strong> &nbsp; (where 1500 is the desired <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=MTU" title="What is MTU ?" rel=sg-term>MTU</a> size)</em><p><br><h3>Changing Current Values</h3><p>While testing, the current <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> parameters can be edited without the need for reboot in the following locations: <p><strong>/proc/sys/net/core/</strong><br> rmem_default = Default Receive Window <br> rmem_max = Maximum Receive Window <br> wmem_default = Default Send Window <br> wmem_max = Maximum Send Window <p><strong>/proc/sys/net/ipv4/</strong><br> You'll find <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TIMESTAMPS" title="What is timestamps ?" rel=sg-term>timestamps</a>, window scaling, selective acknowledgements, etc. <p>Keep in mind the values in /proc will be reset upon reboot. You still need to add the code in either sysctl.conf, or &nbsp;the alternate syntax in rc.local in order to have the changes applied at each <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=BOOT" title="What is boot ?" rel=sg-term>boot</a> as described in the section above.<p>To make any new sysctl.conf changes take effect without rebooting the machine, you can execute:<p style=margin-left:20px><strong>sysctl -p</strong><p>To see a list of all relevant tweakable sysctl parameters, along with their current values, try the following in your terminal:<p style=margin-left:20px><strong>sysctl -a | grep tcp</strong><p>To set a single sysctl value:<p style=margin-left:20px><strong>sysctl -w variable=value</strong><br> example: &nbsp;sysctl -w net.netfilter.nf_conntrack_tcp_timeout_time_wait=30<p><br><h3>TCP Parameters to consider</h3><p><strong>TCP_FIN_TIMEOUT</strong><br> This setting determines the time that must elapse before <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> can release a closed connection and reuse its resources. During this TIME_WAIT state, reopening the connection to the client costs less than establishing a new connection. By reducing the value of this entry, <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> can release closed connections faster, making more resources available for new connections. Adjust this in the presence of many connections sitting in the TIME_WAIT state:<blockquote style=margin-right:0px dir=ltr><p>sysctl.conf syntax:<br><strong>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_fin_timeout = 15</strong><p>(default: 60 seconds, recommended 15-30 seconds)<p>alternative rc.local syntax:<br><strong>echo 30 &gt; /proc/sys/net/ipv4/tcp_fin_timeout</strong></p></blockquote><p><br><p><strong>TCP_KEEPALIVE_INTERVAL</strong><br> This determines the wait time between isAlive interval probes. To set:<blockquote style=margin-right:0px dir=ltr><p>sysctl.conf syntax:<br><strong>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_keepalive_intvl = 30</strong></p>
+<div style="float:right;margin:0 0 10px 10px;text-align:right;z-index:9999;position:relative">
+ 
+<div id=div-gpt-ad-1541755602306-0 class=sf-hidden>
+ </div>
+</div>
+<p>(default: 75 seconds, recommended: 15-30 seconds)<p>alternative rc.local syntax:<br><strong>echo 30 &gt; /proc/sys/net/ipv4/tcp_keepalive_intvl</strong></p></blockquote><p><br><p><strong>TCP_KEEPALIVE_PROBES</strong><br> This determines the number of probes before timing out. To set:<blockquote style=margin-right:0px dir=ltr><p>sysctl.conf syntax:<br><strong>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_keepalive_probes = 5</strong><p>(default: 9, recommended 5)<p>alternative rc.local syntax:<br><strong>echo 5 &gt; /proc/sys/net/ipv4/tcp_keepalive_probes</strong></p></blockquote><p><br><p><strong>TCP_TW_RECYCLE</strong><br> It enables fast recycling of TIME_WAIT sockets. The default value is 0 (disabled). The sysctl documentation incorrectly states the default as enabled. It can be changed to 1 (enabled) in many cases. Known to cause some issues with hoststated (<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=LOAD%20BALANCING" title="What is load balancing ?" rel=sg-term>load balancing</a> and fail over) if enabled, should be used with caution.<blockquote style=margin-right:0px dir=ltr><p>sysctl.conf syntax:<br><strong>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_tw_recycle=1</strong><p>(boolean, default: 0)<p>alternative rc.local syntax:<br><strong>echo 1 &gt; /proc/sys/net/ipv4/tcp_tw_recycle</strong></p></blockquote><p><br><p><strong>TCP_TW_REUSE</strong><br> This allows reusing sockets in TIME_WAIT state for new connections when it is safe from <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=PROTOCOL" title="What is protocol ?" rel=sg-term>protocol</a> viewpoint. Default value is 0 (disabled). It is generally a safer alternative to tcp_tw_recycle<blockquote style=margin-right:0px dir=ltr><p>sysctl.conf syntax:<br><strong>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_tw_reuse=1</strong><p>(boolean, default: 0)<p>alternative rc.local syntax:<br><strong>echo 1 &gt; /proc/sys/net/ipv4/tcp_tw_reuse</strong></p></blockquote><p>Note: The tcp_tw_reuse setting is particularly useful in environments where numerous short connections are open and left in TIME_WAIT state, such as web servers. Reusing the sockets can be very effective in reducing server load.<p><br><h3>Linux Netfilter Tweaks</h3><p>Try this for a list netfilter parameters:&nbsp; sysctl -a | grep netfilter<p>We can add the following commands to the /etc/sysctl.conf file to tune individual parameters, as follows.<br> To reduce the number of connections in TIME_WAIT state, we can decrease the number of seconds connections are kept in this state before being dropped:<p style=margin-left:20px># reduce TIME_WAIT from the 120s default to 30-60s<br><strong>net.netfilter.nf_conntrack_tcp_timeout_time_wait=30</strong><br> # reduce FIN_WAIT from teh 120s default to 30-60s<br><strong>net.netfilter.nf_conntrack_tcp_timeout_fin_wait=30</strong><p>You can commit the sysctl.conf changes without rebooting (and test for possible syntax errors) by executing: sysctl -p<br> To check sysctl parameters, use: sysctl -a<p>Misc Notes: You may want to reduce net.netfilter.nf_conntrack_tcp_timeout_established to 900 or some manageable number as well.<br> To check the actual number of current connections in the TIME_WAIT state, for example, try: <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=NETSTAT" title="What is netstat ?" rel=sg-term>netstat</a> -n | grep TIME_WAIT | wc -l<p><br><h3>Kernel Recompile Option</h3><p>There is another method one can use to directly set the default <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=TCP/IP" title="What is TCP/IP ?" rel=sg-term>TCP/IP</a> parameters, involving kernel recompile... If you're brave enough. Look for the parameters in the following files: <br> /LINUX-SOURCE-DIR/include/linux/skbuff.h&nbsp; (Look for SK_WMEM_MAX &amp; SK_RMEM_MAX) <br> /LINUX-SOURCE-DIR/include/net/tcp.h (Look for MAX_WINDOW &amp; MIN_WINDOW) <p><br><h3>Determine Connection States</h3><p>It is often useful to decrease some of the TCP Timeouts to release resources faster and reduce memory use, the default TCP timeouts may leave too many connections in the TIME_WAIT state. To see a list of all current connections to the machine and their states, try:<p style=margin-left:20px><strong><a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=NETSTAT" title="What is netstat ?" rel=sg-term>netstat</a> -tan | grep ':80 ' | awk '{print $6}' | sort | uniq -c</strong><p>You will be presented with a list similar to the following:<p style=margin-left:20px>&nbsp; 4 CLOSING<br> 12 ESTABLISHED<br> &nbsp; 4 FIN_WAIT1<br> 14 FIN_WAIT2<br> 12 LAST_ACK<br> &nbsp; 1 LISTEN<br> 10 SYN_RECV<br> 273 TIME_WAIT<p>This information can be very useful to determine whether you need to tweak some of the timeouts above.<p><br><h3>SYN Flood Protection</h3><p>These settings added to sysctl.conf will make a server more resistant to SYN flood attacks. Applying configures the kernel to use the SYN cookies mechanism, with a backlog queue of 1024 connections, also setting the SYN and SYN/ACK retries to an effective ceiling of about 45 seconds. The defaults for these settings vary depending on kernel version and distribution you may want to check them with <em>sysctl -a | grep syn</em><p style=margin-left:20px>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_max_syn_backlog = 1024<br> net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_syn_retries = 6<br> net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_synack_retries = 3<br> net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_syncookies = 1<p>Notes: The default SYN retries cycle under Linux doubles every time, so 5 retries means: the original <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=PACKET" title="What is packet ?" rel=sg-term>packet</a>, 3s, 6s, 12s, 24s.. 6th retry is 48s. Under BSD-derived kernels (including <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=MAC" title="What is Mac ?" rel=sg-term>Mac</a> OS X), the retry times triple instead.<p><br><p><br><h3>TCP Congestion Control Algorithm</h3><p>By default, the Linux kernel uses CUBIC congestion control/avoidance algorithm, which is very good, and probably the most popular. There is a maybe better new alternative: BBR (version 2). You can read more about it in our <a href=https://www.speedguide.net/articles/tcp-congestion-control-algorithms-comparison-7423>Congestion Control Algorithms Comparison</a> article. Note that BBR is very new, and its implementation is still being tweaked. It was first introduced in kernel 4.9, but there was a <a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=PATCH" title="What is patch ?" rel=sg-term>patch</a>/improvement to its functionality as recently as November 2020 in kernel 5.9.11<p>To see your current kernel version, in terminal type:&nbsp; <strong>uname -r</strong><br>To view a list of available congestion control algorithms: <strong>sysctl net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_available_congestion_control</strong><br>To see your current congestion control algorithm:&nbsp; <strong>sysctl net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_congestion_control</strong><p>Note that only CUBIC and RENO are available by default. To change to BBR with kernels 4.9 and newer, you need to edit /etc/sysctl.conf and add the following two lines to the bottom of it:<p style=margin-left:20px>net.core.default_qdisc=fq<br>net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_congestion_control=bbr<p>After that, reolad sysctl with the command:&nbsp; sysctl -p<p>You should now see the new congestion control algorithm in use (with the command: <em>sysctl net.<a class="term1 piterm cboxElement" href="https://www.speedguide.net/_iframe_term.php?seek=IPV4" title="What is ipv4 ?" rel=sg-term>ipv4</a>.tcp_congestion_control</em>).<p><br><p><br><h3>References</h3><p><a href=http://ipsysctl-tutorial.frozentux.net/chunkyhtml/tcpvariables.html target=_blank>TCP Variables</a><br> See also the complete ip-sysctl parameters reference <a href="https://www.speedguide.net/read_articles.php?id=2672">-here-</a><br><br></p></div>
+<div style="position:relative;padding:10px 0;margin:0 auto;width:728px;text-align:center">
+<div id=div-gpt-ad-1529998659522-0 class=sf-hidden>
+ </div>
+</div>
+<div class=comment style=background:rgb(242,242,242);padding:2px;height:18px;--darkreader-inline-bgimage:initial;--darkreader-inline-bgcolor:var(--darkreader-background-f2f2f2,#1f2223) data-darkreader-inline-bgimage data-darkreader-inline-bgcolor>
+<div style=float:left;line-height:18px><a name=comments>&nbsp;</a>
+ <font face="Arial, Helvetica, sans-serif" size=4 color=#9E0000 data-darkreader-inline-color style=--darkreader-inline-color:var(--darkreader-text-9e0000,#ff5d5d)><b>User Reviews/Comments:</b></font> 
+ </div>
+<div style=float:right;margin:0;line-height:18px>
+ &nbsp;&nbsp;&nbsp;
+ rate: <form action=/rating_data.php name=rform id=rform method=post style=display:inline enctype=multipart/form-data>
+<select name=rating id=rating style=font-size:9px;vertical-align:middle;margin-top:-3px>
+    <option value=0 selected>&nbsp;-- rating --</option>
+  <option value=5>5 - Excellent</option>
+  <option value=4>4 - Good</option>
+  <option value=3>3 - Average</option>
+  <option value=2>2 - Poor</option>
+  <option value=1>1 - Very Poor</option>
+  </select>
+</form>
+ &nbsp;&nbsp;
+ avg: <span style=vertical-align:-12%;margin-right:2px><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4.00 of 5 (34 votes)" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4.00 of 5 (34 votes)" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4.00 of 5 (34 votes)" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4.00 of 5 (34 votes)" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4.00 of 5 (34 votes)" class=stars-0></span>
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_1420 href=#c_1420><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">anonymous</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [65.80.xxx.xx]"></b> - 2008-03-09 18:44 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Two things:<br>
+<br>
+1) This threw me at first: Changing the referenced files in a root kate seemed to make no difference in the files; they stayed the same as far as I could tell. But the command cat /proc/sys/net/core/wmem_max (or whichever file) showed the changes. This might have only been an oddity in my setup: Mandriva 2008.<br>
+<br>
+2) This must not work for kernels 2.17 and newer. See <a href=http://www.psc.edu/networking/projects/tcptune/#Linux target=_blank rel=nofollow title=http://www.psc.edu/networking/projects/tcptune/#Linux>http://www.psc.edu/networking/projects/tcptune/#Linux</a> . The article says these kernels auto-tune download speeds. I made the recommended changes but could detect no difference in speeds. Then I rebooted without any of the changes in place, used the cat command, and found the files had been set to 131071. However, the TCP/IP analyzer says it's set at 5888. This I don't understand. Also, I discovered the files' settings change infrequently by themselves.<br>
+<br>
+In faith, Dave<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_1484 href=#c_1484><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">Breno Leitao</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [201.82.xxx.xxx]"></b> - 2008-04-12 13:16 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Well, the /proc/sys/net/core/rmem_max isn't the maximum *TCP* receive window size. I'd say that is the maximum receive size for a generic protocol.<br>
+Even, this value limits the tcp_rmem[max], if they're different. <br>
+<br>
+--<br>
+Thanks<br>
+Breno<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_1697 href=#c_1697><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="3 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="3 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="3 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="3 of 5" class=stars-0><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="3 of 5" class=stars-0></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">darkglobe87</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [78.145.xxx.xxx]"></b> - 2008-08-12 19:03 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Newbie alert!<br>
+I'm quite comfortable tweaking the win9x and 2000/xp reg to fine-tune my tcp/ip peformance, but have recently switched to linux (xubuntu 8.04). Now, this guide may well mean something to more experienced users of linux, but... well it doesn't mean much at all to me.<br>
+<br>
+I think this article should be simplified somewhat.<br>
+<br>
+Is there an easier way to tune internet settings under linux??<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_2166 href=#c_2166><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1></span>
+ <font size=1><b>by 
+ 
+ <a target=_blank href="https://www.speedguide.net/forums/member.php?u=180536" class=link7>jsday187</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite user" title="registered user" alt></b> - 2009-05-15 11:14 </font>
+</div>
+<div class=comment-body style=clear:both>
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^<br>
+Lazy Alert!!! Someone is capable of installing XUbuntu but not capable of copying and pasting a few commands into the console.<br>
+<br>
+Suggestion ?<br>
+<br>
+Go back to Windows Vista Home Premium!<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_2177 href=#c_2177><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-0></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">Vamsi</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [10.32.xx.xx]"></b> - 2009-05-20 07:00 </font>
+</div>
+<div class=comment-body style=clear:both>
+ I have a setup with a client doing a TCP download from a server(Both are Linux Fedora Core 10).I changed the rmem_max and wmem_max from 64KBytes to 256KBytes.My purpose is to check the throughput at different TCP Window size. But unfortunately I get same at all sizes.<br>
+<br>
+Let me know the place where I can configure the TCP Window size like in Iperf tool.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_2179 href=#c_2179><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right></span>
+ <font size=1><b>by 
+ 
+ <a target=_blank href="https://www.speedguide.net/forums/member.php?u=4" class=link7>Philip</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite user" title="registered user" alt></b> - 2009-05-20 08:38 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Here are a couple of pointers:<br>
+<br>
+1. To check the throughput difference there has to be substantial latency on the line, you will not be able to notice much on a LAN.<br>
+<br>
+2. Linux has auto-tuning of the TCP Window. Even though you will get some benefit from tweaking the maximum TCP Window, you may only see the current (instead of maximum) TCP Receive Window by examining packets or using the TCP Analyzer.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_2319 href=#c_2319><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">anonymous</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [200.130.xx.xxx]"></b> - 2009-08-13 06:20 </font>
+</div>
+<div class=comment-body style=clear:both>
+ The best article I've ever read about tunning tcp/ip connections.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_2354 href=#c_2354><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">Sami Kerola</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [82.210.xxx.xx]"></b> - 2009-09-09 07:27 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Bellow is my version of socket state counter. It's basically same as in original article, but a bit more generic and perhaps a one microsecond quicker because of less commands piping to each others.<br>
+<br>
+# netstat -an | awk '/^tcp/ {A[$(NF)]++} END {for (I in A) {printf "%5d %s\n", A[I], I}}'<br>
+ 1962 TIME_WAIT<br>
+ 18 FIN_WAIT1<br>
+ 1 FIN_WAIT2<br>
+ 7 ESTABLISHED<br>
+ 12 SYN_RECV<br>
+ 8 LISTEN<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_3556 href=#c_3556><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">anonymous</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [124.125.xxx.xxx]"></b> - 2011-07-28 02:58 </font>
+</div>
+<div class=comment-body style=clear:both>
+ This is an awesome guide. :) the best over the internet.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_3650 href=#c_3650><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">biru</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [95.252.xxx.xx]"></b> - 2011-09-11 11:45 </font>
+</div>
+<div class=comment-body style=clear:both>
+ i changed rwin value like the guide suggested it<br>
+<br>
+biru@biru-EasyNote-MH35:~$ sudo gedit /etc/rc.local<br>
+[sudo] password for biru: <br>
+biru@biru-EasyNote-MH35:~$ sudo sysctl -p<br>
+net.core.rmem_default = 256960<br>
+net.core.rmem_max = 256960<br>
+net.core.wmem_default = 256960<br>
+net.core.wmem_max = 256960<br>
+net.ipv4.tcp_timestamps = 0<br>
+net.ipv4.tcp_sack = 1<br>
+net.ipv4.tcp_window_scaling = 1<br>
+<br>
+<br>
+but testing my pc, i got this results <br>
+<br>
+MTU = 1500<br>
+MTU is fully optimized for broadband.<br>
+MSS = 1460<br>
+Maximum useful data in each packet = 1460, which equals MSS.<br>
+Default TCP Receive Window (RWIN) = 14600 <br>
+<br>
+why??<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_3658 href=#c_3658><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right></span>
+ <font size=1><b>by 
+ 
+ <a target=_blank href="https://www.speedguide.net/forums/member.php?u=4" class=link7>Philip</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite user" title="registered user" alt></b> - 2011-09-16 18:33 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Linux (and new versions of Windows) have TCP Auto-tuning, which tunes the TCP Window value on the fly and the Analyzer can only detect the currently advertised RWIN value (during the TCP handshake). The advertised RWIN will keep expanding during large transfers.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_4194 href=#c_4194><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-0></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">andrs chanda</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [79.151.xx.xxx]"></b> - 2012-12-07 12:53 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Hi there, I've tried your advice but as yours is focused on internet connection I think that's why does not solve my problem, which is next: <br>
+<br>
+I have a little office network, where I have a file, printer, download and router server. I mean I use it as storage (NFS). By a web interface users can access to a mldonkey where they look for things they need to download. And all the network goes to the internet through it.<br>
+I recently increased the memory fom 1G to 3G, and added a 2TB hard disk for storage. Since this moment on some workstations, specially the old ones have problems accesing the files stored at the server, if a user needs to watch a video, while watching it, the video stops some times and after a while starts again. The acces to folders with huge amount of data makes the nautilus window to turn gray for a while before showing the content, etc�.<br>
+These kind of things didn�t happen with 1Gb RAM. I have to say that I have read that large disks may affect performance of the machine. But I suspect my problem is related to ram addition and the network.<br>
+I hope you can help me.<br>
+Thanks a lot.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_5456 href=#c_5456><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="4 of 5" class=stars-0></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">Angel Genchev</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [46.233.x.xx]"></b> - 2015-05-26 15:49 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Beware: The sack is better turned OFF for servers. It would help only over a high bandwidth, but lossy (or high delay) link.<br>
+The bad: It allows of certain type of DOS attack.<br>
+See <a href=http://web.archive.org/web/20111022225944/http://www.ibm.com/developerworks/linux/library/l-tcp-sack/index.html target=_blank rel=nofollow title=http://web.archive.org/web/20111022225944/http://www.ibm.com/developerworks/linux/library/l-tcp-sack/index.html>http://web.archive.org/web/20111022225944/http://www.ibm.com/developerworks/linux/library/l-tcp-sack/index.html</a><br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+<div class=comment>
+<div class=comment-head>
+ <a id=c_6864 href=#c_6864><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="comment permalink" alt class="sprite comment-post" style="margin:0 3px 0 0"></a>
+ <span style=float:right><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="5 of 5" class=stars-1></span>
+ <font size=1><b>by 
+ <a href=#comments class=link7 title="not registered">B.E.E.</a> <img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 class="sprite anon" alt title="anonymous [76.30.x.xx]"></b> - 2019-03-04 17:24 </font>
+</div>
+<div class=comment-body style=clear:both>
+ Ebonicly speaking and asking;<br>
+"Couldn't one of the many geniuses commenting on this topic create a one click fix for this?" I will be patiently waiting and praying that this comes to pass. Lol.<br>
+ <div style=text-align:right>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt title="add comment" class="sprite comment-post" style="margin:0 3px 0 0"></a> </div> 
+</div>
+</div>
+ <div class=buttons>
+ <div class=sg-social>
+<a href="http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.speedguide.net%2Farticles%2Flinux-broadband-tweaks-121&amp;t=SpeedGuide.net+%3A%3A+Linux+Broadband+Tweaks" target=_blank rel="noopener nofollow" title="Share on Facebook"><span class=icon-facebook> </span></a>
+<a href="http://www.twitter.com/intent/tweet?url=https%3A%2F%2Fwww.speedguide.net%2Farticles%2Flinux-broadband-tweaks-121&amp;text=SpeedGuide.net+%3A%3A+Linux+Broadband+Tweaks&amp;hashtags=speedguide" target=_blank rel="noopener nofollow" title="Tweet about it"><span class=icon-twitter> </span></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.speedguide.net%2Farticles%2Flinux-broadband-tweaks-121&amp;title=SpeedGuide.net+%3A%3A+Linux+Broadband+Tweaks&amp;source=SpeedGuide.net" target=_blank rel="noopener nofollow" title="Share on LinkedIn"><span class=icon-linkedin> </span></a>
+<a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.speedguide.net%2Farticles%2Flinux-broadband-tweaks-121&amp;description=SpeedGuide.net+%3A%3A+Linux+Broadband+Tweaks" target=_blank rel="noopener nofollow" title="Pin this"><span class=icon-pinterest> </span></a>
+<a href="http://www.reddit.com/submit?url=https%3A%2F%2Fwww.speedguide.net%2Farticles%2Flinux-broadband-tweaks-121&amp;title=SpeedGuide.net+%3A%3A+Linux+Broadband+Tweaks" target=_blank rel="noopener nofollow" title="Share on Reddit"><span class=icon-reddit> </span></a>
+</div>
+ <a href="https://www.speedguide.net/comment_add.php?id=121&amp;type=article" class=button rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="Add Comment" alt=comment class="sprite comment"></a>
+ <a href="https://www.speedguide.net/articles/linux-broadband-tweaks-121&amp;print=friendly" target=_blank class=button rel=nofollow><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="Print this document" alt=print class="sprite print"></a>
+ <a href=https://www.speedguide.net/forums/ class=button><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 title="Discuss in our forums" alt=discuss class="sprite discuss"></a>
+ <a href=#top class=button><img src=data:image/gif;base64,R0lGODlhBQAFAIAAAP///wAAACH5BAEAAAAALAAAAAAFAAUAAAIEhI+pWAA7 alt=top title=Top class="sprite top"></a>
+ </div>
+ <div id=related>
+ <b>Related Articles:</b>
+ <ul class=sgy>
+ <li><a href=https://www.speedguide.net/articles/windows-10-manual-tcp-ip-registry-tweaks-7507>Windows 10 Manual TCP/IP Registry Tweaks</a></li>
+<li><a href=https://www.speedguide.net/articles/internet-data-caps-compared-7472>Internet Data Caps compared</a></li>
+<li><a href=https://www.speedguide.net/articles/tcp-congestion-control-algorithms-comparison-7423>TCP Congestion Control Algorithms Comparison</a></li>
+<li><a href=https://www.speedguide.net/articles/windows-10-anniversary-updates-to-tcp-6266>Windows 10 Anniversary updates to TCP</a></li>
+<li><a href=https://www.speedguide.net/articles/how-to-backup-using-batch-files-under-windows-10-4569>How to Backup using Batch Files under Windows 10</a></li>
+ </ul>
+ </div>
+</table>
+<div id=footer>
+<div class=sg-social style="float:right;margin:7px 4px 0 0;font-size:1.2em">
+<a href=https://www.facebook.com/speedguide target=_blank rel="noopener nofollow" title="Follow SpeedGuide on Facebook"><span class=icon-facebook> </span></a>
+<a href=https://twitter.com/speedguide target=_blank rel="noopener nofollow" title="Follow @speedguide on Twitter"><span class=icon-twitter> </span></a>
+<a href=https://www.speedguide.net/rss/ target=_blank rel="noopener nofollow" title="SG RSS feeds"><span class=icon-rss> </span></a>
+</div>
+<div style="display:inline-block;margin:0 auto;text-align:center;font:inherit">
+Copyright © 1999-2026 Speed Guide, Inc. All rights reserved.
+<br><a href=https://www.speedguide.net/about.php>About</a> · <a href=https://www.speedguide.net/copyright.php>Terms of Use</a> · <a href=https://www.speedguide.net/privacy.php>Privacy Policy</a> ·
+<a href=# id=fluid-privacy-opt-out-link>Change Ad Consent</a>
+</div>
+</div>
+<div id=bmenu-main class="boxMenu mbmenu" style=display:none>
+ 
+</div>
+<div id=bmenu-broadband class="boxMenu mbmenu" style=display:none>
+ 
+</div>
+<div id=bmenu-articles class="boxMenu mbmenu" style=display:none>
+ 
+</div>
+<div id=bmenu-forums class="boxMenu mbmenu" style=display:none>
+ 
+</div>
+<div id=bmenu-info class="boxMenu mbmenu" style=display:none>
+ 
+</div>
+<div id=menu-main class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+ <div id=submenu-news class=mbmenu style=display:none>
+ 
+ </div>
+ <div id=submenu-faqs class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ <div id=submenu-links class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ </div>
+<div id=menu-broadband class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+ <div id=submenu-tweaks class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-tools class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ <div id=submenu-optimizer class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-scan class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ </div>
+ <div id=submenu-speedtest class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ <div id=submenu-userstories class=mbmenu style=display:none>
+ 
+ 
+ </div>
+<div id=menu-articles class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+ <div id=submenu-broadband class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-security class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-editorials class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-general class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-userarticles class=mbmenu style=display:none>
+ 
+ 
+ </div>
+ <div id=submenu-quickreference class=mbmenu style=display:none>
+ 
+ 
+ </div>
+<div id=menu-forums class=mbmenu style=display:none>
+ 
+ 
+ 
+</div>
+<div id=menu-info class=mbmenu style=display:none>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+<div id=cboxOverlay style=display:none></div><div id=colorbox role=dialog tabindex=-1 style=display:none></div>
