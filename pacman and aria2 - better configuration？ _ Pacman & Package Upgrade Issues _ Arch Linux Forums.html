@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en dir=ltr data-darkreader-mode=dynamic data-darkreader-scheme=dark data-darkreader-proxy-injected=true style><!--
+ Page saved with SingleFile 
+ url: https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879 
+ saved date: Thu Oct 08 2026 05:18:16 GMT-0400 (Eastern Daylight Time)
+--><meta charset=utf-8><style>:root{--sf-img-0: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAQMAAABsu86kAAAABlBMVEX///+wu8wFf9SGAAAAAXRSTlMAQObYZgAAABNJREFUCNdjYIAB2QNQhMZmYAAAU7IFL8NLJYgAAAAASUVORK5CYII=");--sf-img-1: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAxlBMVEVMaXHqfDf4lDDrlU/xjDv2lT34nD7////0jjXthDnzkjnkczD/9+/+8eXqgDjlbSHqeij/8ODwhC/4kCj1iiTvgCj859n2s3v8vn//9en6rGDleDHkikz/mTPtlV/44NTvjETvfCLfYB/haCn92bT5w5DeYyf1p2X6z6rgbTLjhEz1nUz7tnHocyf/zJnrjVH40Lf4283yt5L2wprvrovzrHbyijH848v3x6X8x47aVx3gckP5y6T7qlb1oln/69b93b75pFFRjL0EAAAAAXRSTlMAQObYZgAAAJ9JREFUeNoNyUMWxEAUAMDfSTM2B7HGtu5/qcmyXgFMEBICY0IUeYS6EZZ/5pxTKkNqBpr9XHiSRKkChnXqNKZH7nTKOQi/bclSYzeXczEqCLok+bAwNwzATv1l8TLR9cxCoCjeL4rjd8j2ZgpEqqtXxK6ZNi9UIK7NqsVFn21Z04+3tsP8sJsd548SZCp5jrMyy+LeDAAyxlggpKr9AH+p2Q5ke7f5FAAAAABJRU5ErkJggg==");--sf-img-4: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTI2Ij48cGF0aCBkPSJNMTU5LjU2OCAzNC40MjdjLTguODktLjAxNC0xNi4yNjcgMS44MDktMTkuMTIgMi44MDNsLTIuOTM3IDE1Ljg1N2MtLjAwNy4wNTggMTQuNjE3LTMuOSAyMS4wNTktMy42NjcgMTAuNjY1LjM4MyAxMS42NDYgNC4wNzYgMTEuNDYgOS4wNi4xODIuMjkyLTIuNzUyLTQuNTAzLTExLjk3OS00LjY2NC0xMS42NC0uMi0yOC4wNjkgNC4xMjItMjguMDQ2IDIxLjY5Mi0uMzE0IDE5Ljc2NSAxNC43NjQgMjUuNTc5IDI1LjAzMiAyNS42ODYgOS4yMzItLjE2OCAxMy41NjMtMy40OTYgMTUuOTM0LTUuMjggMy4xMTUtMy4yNTcgNi42NzktNi41MzIgMTAuMDc4LTEwLjQ2Mi0zLjIxNiA1Ljg0NC02LjAwNSA5Ljg4NC04LjkwNyAxMi45Nzd2Mi42MTFsMTQuMDMzLTIuMzYxLjA5Ni0zOC4xNDRjLS4xNDMtNS4zOTkgMy4wOTYtMjYuMDU3LTI2LjcwMy0yNi4xMDh6bS0yLjAxNiAzMy4yMWM1LjgxNy4wOCAxMi40ODggMi45NDggMTIuNDk3IDkuODQ5LjAzIDYuMjc3LTcuODYzIDkuNjUxLTEyLjk5NiA5LjU5OC01LjEzNS0uMDUzLTExLjk0OS00LjAzNi0xMS45NzktMTAuMTU1LjA5OS01LjQ3IDYuNDI2LTkuNDMyIDEyLjQ3OC05LjI5MXptMzcuOTcyLTI5LjY4NWwtLjA5NSA2My4xNjYgMTYuMzQ4LTMuMTUuMDI3LTM1LjgxNGMuMDA0LTUuMzMzIDcuNjItMTEuNTY0IDE3LjE3OC0xMS40NjQgMi4wMjgtMy42NyA1Ljg0LTEzLjA1IDYuNzctMTUuMTgzLTIxLjM1MS0uMDUxLTIxLjYyMyA2LjEzNy0yNS4zMzYgOS4xOC0uMDQtNS44MDYtLjAxMy05LjI5Mi0uMDEzLTkuMjkybC0xNC44NzkgMi41NTd6bTkyLjAwMiA4LjI5MmMtLjE1OC0uMDc0LTguNTI2LTkuNzg4LTI1LjM1LTkuODY0LTE1Ljc1OC0uMjYyLTMzLjQzMyA1Ljg0Ny0zMy43MTYgMzIuMjcuMTM4IDIzLjIzMiAxNi45NzkgMzIuMzExIDMzLjgwNSAzMi40ODggMTguMDA3LjE4NyAyNS4xNzItMTEuMjYgMjUuNjAyLTExLjU0My0yLjE0OS0xLjg2My0xMC4xOTYtOS44MzctMTAuMTk2LTkuODM3cy01LjAyNyA3LjE1Ny0xNC43NzkgNy4yNDhjLTkuNzU1LjA5My0xOC4yMzQtNy41NC0xOC4zNTQtMTguMTg5LS4xMjUtMTAuNjUgNy43OTUtMTYuNDE5IDE4LjQyNy0xNi44ODUgOS4yMDUtLjAwMiAxNC41MTYgNS45NDMgMTQuNTE2IDUuOTQzem0yMC42MDYtMzAuMzk5bC0xNS40MzQgMy42MjguMTE1IDgyLjI3NyAxNS4yMDQtMi43NDUuMTcyLTM4LjcyYy4wMzMtNC4wNiA1Ljg3NC0xMC4yOTUgMTUuNjI2LTEwLjA5NyA5LjMyNS4wOTcgMTEuNDEgNi4yMTUgMTEuMzg0IDYuOTg4bC4yNjkgNDQuODI0IDE0Ljk5My0yLjY1LjA1Ny00Ny41M2MuMDk5LTQuNTc0LTEwLjAxOC0xNC4yMzMtMjYuMjgtMTQuMzAyLTcuNzI5LjAxMi0xMi4wMDkgMS43NjItMTQuMTg3IDMuMDUyLTMuNzI2IDIuODc5LTcuOTg1IDUuNjM3LTEyLjE3IDkuMTU3IDMuODY5LTQuOTcgNy4xMTctOC40MDcgMTAuMjktMTAuOTYxbC0uMDQtMjIuOTIxeiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTTM2MC4xMzYgMTcuMjE4bDYuOTYyLTEuNzQyLjMzIDgyLjk1LTcuMDc0IDEuMjA0em0xOC45MjggMjQuNzU3bDYuMTAxLTIuNzE2LjA1MiA1OS40NzgtNS44OTIgMS4yMTd6bS0xLjQ1LTIxLjQ0OGw0LjkyLTQuMDE1IDQuMDg2IDQuNTQ3LTQuOTIxIDQuMTIxem0xOS4wMjQgMjAuMzY1bDYuOTYyLTEuNDIxLjAzMyAxMi40MzRjLjAwMS41MzQgMy44MjMtMTMuODkgMjIuMjU4LTEzLjU3IDE3LjkuMSAyMC44MjcgMTMuOTU3IDIwLjczIDE3LjA2NGwuMjIxIDQzLjcyNS02LjEwMiAxLjMyNC0uMDM1LTQzLjE4OWMuMDctMS4yNjEtMi43OS0xMS45MjctMTUuNDM5LTExLjk2Ni0xMi42NDYtLjAzNy0yMS40MDkgOS4xODYtMjEuMzkzIDE1LjA3OGwuMSAzOC4wNDctNy4wNyAxLjg0N3ptMTEwLjk1NCA1OC41NDZsLTYuOTYyIDEuNDItLjAzMy0xMi40MzNjLS4wMDEtLjUzNC0zLjgyNSAxMy44OS0yMi4yNTggMTMuNTctMTcuOS0uMS0yMC44MjctMTMuOTU3LTIwLjczLTE3LjA2NGwtLjIyMS00My43MjUgNy4zOTctMS40OTQuMTE0IDQzLjE5Yy4wMDMgMS4xOCAxLjQxNiAxMi4wOTYgMTQuMDY1IDEyLjEzNSAxMi42NDYuMDM3IDIxLjUwNi03LjYxNiAyMS41NjktMTkuMTM5bC0uMDktMzQuMDc2IDYuODg1LTEuNzU3em0xMy42NDUtNTkuMDM3bC00Ljg4MiAzLjgyIDE4LjcxNyAyNC40OTQtMTkuOTYzIDI4LjMgNS4xNzkgMy44NDMgMTguNzY2LTI2LjI4IDE5LjM2OCAyNi45MDIgNC43OTEtMy44Mi0yMC43NTctMjguNzY1IDE2LjU2LTIzLjI2Mi01LjA5Mi00LjMwNS0xNS4wODUgMjEuNTI1ek02MS44OCAxLjc3OGMtNS4zODUgMTMuMjAzLTguNjMzIDIxLjgzOS0xNC42MjkgMzQuNjQ5IDMuNjc2IDMuODk2IDguMTg4IDguNDM0IDE1LjUxNiAxMy41NTktNy44NzgtMy4yNDItMTMuMjUyLTYuNDk3LTE3LjI2Ny05Ljg3NC03LjY3MyAxNi4wMTEtMTkuNjk1IDM4LjgxOC00NC4wOSA4Mi42NSAxOS4xNzQtMTEuMDY4IDM0LjAzNy0xNy44OTMgNDcuODg5LTIwLjQ5N2EzNS4xMDMgMzUuMTAzIDAgMCAxLS45MS04LjIxM2wuMDIzLS42MTRjLjMwNC0xMi4yODQgNi42OTQtMjEuNzMgMTQuMjY0LTIxLjA5IDcuNTcuNjQyIDEzLjQ1NCAxMS4xMjYgMTMuMTUgMjMuNDEtLjA1OCAyLjMxMi0uMzE5IDQuNTM2LS43NzQgNi41OTggMTMuNzAxIDIuNjggMjguNDA1IDkuNDg3IDQ3LjMyIDIwLjQwNy0zLjczLTYuODY2LTcuMDU5LTEzLjA1Ni0xMC4yMzgtMTguOTUtNS4wMDctMy44ODItMTAuMjMtOC45MzMtMjAuODg0LTE0LjQwMiA3LjMyMyAxLjkwMyAxMi41NjYgNC4wOTkgMTYuNjUzIDYuNTUyQzc1LjU4IDM1Ljc4NiA3Mi45NjMgMjcuNzkgNjEuODggMS43Nzh6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNNTc2Ljc3MSA5My4yNjVWODAuNjAzaC00Ljczdi0xLjY5NWgxMS4zOHYxLjY5NWgtNC43NXYxMi42NjJoLTEuOW04LjYyOSAwVjc4LjkwOGgyLjg1OWwzLjM5OCAxMC4xNjZjLjMxNC45NDcuNTQyIDEuNjU1LjY4NiAyLjEyNS4xNjMtLjUyMi40MTgtMS4yOS43NjQtMi4zMDFsMy40MzctOS45OWgyLjU1NnYxNC4zNTdoLTEuODMxVjgxLjI1bC00LjE3MiAxMi4wMTZoLTEuNzE0bC00LjE1Mi0xMi4yMjJ2MTIuMjIyaC0xLjgzMiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSI4LjQ0MSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zIE1vbm8iIGZpbGw9ImdyYXkiLz48L3N2Zz4=");--sf-img-5: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZlcnNpb249IjEiPjxwYXRoIGQ9Ik02MDAgMGMtNTMuNDE2IDEzMC45NjItODUuNjcxIDIxNi43NC0xNDUuMTQzIDM0My44MSAzNi40NjQgMzguNjUxIDgxLjIyIDgzLjQ0OSAxNTMuOTA1IDEzNC4yODUtNzguMTQ1LTMyLjE1Ni0xMzEuNDAzLTY0LjIxMy0xNzEuMjM4LTk3LjcxNEMzNjEuNDEgNTM5LjIgMjQxLjk4OSA3NjUuMTk0IDAgMTIwMGMxOTAuMTYxLTEwOS43ODQgMzM3LjY2NS0xNzcuMzk3IDQ3NS4wNDgtMjAzLjIzOC01Ljg5NS0yNS4zNjctOS4xOC01Mi44OTYtOC45NTMtODEuNTI0bC4xOS01LjkwNUM0NjkuMzA1IDc4Ny40OCA1MzIuNzIgNjkzLjYzOCA2MDcuODEgNzAwYzc1LjA4OSA2LjM2MiAxMzMuNDk0IDExMC41MjggMTMwLjQ3NiAyMzIuMzgxLS41NjggMjIuOTE2LTMuMTA1IDQ0Ljg4NS03LjYyIDY1LjMzM0M4NjYuNTI4IDEwMjQuMzI1IDEwMTIuNDYyIDEwOTEuNzMgMTIwMCAxMjAwYy0zNi45OTUtNjguMTExLTcwLjE4LTEyOS4zMzUtMTAxLjcxNC0xODcuODEtNDkuNjcyLTM4LjQ5OS0xMDEuMzY1LTg4LjYxMy0yMDcuMDQ4LTE0Mi44NTcgNzIuNjQgMTguODc1IDEyNC43OTMgNDAuNjEyIDE2NS4zMzMgNjQuOTUzQzczNS45NTIgMzM3LjM0OCA3MDkuOTQ4IDI1OC4wMTYgNjAwIDB6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=");--sf-img-7: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAtFBMVEVMaXH+6gAkGgD4owD/3QD/4AD/2AMAAADimwD98gD9+AD+8UMqKipGRkZiYmL/7Xv/swD/ugD+5QD/1ADzoAD/5BL8/BH99So3LhX+7mT/zADGhwD/rADpnQD/wQn+7BH99BH/1WX/x0L/3kL/4lzgqQD+5QL99Sb+7Sr1uUX/2hH/xSr/3CrWni7joA7xnwD5qhHkpBn/wyD4sSrlzSf+zGLeozHn0Dn+8WL/4Xv/1VZDPSGIA6UnAAAAAXRSTlMAQObYZgAAAKRJREFUeNpdz0cSgzAMBVCqZQw49BY6pPfe7n+vyIRV/mjG86yFJGkIiOA76tP1/btNYOQjnWBezR0GXtMn5ynnzW0H6MQ0TdvG6tpVgu1wGceWhbXdXE6AruooiuoqXJfHPVqXF4wxQ9b9s0rRmgfMMGRPI3AQJroH6LkGeYGWFKLpIOIEVBHzZ5lP/Kx0VDr9LURd13XyYCR+KKoaFFQR/L/vC6wIDG6jKot3AAAAAElFTkSuQmCC");--sf-img-8: url("data:image/gif;base64,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");--sf-img-9: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAulBMVEVMaXH/3QD/4AD/2AP98gD9+AD+5QAAAADimwD0oAAkGgBGRkb/7oD/7Xv/swD/ugD/1AD8/BH/73U3LhX+6gD/ygDGhwD+6wDaoS/99Cj/4w/+6xH99BH/rAD+8Ub+8WL/1WViYmL/vwb/1lf/5j3pnQD4pAD/xCXkohPgqQD/yUb/2yr/zGLlzSeinUb+4xn+7Sr+8Wrn0Dn/5In/2hH1uUX/4Xv/7mX/xT7/4GP/41ZDPSH4sSr5qhE73CCwAAAAAXRSTlMAQObYZgAAAKBJREFUeNpdz8UWwjAQQNH6RKBeoK6Cu8v//xZJ6Iq3ybnJIjOSCHjsHPRqno/67sHA423MuhYzENzk7oh1Ktbiwmuy/OC6ZVkvLx573u3DLaUZpav+PQcJojhxHCeJo3P14Vamoa7rmq/YfYeYZQN0TfMNWQXMrSoGCEPaMktElRXgmRgR/v8isFU7qBgnv4GQZVlmKigC0mHcIsL5v98XB9UM58TqEYcAAAAASUVORK5CYII=");--sf-img-11: url("data:image/jpeg;base64,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")}</style><style class="darkreader darkreader--user-agent" media=screen>@layer{html{background-color:var(--darkreader-background-ffffff,#181a1b)!important}html{color-scheme:dark!important}a{color:var(--darkreader-text-0040ff,#3391ff)}::placeholder{color:var(--darkreader-text-a9a9a9,#b2aba1)}input:-webkit-autofill,select:-webkit-autofill{background-color:var(--darkreader-background-faffbd,#404400)!important;color:var(--darkreader-text-000000,#e8e6e3)!important}::selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}::-moz-selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}}</style><style class="darkreader darkreader--variables" media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3);--darkreader-background-ffffff:#181a1b;--darkreader-text-ffffff:#e8e6e3;--darkreader-border-404040:#776e62;--darkreader-text-000000:#e8e6e3;--darkreader-border-4c4c4c:#736b5e;--darkreader-text-0040ff:#3391ff;--darkreader-border-808080:#545b5e;--darkreader-text-a9a9a9:#b2aba1;--darkreader-background-faffbd:#404400;--darkreader-background-0060d4:#004daa;--darkreader-background-ffd76e:#684b00;--darkreader-background-c59d00:#9e7e00;--darkreader-text-302505:#d7d4cf;--darkreader-background-add8e6:#1b4958;--darkreader-background-cfecf5:#0f3a47;--darkreader-background-f5f5f5:#1e2021;--darkreader-background-faedda:#432c09;--darkreader-background-85c3d8:#245d70;--darkreader-background-e6e6e6:#26292b;--darkreader-background-f9f9f9:#1b1e1f;--darkreader-background-f6f9fc:#1b1e1f;--darkreader-text-333333:#c8c3bc;--darkreader-border-cad7e1:#2e4251;--darkreader-text-566579:#a79f93;--darkreader-border-b9c5ce:#414649;--darkreader-text-2365b0:#6babe2;--darkreader-text-b50000:#ff4d4d;--darkreader-border-22538a:#2862a3;--darkreader-border-b50000:#c90000;--darkreader-background-44699c:#36547d;--darkreader-border-ffffff:#303436;--darkreader-text-d4dae2:#d1cdc7;--darkreader-background-b50000:#910000;--darkreader-background-fcfdfe:#191b1c;--darkreader-border-d9e1e7:#393d40;--darkreader-text-357082:#80bacb;--darkreader-border-dfe6ee:#28394c;--darkreader-background-ebf1f5:#202325;--darkreader-text-3399cc:#47a3d1;--darkreader-text-fcfdfe:#d7e6f2;--darkreader-background-f8f9f0:#20220e;--darkreader-border-7aadbd:#365f6c;--darkreader-background-333333:#262a2b;--darkreader-background-b9c5ce:#323f48;--darkreader-background-ffff00:#999900;--darkreader-background-ffffe1:#343400;--darkreader-background-ffffe6:#313100;--darkreader-background-d59b9b:#602828;--darkreader-border-cccccc:#3e4446;--darkreader-border-e8ecf1:#2b3746;--darkreader-border-d4d9dd:#3b4042;--darkreader-border-dfe3e8:#383c3f;--darkreader-border-91b3d9:#26476d;--darkreader-border-87a8d1:#2a486e;--darkreader-border-6c85bb:#354872;--darkreader-border-7292c3:#304a72;--darkreader-text-222222:#d3cfc9;--darkreader-border-bbccdd:#2c4258;--darkreader-text-0077bb:#49bdff;--darkreader-text-ee9900:#ffb125;--darkreader-text-999999:#a8a095;--darkreader-text-666666:#a8a095;--darkreader-text-444444:#bdb7af;--darkreader-border-0077bb:#007fc7;--darkreader-border-0088cc:#0081c2;--darkreader-background-00000013:rgba(0,0,0,0.07);--darkreader-background-00000000:rgba(0,0,0,0);--darkreader-background-000000:#000000;--darkreader-border-a9a9a9:#484e51;--darkreader-background-696969:#4f5659;--darkreader-text-055000:#cfcbc4;--darkreader-background-1c1b22:#17191a;--darkreader-text-eeeeee:#dddad6;--darkreader-text-7dc67d:#81c881}</style>
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>pacman and aria2 - better configuration? / Pacman &amp; Package Upgrade Issues / Arch Linux Forums</title>
+<style>html,body,.pun div,.pun form,.pun p,.pun h2,.pun h3,.pun h5,.pun pre,.pun blockquote,.pun ul,.pun li,.pun dl,.pun dt,.pun dd,.pun cite{border:0;font-style:normal;font-weight:normal;margin:0;padding:0}.pun ul{list-style:none}.pun select{padding-bottom:1px;padding-top:1px;padding-right:1px}.pun{font:81.25%/1.462em Arial,Helvetica,sans-serif}.pun input,.pun select,.pun optgroup{font-family:Arial,Helvetica,sans-serif;font-size:1em}.pun pre,.pun code{font-family:consolas,monaco,"bitstream vera sans mono","courier new",courier,monospace;font-size:1em}.pun pre code{font-size:1em}.pun h2{font:1.462em/1em"Trebuchet MS",Arial,Helvetica,sans-serif;padding:7px 0}.pun h3{font-size:1.154em;line-height:1.267em;padding:7px 0}.pun p,.pun ul,.pun dl{padding:7px 0}.pun strong{font-weight:bold}.pun em{font-style:italic}.pun a,.pun a:link,.pun a:visited{text-decoration:none}.pun a:hover,.pun a:active,.pun a:focus{text-decoration:underline}#brdfooter h2,div.postright h3{display:block;overflow:hidden;position:absolute;text-indent:-9999em;width:0}.pun .inbox,.pun #brdmain,.pun .crumbs,.pun .pagepost{min-height:1px}.pun .inbox:after,.pun #brdmain:after,.pun .crumbs:after,.pun .pagepost:after{content:" ";display:block;height:0;font-size:0;clear:both;visibility:hidden}.pun{max-width:1070px;margin:0 auto;padding:30px 40px}.pun .punwrap{border:1px solid;border-radius:10px;padding:18px}#brdmain{border-style:solid none;border-width:2px 0;margin-bottom:12px;padding:12px 0}#brdmenu ul{padding:0}#brdmenu li{float:left}#brdmenu a:link,#brdmenu a:visited{border-right-style:solid;border-width:1px;display:block;min-width:60px;padding:12px 16px 6px 8px;white-space:nowrap}#brdmenu a:hover,#brdmenu a:focus{text-decoration:none}#brdwelcome{padding:10px 0}#brdwelcome .conl,#brdwelcome .conr,#brdwelcome p,#brdwelcome li{display:inline;padding:0}#brdwelcome .conl{float:left}#brdwelcome .conr{float:right}#brdwelcome li span{background:var(--sf-img-0) center left no-repeat;padding-left:18px;margin-right:3px;display:inline-block;line-height:normal;white-space:nowrap}.pun #brdfooter .conl{float:left}.pun #brdfooter .conr{text-align:right;float:right}.pun #brdfooter #poweredby a{font-size:1.077em;font-weight:bold}.pun #brdfooter #qjump{padding-top:5px}.pun #brdfooter #qjump *{white-space:nowrap}.pun #brdfooter #feedlinks{padding-bottom:0}.pun #brdfooter #feedlinks span{background:var(--sf-img-1) center left no-repeat;display:inline-block;padding-left:18px;white-space:nowrap}.pun .linkst .inbox,.pun .postlinksb .inbox{overflow:hidden}.pun .postlinksb,.pun .linkst,.pun .crumbs{clear:both;position:relative}.pun .linkst .crumbs{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif;font-size:1.462em;line-height:1.211em;padding:7px 0}.pun .postlinksb .crumbs{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif;font-size:1.154em}.pun .linkst .crumbsplus .pagepost{border-top-style:dotted;border-top-width:1px}.pun .postlinksb .crumbsplus .pagepost{border-bottom-style:dotted;border-bottom-width:1px}.pun .postlinksb .crumbs{margin-right:11em}.pun .crumbs li{float:left;padding-right:0.4em;white-space:nowrap}.pun .crumbs li strong{font-weight:normal}.pun .pagelink{float:left;white-space:nowrap}.pun .pagelink strong{border-style:none none none solid;border-width:0 0 0 1px;display:inline-block;padding:0 12px 0 10px;margin-right:-6px}.pun .pagelink .item1{border:0}.pun .pagelink .pages-label{display:inline-block}.pun .postlink{float:right;font-weight:bold;text-align:right}.pun .blockpost{border-style:solid;border-width:1px;margin-bottom:-1px;overflow:hidden;position:relative}.pun .blockpost h2{font:1em/1.462em Arial,Helvetica,sans-serif;white-space:nowrap;border-bottom-style:solid;border-bottom-width:1px;height:1.462em;padding:0.538em 8px 0.538em 236px;font-weight:normal}.pun .blockpost h2 .conr{float:right;text-align:right}.pun .blockpost .inbox{float:right;position:relative;width:100%}.pun .blockpost .postbody,.pun .blockpost .postfoot{border-left-style:solid;border-left-width:1px;float:right;margin-right:-218px;position:relative;text-align:left;width:100%}.pun .blockpost .postleft,.pun .blockpost .postfootleft{width:194px;padding:7px 12px 7px 12px;float:left;margin-left:-218px;position:relative}.pun .blockpost .postleft dl{padding:0}#punviewtopic .blockpost dt{display:block;position:absolute;padding:0.538em 0 0.538em 12px;height:1.462em;top:-2.615em;left:0;overflow:hidden;width:206px}.pun .blockpost dt{text-overflow:ellipsis;white-space:nowrap}.pun .blockpost dt strong{font-size:1.231em;font-weight:bold}.pun .blockpost .postleft dd{font-size:0.923em}.pun .blockpost .postleft .usertitle{padding:4px 0 6px 0;font-size:1em}.pun .blockpost .postleft .postavatar{display:block;margin:0 0 4px 0}.pun .blockpost .postright{position:relative;padding:4px 230px 7px 18px}.pun .postmsg{width:100%;overflow:hidden;word-wrap:break-word}.pun .postfoot p{padding:0}.pun .blockpost .usercontacts{padding:7px 0}.pun .blockpost .usercontacts .website{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEVMaXEAZsw7KeOnAAAAAXRSTlMAQObYZgAAACpJREFUCB1jgAPmHwyMHAwMHQzyHAxCGgwiEQwCJxgEHRgEHBjkDzDAAABrzgSyHE8gJwAAAABJRU5ErkJggg==)left 65%no-repeat;padding-left:18px;display:inline-block;line-height:normal}.pun .postsignature hr{border:none;height:1px;margin-left:0px;text-align:left}.pun .postmsg p,.pun .postmsg li{font-family:Verdana,Arial,Helvetica,sans-serif}.pun .postmsg h5{font-size:1.231em;font-weight:bold;padding:7px 0}.pun .postmsg ul{list-style:disc;padding:4px 13px 4px 30px}.pun .postmsg li{padding:0 3px}.pun .postmsg li p{padding:0}.pun span.bbu{text-decoration:underline}.pun .blockpost .postmsg .postedit{font-size:0.857em}.pun .blockpost .postsignature{font-size:0.923em}.pun .codebox{border-style:solid;border-width:1px;margin:0.75em 1em;padding:0}.pun .quotebox{border-style:solid;border-width:1px 1px 1px 3px;margin:0.75em 1em;padding:0 0.75em}.pun .quotebox cite{display:block;padding:0.75em 0 0 0;font-weight:bold;line-height:1.462em}.pun .quotebox blockquote{overflow:hidden;width:100%}.pun .codebox pre{overflow:auto;width:100%;direction:ltr;text-align:left}.pun .codebox pre code{padding:0.5em;white-space:pre}.pun div[class*=codebox] pre code{display:inline-block}.pun .codebox pre.vscroll{height:32em;overflow:auto;overflow-y:auto}.pun .postmsg img{vertical-align:text-top}.pun label select{margin-top:2px}.pun select{font-family:Verdana,Arial,Helvetica,sans-serif}html,body,.pun{background:#f6f9fc;color:#333}.pun .punwrap{background:#fff;border-color:#cad7e1;color:#566579}.pun .pagepost,.pun .pagelink *{border-color:#b9c5ce}.pun a,.pun a:link,.pun a:visited{color:#2365B0}.pun a:hover,.pun a:active,.pun a:focus{color:#b50000}#brdmenu{background:#44699c}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{background:#44699c;border-color:#fff;color:#d4dae2}#brdmenu a:hover,#brdmenu a:active,#brdmenu a:focus{background:#b50000;border-color:#fff;color:#fff}.pun .blockpost{background:#f6f9fc;border-color:#b9c5ce #d9e1e7}.pun .blockpost h2{background:#ebf1f5;border-color:#cad7e1;color:#357082}.pun .blockpost .postbody,.pun .blockpost .postfoot{background:#fcfdfe;border-color:#dfe6ee}.pun .postmsg{color:#333}.pun .postsignature,.pun .postmsg .postedit{color:#566579}.pun .quotebox{background:#f8f9f0;border-color:#7aadbd;color:#566579}.pun .quotebox cite{color:#357082}.pun .codebox{background:#333;color:#fff}.pun .postmsg hr{background:#b9c5ce}.pun label{color:#357082}</style><style class="darkreader darkreader--sync" media=screen>html,body,.pun div,.pun form,.pun p,.pun h2,.pun h3,.pun h5,.pun pre,.pun blockquote,.pun ul,.pun li,.pun dl,.pun dt,.pun dd,.pun cite{border-width:0px;border-style:initial;border-color:initial}.pun ul{list-style-image:initial}.pun a,.pun a:link,.pun a:visited{text-decoration-color:initial}.pun a:hover,.pun a:active,.pun a:focus{text-decoration-color:initial}#brdmenu a:hover,#brdmenu a:focus{text-decoration-color:initial}#brdwelcome li span{background-image:var(--sf-img-0);background-repeat:no-repeat;background-color:initial}.pun #brdfooter #feedlinks span{background-image:var(--sf-img-1);background-repeat:no-repeat;background-color:initial}.pun .pagelink .item1{border-width:0px;border-style:initial;border-color:initial}.pun .blockpost .usercontacts .website{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4yNDkgLTAuNjE0IC0wLjY3MiAwLjAwMCAxLjAzNSAtMC42NDYgMC4yODggLTAuNjY0IDAuMDAwIDEuMDIwIC0wLjYzNiAtMC42MDkgMC4yNTAgMC4wMDAgMC45OTQgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQkFBQUFBUUFRTUFBQUFsUFcwaUFBQUFCbEJNVkVWTWFYRUFac3c3S2VPbkFBQUFBWFJTVGxNQVFPYllaZ0FBQUNwSlJFRlVDQjFqZ0FQbUh3eU1IQXdNSFF6eUhBeENHZ3dpRVF3Q0p4Z0VIUmdFSEJqa0R6REFBQUJyemdTeUhFOGdKd0FBQUFCSlJVNUVya0pnZ2c9PSIgLz48L3N2Zz4=);background-repeat:no-repeat;background-color:initial}.pun .postsignature hr{border-width:initial;border-style:none;border-color:initial}.pun .postmsg ul{list-style-image:initial}.pun span.bbu{text-decoration-color:initial}.pun .punwrap{background-image:initial;background-color:var(--darkreader-background-ffffff,#181a1b);color:var(--darkreader-text-566579,#a79f93)}.pun .pagepost,.pun .pagelink *{border-top-color:var(--darkreader-border-b9c5ce,#414649);border-right-color:var(--darkreader-border-b9c5ce,#414649);border-bottom-color:var(--darkreader-border-b9c5ce,#414649);border-left-color:var(--darkreader-border-b9c5ce,#414649)}.pun a,.pun a:link,.pun a:visited{color:var(--darkreader-text-2365b0,#6babe2)}.pun a:hover,.pun a:active,.pun a:focus{color:var(--darkreader-text-b50000,#ff4d4d)}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{background-image:initial;background-color:var(--darkreader-background-44699c,#36547d);border-top-color:var(--darkreader-border-ffffff,#303436);border-right-color:var(--darkreader-border-ffffff,#303436);border-bottom-color:var(--darkreader-border-ffffff,#303436);border-left-color:var(--darkreader-border-ffffff,#303436);color:var(--darkreader-text-d4dae2,#d1cdc7)}#brdmenu a:hover,#brdmenu a:active,#brdmenu a:focus{background-image:initial;background-color:var(--darkreader-background-b50000,#910000);border-top-color:var(--darkreader-border-ffffff,#303436);border-right-color:var(--darkreader-border-ffffff,#303436);border-bottom-color:var(--darkreader-border-ffffff,#303436);border-left-color:var(--darkreader-border-ffffff,#303436);color:var(--darkreader-text-ffffff,#e8e6e3)}.pun .blockpost{background-image:initial;background-color:var(--darkreader-background-f6f9fc,#1b1e1f);border-top-color:var(--darkreader-border-b9c5ce,#414649);border-right-color:var(--darkreader-border-d9e1e7,#393d40);border-bottom-color:var(--darkreader-border-b9c5ce,#414649);border-left-color:var(--darkreader-border-d9e1e7,#393d40)}.pun .blockpost h2{background-image:initial;background-color:var(--darkreader-background-ebf1f5,#202325);border-top-color:var(--darkreader-border-cad7e1,#2e4251);border-right-color:var(--darkreader-border-cad7e1,#2e4251);border-bottom-color:var(--darkreader-border-cad7e1,#2e4251);border-left-color:var(--darkreader-border-cad7e1,#2e4251)}.pun .blockpost .postbody,.pun .blockpost .postfoot{background-image:initial;background-color:var(--darkreader-background-fcfdfe,#191b1c);border-top-color:var(--darkreader-border-dfe6ee,#28394c);border-right-color:var(--darkreader-border-dfe6ee,#28394c);border-bottom-color:var(--darkreader-border-dfe6ee,#28394c);border-left-color:var(--darkreader-border-dfe6ee,#28394c)}.pun .postmsg{color:var(--darkreader-text-333333,#c8c3bc)}.pun .postsignature,.pun .postmsg .postedit{color:var(--darkreader-text-566579,#a79f93)}.pun .postmsg hr{background-image:initial;background-color:var(--darkreader-background-b9c5ce,#323f48)}</style>
+<link rel=canonical href="https://bbs.archlinux.org/viewtopic.php?id=192072" title="Page 1">
+<link rel=alternate type=application/atom+xml href="https://bbs.archlinux.org/extern.php?action=feed&amp;tid=192072&amp;type=atom" title="Atom topic feed">
+<style media=screen>*{font-family:sans-serif!important}.pun{max-width:none;margin:0}.pun pre,.pun code{font-family:monospace!important}html,body,.pun{background:#f6f9fc}.pun .punwrap{border-color:#bcd;border-radius:0}.pun a,.pun a:link,.pun a:visited{text-decoration:none;color:#07b;outline:none}.pun a:focus,#brdmain a:focus{color:#e90}.pun a:hover,#brdmain a:hover{color:#999!important;text-decoration:underline}.pun a:active,#brdmain a:active{color:#e90!important}#brdmenu{background:#fff}#brdmenu ul{margin-left:-9px}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{display:inline;padding-right:10px;background:#fff;color:#07b}#brdmain a:visited{color:#666}#brdmenu a:hover{color:#999;text-decoration:underline}#brdmenu a:active,#brdmenu a:focus{color:#e90}.pun .postmsg a{font-weight:bold}.pun .top-box{background:none}.pun .end-box{background:none}.pun .quotebox{border-color:#bcd;background:#f6f9fc}.pun .codebox{border-color:#bcd;background:#ebf1f5}@media (max-width:575px){.pun .blockpost .postfootleft,.pun .blockpost .postleft dd,.pun .blockpost h2 .conr,.pun .blockpost .postleft .postavatar{display:none}.pun .blockpost .postleft{margin-left:0;padding:0}.pun .blockpost .postbody{float:none}.pun .blockpost .postright{padding:5px}.pun select{max-width:75vw}.pun .quotebox{margin:0.75em 0.5em}#brdmenu a:link,#brdmenu a:visited{padding-left:0}}@media (max-width:768px){.pun{padding:30px 5px}.pun .punwrap{padding:18px 5px}#brdwelcome{padding:20px 0}#brdmenu ul{margin-left:0}.pun .crumbs li{white-space:normal}.pun .postlinksb .crumbs{margin-right:0}.pun .blockpost .postfoot{border-left-style:none}#brdwelcome .conl{display:none}}</style><style class="darkreader darkreader--sync" media=screen>#archnavbar.anb-forum ul li.anb-selected a{color:var(--darkreader-text-ffffff,#e8e6e3)!important}html,body,.pun{background-image:initial;background-color:var(--darkreader-background-f6f9fc,#1b1e1f);color:var(--darkreader-text-222222,#d3cfc9)}.pun .punwrap{border-top-color:var(--darkreader-border-bbccdd,#2c4258);border-right-color:var(--darkreader-border-bbccdd,#2c4258);border-bottom-color:var(--darkreader-border-bbccdd,#2c4258);border-left-color:var(--darkreader-border-bbccdd,#2c4258)}.pun a,.pun a:link,.pun a:visited{text-decoration-color:initial;color:var(--darkreader-text-0077bb,#49bdff);outline-color:initial}.pun a:focus,#brdmain a:focus{color:var(--darkreader-text-ee9900,#ffb125)}.pun a:hover,#brdmain a:hover{text-decoration-color:initial;color:var(--darkreader-text-999999,#a8a095)!important}.pun a:active,#brdmain a:active{color:var(--darkreader-text-ee9900,#ffb125)!important}#brdmenu{background-image:initial;background-color:var(--darkreader-background-ffffff,#181a1b)}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{background-image:initial;background-color:var(--darkreader-background-ffffff,#181a1b);color:var(--darkreader-text-0077bb,#49bdff)}#brdmain a:visited{color:var(--darkreader-text-666666,#a8a095)}#brdmenu a:hover{color:var(--darkreader-text-999999,#a8a095);text-decoration-color:initial}#brdmenu a:active,#brdmenu a:focus{color:var(--darkreader-text-ee9900,#ffb125)}.pun .top-box{background-image:none;background-color:initial}.pun .end-box{background-image:none;background-color:initial}.pun .blockpost h2{color:var(--darkreader-text-444444,#bdb7af)}.pun .quotebox cite{color:var(--darkreader-text-444444,#bdb7af)}.pun label{color:var(--darkreader-text-444444,#bdb7af)}.pun .quotebox{border-top-color:var(--darkreader-border-bbccdd,#2c4258);border-right-color:var(--darkreader-border-bbccdd,#2c4258);border-bottom-color:var(--darkreader-border-bbccdd,#2c4258);border-left-color:var(--darkreader-border-bbccdd,#2c4258);background-image:initial;background-color:var(--darkreader-background-f6f9fc,#1b1e1f);color:var(--darkreader-text-444444,#bdb7af)}.pun .codebox{border-top-color:var(--darkreader-border-bbccdd,#2c4258);border-right-color:var(--darkreader-border-bbccdd,#2c4258);border-bottom-color:var(--darkreader-border-bbccdd,#2c4258);border-left-color:var(--darkreader-border-bbccdd,#2c4258);background-image:initial;background-color:var(--darkreader-background-ebf1f5,#202325);color:var(--darkreader-text-222222,#d3cfc9)}@media (max-width:575px){.pun .blockpost{background-color:var(--darkreader-background-fcfdfe,#191b1c)}}</style>
+<style media=screen>#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:var(--sf-img-4) no-repeat!important}#archnavbarlogo h1{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}@media (max-width:680px){#anb-forums{display:none}html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:var(--sf-img-5) no-repeat!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:830px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}</style><style class="darkreader darkreader--sync" media=screen>#archnavbar{background-image:initial!important;background-color:var(--darkreader-background-333333,#262a2b)!important;border-bottom-color:var(--darkreader-border-0088cc,#0081c2)!important}html>body #archnavbarlogo{background-image:var(--sf-img-4)!important;background-repeat:no-repeat!important;background-color:initial!important;background-size:190px 40px!important}#archnavbar ul{list-style-image:initial!important}#archnavbar ul#archnavbarlist li a{color:var(--darkreader-text-999999,#a8a095);text-decoration-color:initial!important}#archnavbar ul li a:hover{color:var(--darkreader-text-ffffff,#e8e6e3)!important;text-decoration-color:initial!important}@media (max-width:680px){html>body #archnavbarlogo{background-image:var(--sf-img-5)!important;background-repeat:no-repeat!important;background-color:initial!important;background-size:40px 40px!important}}</style>
+<meta name=darkreader content=b7d973d49ab74876aa7377889d97b73d><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}select{--darkreader-bg--form-control-background-color:rgba(22,22,22,0)!important}:host{--d2l-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-button-icon-background-color-hover:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-color-ferrite:var(--darkreader-neutral-text)!important;--d2l-color-sylvite:var(--darkreader-bg--d2l-color-sylvite)!important;--d2l-dropdown-background-color:var(--darkreader-neutral-background)!important;--d2l-dropdown-border-color:var(--darkreader-border--d2l-color-mica)!important;--d2l-input-backgroud-color:var(--darkreader-neutral-background)!important;--d2l-menu-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-tooltip-background-color:var(--darkreader-neutral-background)!important;--d2l-tooltip-border-color:var(--darkreader-bg--d2l-color-gypsum)!important}body{height:fit-content}</style><meta name=referrer content=no-referrer><link rel="shortcut icon" href=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:; form-action 'none'; base-uri 'none';"></head>
+<body>
+<div id=archnavbar class=anb-forum>
+ <div id=archnavbarlogo><h1><a href=http://archlinux.org/>Arch Linux</a></h1></div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=http://archlinux.org/>Home</a><li id=anb-packages><a href=http://archlinux.org/packages/>Packages</a><li id=anb-forums class=anb-selected><a href=https://bbs.archlinux.org/>Forums</a><li id=anb-wiki><a href=https://wiki.archlinux.org/>Wiki</a><li id=anb-gitlab><a href=https://gitlab.archlinux.org/archlinux>GitLab</a><li id=anb-security><a href=https://security.archlinux.org/>Security</a><li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a><li id=anb-download><a href=http://archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div id=punviewtopic class=pun>
+<div class=top-box></div>
+<div class=punwrap>
+<div id=brdheader class=block>
+ <div class=box>
+ <div id=brdmenu class=inbox>
+ <ul>
+ <li id=navindex class=isactive><a href=https://bbs.archlinux.org/index.php>Index</a></li>
+ <li id=navrules><a href="https://bbs.archlinux.org/misc.php?action=rules">Rules</a></li>
+ <li id=navsearch><a href=https://bbs.archlinux.org/search.php>Search</a></li>
+ <li id=navregister><a href=https://bbs.archlinux.org/register.php>Register</a></li>
+ <li id=navlogin><a href=https://bbs.archlinux.org/login.php>Login</a></li>
+ </ul>
+ </div>
+ <div id=brdwelcome class=inbox>
+ <p class=conl>You are not logged in.</p>
+ <ul class=conr>
+ <li><span>Topics: <a href="https://bbs.archlinux.org/search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="https://bbs.archlinux.org/search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+ </ul>
+ <div class=clearer></div>
+ </div>
+ </div>
+</div>
+<div id=brdmain>
+<div class=linkst>
+ <div class="inbox crumbsplus">
+ <ul class=crumbs>
+ <li><a href=https://bbs.archlinux.org/index.php>Index</a></li>
+ <li><span>»&nbsp;</span><a href="https://bbs.archlinux.org/viewforum.php?id=44">Pacman &amp; Package Upgrade Issues</a></li>
+ <li><span>»&nbsp;</span><strong><a href="https://bbs.archlinux.org/viewtopic.php?id=192072">pacman and aria2 - better configuration?</a></strong></li>
+ </ul>
+ <div class=pagepost>
+ <p class="pagelink conl"><span class=pages-label>Pages: </span><strong class=item1>1</strong></p>
+ <p class="postlink conr">Topic closed</p>
+ </div>
+ <div class=clearer></div>
+ </div>
+</div>
+<div id=p1491879 class="blockpost rowodd firstpost blockpost1">
+ <h2><span><span class=conr>#1</span> <a href=#p1491879>2015-01-10 17:27:13</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>amish</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2014-05-10</span></dd>
+ <dd><span>Posts: 513</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>Today I used some tips from:<br><a href=https://wiki.archlinux.org/index.php/improve_pacman_performance#Configuration rel=nofollow>https://wiki.archlinux.org/index.php/im … figuration</a><p>And configured pacman to use aria2.<p>However I found existing wiki instructions bit complicated. So I made my own config which I would like to share (and also get reviews/opinions).<p>Wiki entry has too many config parameters fit in one single line which made things look too complex.<p>First thing I did is that I moved everything to a config file and change XferCommand to:<div class=quotebox><blockquote><div><p>XferCommand = echo Downloading %u ... &amp;&amp; /usr/bin/aria2c --conf-path=/root/.aria2/pacman-aria2.conf %u</p></div></blockquote></div><p>Config file /root/.aria2/pacman-aria2.conf contains this:<div class=codebox><pre class=vscroll><code># error handling
+timeout=60
+connect-timeout=30
+max-tries=5
+retry-wait=10
+max-file-not-found=1
+
+# downloading
+split=3
+max-connection-per-server=3
+min-split-size=1M
+max-concurrent-downloads=1
+file-allocation=none
+remote-time=true
+conditional-get=true
+no-netrc=true
+
+# resuming
+continue=true
+allow-overwrite=true
+always-resume=false
+
+# proxy
+#http-proxy=127.0.0.1:8080
+#https-proxy=127.0.0.1:8080
+#ftp-proxy=127.0.0.1:8080
+
+# console
+#quiet=true
+console-log-level=warn
+summary-interval=0
+#enable-color=false
+#human-readable=false
+#show-console-readout=false
+#truncate-console-readout=false
+
+# logging
+log-level=warn
+log=/var/log/pacman-aria2.log</code></pre></div><p>Above config adds better error logging and better display on console. And also proxy config for aria2<p>This also adds support for resuming download based on timestamp+size using conditional-get option of aria2.<p>Major change about this configuration (from one in wiki) is that, this config does not write to .part files but directly writes to the destination file.<p>This change has one advantage and one limitation because of the way pacman calls XferCommand.<p>Advantage is that repository DB files are not downloaded everytime the "pacman -Syu" is run. They are downloaded only if there is change.<p>Limitation is that <strong><span class=bbu>if for some reason</span></strong> the PKG file is not downloaded completely (say due to internet connectivity issues) then when next time you run "pacman -Syu", pacman will report file integrity error and prompts you if to delete the file or not?<p>This is because when pacman runs the next time, it assumes that if PKG file exists it does not need to be downloaded and does not call XferCommand at all for that file. And hence XferCommand does not get opportunity to complete the broken download. Pacman does not realize that file is incompletely downloaded.<p>In my opinion when XferCommand is specified, pacman should ALWAYS call it and let XferCommand decide if file is downloaded completely or not. Afterall XferCommand are normally supposed to be <strong><span class=bbu>"smarter downloaders"</span></strong> than pacman's own internal downloading mechanism.<p>NOTE:<br>If you have frequent connectivity issues, then above can be reversed by use of .part file i.e. adding -d / -o %o to XferCommand (not tested thoroughly)<div class=quotebox><blockquote><div><p>XferCommand = echo Downloading %u ... &amp;&amp; /usr/bin/aria2c --conf-path=/root/.aria2/pacman-aria2.conf -d / -o %o %u</p></div></blockquote></div><p>But in that case repository DB files will be re-downloaded everytime you run "pacman -Syu" (even if they are not changed)</p><br><p>Please give your opinions. Thank you <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' width=15 height=15 alt=smile style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></p>
+ <p class=postedit><em>Last edited by amish (2015-01-10 17:32:48)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1491919 class="blockpost roweven">
+ <h2><span><span class=conr>#2</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1491919#p1491919">2015-01-10 20:24:26</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>TheSaint</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="72"><rect fill-opacity="0"/></svg>' width=80 height=72 alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></dd>
+ <dd><span>From: my computer</span></dd>
+ <dd><span>Registered: 2007-08-19</span></dd>
+ <dd><span>Posts: 1,536</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>I'm using this for pacman <span class=bbu>and</span> makepkg.conf.<div class=codebox><pre><code>max-concurrent-downloads=8
+continue
+split=4
+max-connection-per-server=4
+max-tries=3
+min-split-size=1M
+allow-overwrite=true
+log-level=error
+#log=-
+remote-time=true
+timeout=5
+uri-selector=inorder
+summary-interval=0</code></pre></div><p>My downloader is slightly different because I'm using my <a href=http://www.freefilehosting.net/pfu_1 rel=nofollow>program</a> (<em>It's a python script</em>)<br>So the pacman.conf line is<div class=codebox><pre><code>XferCommand = /home/user/mypgm/4pacman/pfu.py --single %u %o</code></pre></div><p><em>Definitely one may put the program under system wide path</em></p>
+ </div>
+ <div class="postsignature postmsg"><hr><p>do it good first, <em>it will be faster than do it twice</em> <a href=https://en.wikipedia.org/wiki/The_Saint_(TV_series) rel=nofollow>the saint</a> <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' width=15 height=15 alt=wink style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-9)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></p></div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527132 class="blockpost rowodd">
+ <h2><span><span class=conr>#3</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527132#p1527132">2015-05-09 01:01:00</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>thoffmeyer</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src="data:image/jpeg;base64,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" width=68 height=80 alt></dd>
+ <dd><span>From: 127.0.0.1</span></dd>
+ <dd><span>Registered: 2006-07-27</span></dd>
+ <dd><span>Posts: 91</span></dd>
+ <dd class=usercontacts><span class=website><a href=https://hoffmeyer.io/ rel=nofollow>Website</a></span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <div class=quotebox><cite>TheSaint wrote:</cite><blockquote><div><p>I'm using this for pacman <span class=bbu>and</span> makepkg.conf.<div class=codebox><pre><code>max-concurrent-downloads=8
+continue
+split=4
+max-connection-per-server=4
+max-tries=3
+min-split-size=1M
+allow-overwrite=true
+log-level=error
+#log=-
+remote-time=true
+timeout=5
+uri-selector=inorder
+summary-interval=0</code></pre></div><p>My downloader is slightly different because I'm using my <a href=http://www.freefilehosting.net/pfu_1 rel=nofollow>program</a> (<em>It's a python script</em>)<br>So the pacman.conf line is<div class=codebox><pre><code>XferCommand = /home/user/mypgm/4pacman/pfu.py --single %u %o</code></pre></div><p><em>Definitely one may put the program under system wide path</em></p></div></blockquote></div><p>I have your script setup but it just stalls, then eventually outputs this and fails:<div class=codebox><pre><code>┌[tim@muramasa][16:58:02]
+└[~/x/pfu]&gt; pacman -Syu
+:: Synchronizing package databases...
+core                                                                    [DONE]
+core                                                                    [FAIL]
+&gt; /home/tim/x/pfu/pfu.py(250)__call__()
+-&gt; if int(b['errorCode']) &gt; 0:
+(Pdb)</code></pre></div><p>It does not download anything.I don't know if it needs updating or if i'm missing something but I do have aria2 installed, along with configs in ~/.aria2/aria2.conf and /root/.aria2/aria2.conf`<p>More goodness, I don't know python so I'm not much help but from what I see it seems that it's having trouble downloading the sigs..<div class=codebox><pre><code>┌[tim@muramasa][21:15:25]
+└[~/x/pfu]&gt; pacman -Syu
+:: Synchronizing package databases...
+core                                                                    [DONE]
+core                                                                    [FAIL]
+&gt; /home/tim/x/pfu/pfu.py(250)__call__()
+-&gt; if int(b['errorCode']) &gt; 0:
+(Pdb)
+(Pdb) exit
+Traceback (most recent call last):
+  File "/home/tim/x/pfu/pfu.py", line 246, in __call__
+    shutil.copy2(tmpfile, outdir)
+  File "/usr/lib/python3.4/shutil.py", line 245, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.4/shutil.py", line 108, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/paq/core.db.sig.part'</code></pre></div>
+ <p class=postedit><em>Last edited by thoffmeyer (2015-05-09 01:17:09)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527220 class="blockpost roweven">
+ <h2><span><span class=conr>#4</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527220#p1527220">2015-05-09 12:11:46</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>TheSaint</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="72"><rect fill-opacity="0"/></svg>' width=80 height=72 alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></dd>
+ <dd><span>From: my computer</span></dd>
+ <dd><span>Registered: 2007-08-19</span></dd>
+ <dd><span>Posts: 1,536</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>Sorry there are some debugging routines included in the file. So, when it shows <div class=codebox><pre><code>(Pdb)</code></pre></div><p>You may issue a command like <strong> help</strong> to understand what to do. Else you may just issue <strong>quit</strong> to leave the debugger or you may give <strong>continue</strong> to proceed the program.<br>I'm going to have a look for better results<br>Meanwhile you may have the following options <ul><li><p>return to pacman defaults</p><li><p>you may try out the <em>multi</em> options, which is the standalone program that will fill the cache up to the latest packages. Usually I do <div class=codebox><pre><code># pfu -Vyn7 -r
+# pacman -Su</code></pre></div><li><p>correct the program by commenting (or remove) line 248 and 249. Also the line 251 (before removing lines) to substitute <strong>pass</strong> with <strong>die(255)</strong>.<br><em>By commenting I mean to put a <strong>#</strong> a the line beginning</em></p></ul><h5> A new link will substitute the current one, once I'll find a better solution</h5>
+ <p class=postedit><em>Last edited by TheSaint (2015-05-09 12:32:49)</em></p>
+ </div>
+ <div class="postsignature postmsg"><hr><p>do it good first, <em>it will be faster than do it twice</em> <a href=https://en.wikipedia.org/wiki/The_Saint_(TV_series) rel=nofollow>the saint</a> <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' width=15 height=15 alt=wink style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-9)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></p></div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527222 class="blockpost rowodd">
+ <h2><span><span class=conr>#5</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527222#p1527222">2015-05-09 12:22:00</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>tomk</strong></dt>
+ <dd class=usertitle><strong>Forum Fellow</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72"><rect fill-opacity="0"/></svg>' width=72 height=72 alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-11)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></dd>
+ <dd><span>From: Ireland</span></dd>
+ <dd><span>Registered: 2004-07-21</span></dd>
+ <dd><span>Posts: 9,839</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <div class=quotebox><cite>amish wrote:</cite><blockquote><div><p>Advantage is that repository DB files are not downloaded everytime the "pacman -Syu" is run. They are downloaded only if there is change.</p></div></blockquote></div><p>Just FYI, this is the way pacman works anyway, regardless of the downloader used.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527228 class="blockpost roweven">
+ <h2><span><span class=conr>#6</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527228#p1527228">2015-05-09 12:38:14</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>TheSaint</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="72"><rect fill-opacity="0"/></svg>' width=80 height=72 alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></dd>
+ <dd><span>From: my computer</span></dd>
+ <dd><span>Registered: 2007-08-19</span></dd>
+ <dd><span>Posts: 1,536</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>In my case is not happening. They are downloaded anyway. I don't know how pacman uses libcurl to detect the file properties and skip the download.</p>
+ </div>
+ <div class="postsignature postmsg"><hr><p>do it good first, <em>it will be faster than do it twice</em> <a href=https://en.wikipedia.org/wiki/The_Saint_(TV_series) rel=nofollow>the saint</a> <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' width=15 height=15 alt=wink style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-9)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></p></div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527241 class="blockpost rowodd">
+ <h2><span><span class=conr>#7</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527241#p1527241">2015-05-09 13:30:15</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>tomk</strong></dt>
+ <dd class=usertitle><strong>Forum Fellow</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72"><rect fill-opacity="0"/></svg>' width=72 height=72 alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-11)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></dd>
+ <dd><span>From: Ireland</span></dd>
+ <dd><span>Registered: 2004-07-21</span></dd>
+ <dd><span>Posts: 9,839</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>I don't know how it does it either <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' width=15 height=15 alt=smile style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important">, but this is what it does here on two consecutive -Sy operations:<div class=codebox><pre><code>$ pacman -Sy
+:: Synchronizing package databases...
+ testing is up to date
+ core is up to date
+ extra                                              1735.9 KiB   262K/s 00:07 [------------------------------------------------------------------------------] 100%
+ community-testing is up to date
+ community                                            2.6 MiB   288K/s 00:09 [------------------------------------------------------------------------------] 100%
+ multilib-testing is up to date
+ multilib is up to date
+$ pacman -Sy
+:: Synchronizing package databases...
+ testing is up to date
+ core is up to date
+ extra is up to date
+ community-testing is up to date
+ community is up to date
+ multilib-testing is up to date
+ multilib is up to date</code></pre></div><p>I guess you could look at the source code to figure it out.<p>Anyway, not entirely relevant, please continue your work.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527258 class="blockpost roweven">
+ <h2><span><span class=conr>#8</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527258#p1527258">2015-05-09 14:31:36</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>amish</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2014-05-10</span></dd>
+ <dd><span>Posts: 513</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>In my case too pacman downloads DB file everytime.<p>It seems its server dependent. For&nbsp; some server it autodetects if file is changed or not and for others it downloads everytime.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1527366 class="blockpost rowodd">
+ <h2><span><span class=conr>#9</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1527366#p1527366">2015-05-10 00:08:05</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>TheSaint</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="72"><rect fill-opacity="0"/></svg>' width=80 height=72 alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></dd>
+ <dd><span>From: my computer</span></dd>
+ <dd><span>Registered: 2007-08-19</span></dd>
+ <dd><span>Posts: 1,536</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>That is what mine doing.<br><a href=http://www.freefilehosting.net/pfu_2 rel=nofollow>Here's the new version</a>, but it's rather a beta testing (which hasn't testers <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAnFBMVEVMaXEmGQD9+Sr+80Y5OTnd3d3imgAAAAD///8RERH+8GL/73v3ogALCwvGhwD/z2T/yUb98yr+7So6MhexsbH/1wB7e3v/4xP/3wDkohP/zADgqADdozHgngD/2GLlzSf/2kb/5SpDPSHn0Dn/uQD/4Hv/7Wf/4GP/41b/6nv/4T7/1Vb/2yrVni7+6zv/xSr1uUXonAAwJhD4sSrm5nDxAAAAAXRSTlMAQObYZgAAAIdJREFUeNpdz1cSgzAMBFBsDEqwCTWk997b/e8WacNMBnb04bf6sO0hJMEJWp+Ph0ta1E282VtrT7tkGmO7iCJjeObJjdjF3feN4VmmzzevB3mmtc7y1fXxGRG7+494SEHnl4BCuCrBsoL7zb2npKip5P7JmAuwR3jQbEsSEIVyzr1CBbb+9wXnxgk2ojEo6AAAAABJRU5ErkJggg==" width=15 height=15 alt=big_smile>)<br>There's a little idle time if there're no download, but it's a problem&nbsp; mostly related with aria2c. Some times it goes to time-out.<p>Any comment is welcome, but no promises implied that I'll fix bugs in a short time. <em>Let me say it goes as fast as the feedbacks are coming in </em>.</p>
+ </div>
+ <div class="postsignature postmsg"><hr><p>do it good first, <em>it will be faster than do it twice</em> <a href=https://en.wikipedia.org/wiki/The_Saint_(TV_series) rel=nofollow>the saint</a> <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' width=15 height=15 alt=wink style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-9)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important;background-attachment:scroll!important"></p></div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p2213721 class="blockpost roweven">
+ <h2><span><span class=conr>#10</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=2213721#p2213721">2024-12-11 16:07:31</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>citrusagent</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2024-12-11</span></dd>
+ <dd><span>Posts: 1</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>Thanks for your contribution. Can you provide a permalink?</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p2213744 class="blockpost rowodd">
+ <h2><span><span class=conr>#11</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=2213744#p2213744">2024-12-11 18:21:48</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>V1del</strong></dt>
+ <dd class=usertitle><strong>Forum Moderator</strong></dd>
+ <dd class=postavatar><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABQCAYAAABMIbYpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QYIEywEewQNVgAAAAZiS0dEAP8A/wD/oL2nkwAAHvFJREFUeNrFWwdYVNfzRQRUbIgYu7EXFDUqii1qVIxdicYSo8aKiIhKbNhLbFiwF8BGUQTEAmJF6b23pfe69F52z3/uW3ZFhAj+f5r7fffbZVneu+fOzJkzcx9SUt9g9O7dm3udOHEi9zpo0KCR7du3P9u6dWvv5s2bp3bo0EHYtm3bvJYtW/q2atUqoVmzZvH0O3+apt27d9edPHny8KNHj8oCkFxzyZIlUv/52Llz5yc/Kysr91NSUrIiAJCVlUWTJk3YiiEjIwMCx72vPaWlpdGrVy8sW7Ys6PDhw9Nps5qIr7d06dL/DpzYauIxcODAie3atQtmYNjCu3XrBrIW5OXl0bNnTzRt2rROgOIpJycHdXX1iu3bt29eu3ZtM/F1T548+f3BnTlzRvL+p59+kiUAC7p06RLeqVMndOzYES1atOAWTaDRr18/iC3K5r+BZHPKlCnQ09PTvHTpkiy7/po1a/47K44fP16GYmsDAaisdkchW2SbNm04oEOHDkXnzp3BgLOpqKj4RYBszpkzp/TAgQOTxDG5d+/e7wdq3Lhx3KutrW2Trl27ziYSKa5rkSyu6HcNAlSXu9J9bDdv3qzwn1mvT58+PclSvnUtUFauOQb16oJf1YagXdvW9FmTL4ISE5J4stglt59GXtDku4EaOXIk96qqqipD1tOtvSjxHDmoH46sn4MPN7dCb+2v6NJRifu8aVMZKCgo1MumDBR7ZT8TYYE28UPfvn1bf1fLEalIDR8+XIkI5CpbRO2Fjh3cA1s0JsD6sjb8XxxFatANHN/3B8WkEi1ehmNXMQmJgYnJh3In6PoYNmwYZs+eDcqFIJJZ9vDhwyYUl98H4JAhQ5r+/PPPOuvXr/dhC6kJTrFVC1ifXQv9jbPw2HQP/JwMICx8jOTI2zi4fwUBa84x6o8//ij5G5YfxRvFADIWnT59OpYvX87YFCoqKtH0vtV3syDdrPnMmTNTzp8/D8pZoMSOppT7mlHcaS4cDyTchfaaGbC8vxtpMSZIDL8FQZ41IsmSWhvmcUAYo5KCgZqaGhYtWoQxY8ZwMcgsSxuIH374gfvOggULuM8oFpezey9evPjbgqN4kOrfv/8UZrlp06Zxu8wYr3nzlvh55BC8M9MjZnfA+pXTYG26G8ICa/i5nIMw7xEqsy3h/eECxhHxyDSVA12Hy5Fz587FiBEjOOsx8My6YguzzWPAKeX410z+32yQK7F5mbkZA0Yak3O5zh274O+1MyFIMyOAdtipuxA2ZrvJclaICryGnLj7QP4jlGU+hOXdnWgmK4fuPXpwEo70KLMQNxkolj/F4kDsxsTWqfPnzx/1XfIfJfZYMTmwBcq3bIXJaiPx+JYuUPIYqHgC48ubYWa8HSUZFhDmWsHnw1mg0IpAWqMw1Qybl06hv2VpoCsHgG0UIx+x+/bvP4DbQDFA2oRUcs8J39yCFPztGOMxcGJiaCHfCivmT0bE+zNA6Qug2AahXhdw/fwmZMfdI2CPkRppjLjQGyjPeoTwdyfBs9WHAqmdbt1FrshijsUke9+8hTy5qyLnsuKUQQBdyEWHf3OAtMsbRfmsKbfTDGzPHj2xZv5E8P0vE7jHnCui9CmO6a9EEhEMiqzJss/x6vEB+FjtAoLOI9/5H8yeMpIsKBLh7dsrcbr1l0mjMGHsMDSXa4Hu3X7krs9+T3JPf9++fW2+GbA//viDe6Wdfi0GSIkechQnY0cNx/GNc5DlfZHAWIkAltniwZ2/EeF/C8Ge12B+YSMCnhzCtaOrobV8CtZojMdvc8ZjqMpg7ho9evyI4UMH49iuxQhyOY/Zv6qS1OvNWZAIqJSIqMedO3e+DThHR0fulWq1NkTZVWKALGbk5Jph0rhROLN1IRI+kIsSqQgYQGLP/HhT2F7XguOdHTi4aQH27dCDjCynMbH+r5W4bHgWgwb25+K4T98B3HXe3dQmTzDE1fMbKeEPQ/9+/as2bNiwZf+BA03Fm/w/H8Ru4vpPk+IuWwywB7EgAzjt59HY+dcMnNm2GJYXdfDa+hCy4+9Q7FmjnP8AiQGGcH9rgqSkeCgPUiHal8aQwZRSXj/BmtWzKcakiTX7Y94varA5uQoxjsfwwnIvfv5ZFcuW/6F/4sSJ5t889oj7m4waNeokueUbBk4MsBlVC2qjfsL8X6diu94uzJg6HavJ9aLfnwRyHpK7WnHWRNEzQJiDUyeOY+G8uTh+cCcS/e9h15bFaELybZiKCs7qLUOQzV4kB9/AiYOrMHXqeKue/fp/Hx1KSf1XHo/XlEogO5p5LDZYlc6o/JcJo2F99xLYuGlkTEpEBQ8uaKIy3ZRLC1xM0qzKofeZTuAH2iDpPRGN7w0c0/kd8q0UsGT+VDiZ70WkqwEe3t+FSRNHOLdu3aHrd5NnW7Zs4XZywoQJO8eOHXuZYrGMJFUVWVDwy/hRMD2ljYrUYESHB+Gw/t+4cvBPZEVRiiCJBlIxbApzSc3EXEd56GUI0+4h288QZ7aQTBs1DDobFyIpzATW5vpYtmQydHQWnHv77gTHmmvXiir6b1bZ//XXX5L3kyZN6rFq1aqJysrKd4ndotoqKER17doNG2ePRtoDPUTankCe303keV9AQYQpKmNNIMx+KALJkU+1y5Jlc3i3cJFY80+NGTh+YA3MTXan7Ndfyr9zWwv3TbckP366q7/4vpQD233r1oTkva6ubrvVq1fPGz169Dly1xOK7ZUEc6eOh9NVbcCHmDTuJioyzJBNbFgWbAhBloXEipJJsVkYfxcWZ9Zhwqhhpc1lWzyWkmox69CBZWd5vDNlJvc0MXuu2h5l5SF9yGM60qb+9E2Akaiu6aayVMpMJ+W/nD7/jeo1jZUrVy5WGzPmFGnHf0zOb/IvD6Fkn0a6s8gGwnzLjySTXwsgWbI8xZRKq42lfXr1vjNdfbay8mCVyS1btrLYvn1u4dx5qujY6YcK8pQ3VAceots3ZWugTf3fgRMXmL/++mtbAqBB1lpPr7dIN1pQDLIGriu9dyCJdaJZi7a/HDu0UTPK2YCPDFMRIEr6eQmmyI41omrC8qObUvooIVFub6QDqyN/pkwYrbpFeYjKTkpBRdLSH1uLCgqKXFVBGxpH8beZrcXGxubrAVFxWVd6aEoALlFp8yflQ9pmZS0Cuk1BQWE7gTxOwjuQtRmaN2+e0lK+9fMVS6bEer87RSBsOE2am2gJPo8BtBJZkxROeqQR9DbPwQWdOXhnuK5ozJD+fjIycimMmVk3roW8qNpn1QW7NmtekQYuW7FiBZfp582b1zhghoaGUlSacO8tLCxkCGibbdu2cS6xY8eOH8hSpYMGDRpnYGDQV11dfQLt6jpFRUU9AmdC1XiEuNHLGktU+ApGDOsrNLqkg8pcslrpc8qHBKzElvKgPV7aHsWcGaqYM3Yg/Iy2YNeKaZg0fix6kNBmTWIm4MUNYgaQ1YJUg3Il1d9//51MzN3pqy1I1XMH2p2xW7duVazZ2CU3vEM38CVxHUyW86Dc58lahWKlX9dUaq+AzevnID6UxHbZcwR7XIKO1nxabA/0/kERrpfW4c7uReik1BGjVFW5HgyTcKwW5Fofioqc5dg9WNHLGlUTJ07EQRqN7a+IZVg/cr81BLLzgQMHpGuA0yKBbU0386QdfUcuFE9uU/nRavXPZiTjfhraB5MnDMEQ5T6QZlVBu7Z4eHA5WU8bvTq156zerXs3LF26FMTMXGU/ePBg/P777yTVfgZ5CQeSfcYqiyVLlng22nJqamrNiDwWkzJZJ/5MR0enJUsBffr0uUm76UagcghUNt2shN2wvnZhfbNl8xYYrfwjzmjORKypLpb+ImpWsX4L3YMreJmlmDqiwhYzZszgumviIpi1R9h36XvejQZIQLrRPElWnC/+jHZMl3TnW3b0RYDKv6Y7XXN279AO7y6uRcjtLdi7bBLXH5Uhi3Svjr2aLURmNfY5Y1AGlnXHw8LCwJpcU6dOtWh0K58IRIF25iIF+OuZM2cOI7CaVE0nUKwJxGcN/zbZzlKORFRUFFJTU2FsbIQly5ZRHCph2oj+mD1mEP6YNhLOF9fj0aHl6KyoAKkmMpzF2LlF7esx92eWJD7gunas61ZRUYGioiIYGRllU9JXbrQVKQ2MIIA+7OLkfkLmgk2bEolQadNEqv5jL9ZWuH37NmoOfnYOnj2+iRuHVsLu+Co4nFyJu7sWwu26Jkb2ZS7XlIvPAQMG1HlN1r5gLso2jIELDg6GUCjkrl1eXi54ReOrtCntWHNyjS1kQcN+fQc8k2/RukyadrpJdcyJp3ghjNKpyuZuXFpWBmE1QBcXR0QE3qHc9wDO97ciynwr3K6th5pyVyIaWY4hWdzVbCqJG8D9+vWFluY6RISHws3VlcAFoaqqSnJtNnJycrIpnPo3xnof2/Ijhi+kdBDflGq00aMGQmvdHHTt0impXTvFC/37DzCXl28prG4C4dq1a9wNU9LSERIRjpzSYlTSz95edkiOMOK6aIWpD7Br01wotJKHnIwcq9A5ILTAT1ycNXt3796Lt/b3wI81g8X9g7CyeoC8vDxUVlaCX5CPohK2iULmriWmpqZ72Hrnzp7b8IPMIUMGD2vZqrV72zZtoae9CBk8ExTH34OVkc7CgQMHaFACFoiJgNE6G0XlZXALDsV7D0+ExMUjo7AYXh4OCPG+BpsH+6A2VkVEHpQiKNY5D2DNJfF1mDvu3r0b+fl54POT4PHCEC9uamPE4F7cdxjhPH36BAKBEKn8HESnp6K4pETo7Oz8qrH5sDNd7JFIC0pDe+U0eNvoI+LNCTy6rpu8cN64FBkZWaE4RjIyMjiAqdnZeE6u5PDBCR6hoYijn8PD/WF85W88tdyH+XMncnKLgWIKhTEiY0jmnpMnT4atra3I7fjZiPWxRFnUdfw+fxwX+0odlCjx/4CZs2ahpKyU+15kXBx8IyLAi4qKZy3a6urmywCJRRfTQgrIXQrIHSnftMd9w83I8jCAi5kevF+exFjV4Rg+/CeQtJPEQyq558VbRrCyd4CLjx9ZtAIFZI2sFBeYXNsG5UH9MGrUKM4SXLogcIyYNDU1kZmZKbkOs2Colw1unV6PoYN60yZ25MJAjjZFlRROaGICCkpKUFFViciYaHj4+GUfPHSQewzjzZs3UhQu/3qQ2bFHjx57iTQMSSp5sAXIyora5vrbf0NhjCn8n+yBneU1jtHYELNacXExnti/wFED2gh3D8mC2eLnz18AVdXRXBteHG8scZuYmEi+V1UlEDEvPwOJITa4cGgFfmjf7pMD0cHDhsI5LBQeUZGIzkhDcVkFEuITq8wszJ7u2LZDoSEk04/iY4OKikpn2uGHbJdZ4EtTMh7Yqxtu7PsT4Q6Hcf/WPySlRuLpkyfkMmXIIALIKSqGzbPnWLpsKdLS0iQLd3FxwenTpwmgKiexmJuyxR46dOgjOIGArELERK8VRCSRgQ7YtEod7YllmRAQb0rbdgpwCg2BR3QUPGmGxCeiiO6fl58nsLe3v/pFgFQxd6I5ib0nCv+D4qNAlOMUuTZ6p84dEfTqWPn9s9tM1/y1svDoVg2EBRKFJ6bAleLhkZ0dbKytP8mF7u7uuHTpEui63CKZUGYWYZtAuYxRvSi90Pv03DwkpmcgM8kJW9fPkFQmNVOIub0d/OPjkUIxnpmXj/ziEm6D6DpMunX40qFKR5ocwKFDh/ai0ult7TPz32aNYxdq9cRob6Iw4CxCn59AKC+CdjYUr95/oLjLl4BjtM4s+Pz5cwlAZk12Wvv06VNE0Kakp6dLXD2VCMYrIhIeXvY4f2gNenbt+Ak4RkxTKPF7h4Si9uDz+ZHa2trcqRCVc3UD1NDQUKKpKv6ZtKFBzYd2uAQvLRPw/JruqTzX4yVCPwNUeZ+Gp/1NuNHCvPx8P7kpWzwDyJiWVQXsGnZkZScnJ7x48eITV2ajjBgyNDYWr7094BHwAXPnzJDcm4lw8aMnf65aRelC8MnfEgcIPD09jen3LUXqZu3nADds2CBLs634Z0oDq8hN+bUkVJWLzUGizbsQxBqhyucUEt+cgcPbN8gvKPjkpvHkSmwyS3p4eHA13pEjR1BCLCgCVMZNCUBy0zR+JryIwHwT4rGHvtuCqg+WJ0ePHi05GGUbffjwEURGRyOGZnlFJff3hYWFBcSkm+q0HtVgn72nCnoAWdCjtkZ88+QI13YQ5lhCEGSIQncDvH9h9Qk4xq1hkZHIzMqSfMZclS2UpZdHjx5xlYGYhTmxUFqG1NwcZGTz4e7nh2eO77FoxQr8SIKbFcI1n3Fr2aoNVi/ToNSjiuP6unhmcRU2lma4cdMo9ILhmbENSvqbNm3qQqzqyHyf7V57Uv0/DR2I9Og71V0xAsi7hmKvswj2cvwEYDnpRt+QYMSwvFVaItGQpDxAqgl+BKCglsVJmSCULJ7A5yOPJFkwbdDxcxfQu29fCbgmTUQA+3TrAPf7O6C3Rh0e93SR5LAf700PwPzuLTyzf3Fa3H2rcwwfriJO+hpUiyWzVMHOH3r27I2pk8eggm/JnR6xdqAg7DKKvQ0RHuD96WIp0XsGBCA6MR5hyUkoLC2V/C43N/cTy4lHBgFzCwyAT0wMkoglS8hlI3iRXAtDTHTS3Ks0nlzcAARfRGbIDUS+P4Ecl+OoSrkLl3c38k6fPrmqQRZsKS9/RVZG9CikjKwM5SRZdFBsS8L5Idf2E2ZYQOBrgEIfQ7h7uiCFaL6wXASksLQcbn7+iCNwQYmJCKSYyiMxUFxehrpGGcVRaHQMnMmynkyhUJ6LyxIpnCeUb2s+h3NmuwYqfc6gMs6I64wXJN9D8OvjiPpwGmm8u3CwP639RXADBin3kJaWe/kx9kSNpT7dOyE32QzCXGuy3kXA7xTyPc/Bxu4JvMm9QpISSGGUcgDfefogiZgyLCUZ7qQ+QghoZmE+MnJzPgNYRBb2DA6Bq78/B9CdAHqQi+aTgGBjypQpsa3btM29tGspSjzOQBB5A4J8S0kDuTLrIRKCrsOVdLOd0Y7A6/9sHPmvANXVRysdPbDadryaMlpQ8dujkwK2/zEFDlc3oSrzIarCL0HgdxqV3qcF7832ZJpYWpX7xJMAjo1HTmEhCsvKYe/kimRKFTya7tHMKtEIS0pCGiXo2FopIqe4CM5U8zGAHhzASPiToGaxHBgYmH3p8mVWvcu53tvpKfAjgEn3yHo2NY4AHnE9VwHxQpDLRdw4v+90ncDWrhJ1sc3u7NFICDXOEOZZozTxPsqDrkLofxaRNjuRT8JbSK4p8DkN3rODeXt3bj3i6OlJC4tFYGISFzsFVLO98fYht4tGQmYWvGmxzO3YDE1KJAuXSNiWi8uiIiq3QuAWEAg3sjabcfwspFEOtbKyWknpSoat65jOkpGZjv8ASXc/BVjjKCA38S4s7x1J/AzcQ3OJEpf3cjK4UZRmTn/wiCMTbmaZo5QSe7jV36jyPUMq5kD6vm1/zrazf24UFBXFWSimunzKpXowID4Bjl6eSKXP/JkFadEiHRlNbJlA2rOKileRCxZTPuQlJZNKCcErH2/arChkU8y6uLi+PHfuLHe0fEpvBbc46/Pat6vCL9OarD8HyGb5Y7y02IN63fOe8U716IBrKezsQHKmx7kA+XrQRfha7ITb44Oh08ep9PQN5LXz9fMrjMtMp1hLIfFbLgEYmJBEburECQBeDFmQx4NXtRXZzC4soNgr4cBVEFg+ualPWAiek/oJSk5BKMWgw8sXn/XnF6lPUgp6ol+CTPOPhzm5NLMeiA58+BYIdL7gWy9AtzdntqTyjESnQRxAK+5RLGSZgWd/FGaX9DylpBTkq9v980hBfEYauUQOASTCrd+8Q3oWn/vM0y8AbuERXCXAZmxaBieU49IzCaCA4q0SwRE8vPHyAo+s/t7F7ZnBqdPdOVCLFnFrW/fbDO714qHV24pCr3EuyTYfGeYQEvEIgy4AoZfhbLbjdn34mrjZHd+fF3WbxKQF/aEZkP1AdKHYW3h8c3/m9JmLO7IvkhqRJW15ry7a5xcWwT8hAc/c3LiEzeSagAjD0c0DrlTTeRGR+FG+Y/EaTyQUT1UEaynFUjpx8vVFcFwCXr513F5fwn52da/sC6PtrmUJFIvsYDXeCALPkxC82gfhy/1wvbTGoF4Lulvu2Zb2/hgQeBbCENqR+FsojTZC0vvTWTfOaXNbOVZNTYoqg3ZU+BbXBTCDcqIX5TWPuBi8dXNBNqWGcipqi4lM3rm6UeEaRiBjEJeWjhxK/H60CYxJ86m2dPbxwRtXt0pfH9+Z3LM5f9adt7WWqHd9Y7TNocDvfEmljwHwag+KLbTAN9bEu6NLP2fRPdtEF3p2YdO8GJu9BVVvD6HspT5yXf+pCrTc431s6wJ18Xd3794tderUqYVi4Vx7JJEq8YqKRkhyKuyojOITiMTsLJSTK7LG7QdvbzhTicVSQTaVWCH03SB6z8Y7itvrxsZhPt7eqnUB27aq5gOxnZuZHl17KN58W2Kx+QZkG6/Hh8PLcH29+ol6LbhXU2OI3wN97yTrneAZb8h4dXXzlSW/q0uedNDSFB1dkHs+qQsco/4YcrtIIh2Wx/zDeUgk0kjJzkE0xV0lybQispYbSbkP5K681DTwc/I4FZNOhOT43hFr1671mDN7jkq9/4iitUQKQlPJz8d1NCb7Xd9oH2miXfDq5F/J17TnatTf+J2r3tbu8iZNN2Pt+9f0V7AHUCUPg29aNo17nTVrVoeYmJjyugCWU7zFkOtlV5NPBQFyJ+JgTeHg+EREE4EwLcoY1IMEuTuBzCTX5FEt6E6uG0ZpZN26tYwFv/jQ3Z71kmMUqdnzpindP7lB0/Lc5rmdB/0oV+cfHNpa9/8JndgqesJ2xQpRLrpy5YpW7aJTPAqKS4ghM7nyRzw8KB+y2o/FmTvFWyKfX11BENtSZR9C7plDCsfVl/RrRjpsHtuEjR83nnvg4OSJE/8K8vC2v6QQ2IgH8resXvDpo5PjhtY8yuZeqVL3Rz2DEUw0uR2zpHhkEaA4AiEQCsAjd2VpIpXckgNJloyIi6dil75DetUnLBwpGZllb16/ZqJZ7rv/nwQVxCpU8tRpPgG5Xhy5YBznhp/+jtWAzDULScb5EoP6krRjm8FGCYFMI2mWm58HP4rZWNqggMDARBsra+7xjn/+OfHtgYkfBLK1tb1Qn/VKqA4MIwulEmvWHuyUKJdijeFO5ufAJTKCxHkc0vPzqkumCk7RJKSkwotAhpAre3i4L/ruFoyOjk6pD2Au6ccgkmi5RZ+nR5bs/QIDRe8pJ0amp8I1kgdfcl1+DTXEeqOBZGGP0DAYm5pp0S1lvhu469evz6lgp5B1pgchknOyOU1aXFaCcipuaxORJwnpisoqSVsjLScX7iSsgxLiSMd+rPozKT79iVVvPrQwnLdYo+03ByZmT39//wcUR4K6q/IKrt6LoFovr6QIpXVU70y1+NToa7KYzSexEMzIhVmyoLC6TwqOaY0fWjzX0tPt/NULb+w/HfL5/PS6+inc4kmheJMiCaCiN6NGA7j2+ODlzbX6a9qexS6rG7NrNaLs376OM7h8sQ+790atTY1+Hkb87FkzIyMjLW9v70xXV1fPW7du6aqNURty6uSpeS/s7S87O3+wd3N2eXXv3j3bctZvr8t6VAmEpVJMUbXAS07iar36RkRUDMmy2DoVUO2RRS5/x/T+xnbtFWW/1ohNCJBqErnWJ03bxATctzDDbXMLykuRXCHrExggOZ8TLUfIHZjkUvKOJmn21j8AThRjxWVl+LdRRR7wzseXCtpCNGQ4ubpEmVqYd/kqdAcOHJCztLQ8Ko6H2tvIWnzXb5lg5fqNMH/0EBFUAvHSUhGflUkaMhme5JJO4WGwc3GGfx1nBvWNcCqHIigdNGSw/qmJicn6mTNnNp5NCZy8h4eHMzuwDCf2yykq5KzCjoqZ6qiqjjdjE2NEEnUHEBGwloNrWATcSGLZuTrhg7s7bUQOGjNYq4KlAXaQ2ZDh6ekZe/fuXaVGgdPX12/7/NmzMRGUUIMTEuESEQY3EruevEgEUi3nS/HkFhQCBydnXLxyhX7mwZ0qbnd6tXf8QJTvx3Wgv3YwYZ3ewI1hZRmlqI16enrSOjo6DQP48uXL6xEREcUVlI/CCJBncDBcSU65ePvAxs4O2/fugcH5cwihz21sbPDS8T2cPT0QGBzK5bw6cyFZvD4RXvt7zIL+RDgNHV5eXon79+9v+CPN/7pjpEjY4WVCfLwoXzVw0axiqEcHfDYSKS08c3FFcUVlg61IVYxm9f8ufj3A0tJSUK2HuppJ/waOndOz2dDBDmW8SXCn5RY0xoo8Wrr0V1uQ6cUEYsqaTz40ZLDNYIzbEEtL7kXfDUtMRio/t8F/w+6hq6v7C1v/qlWrGgeQWYGUCmrnxC8NZjW2IQ11zZqJvbCklBi1tFF/5+Dg4PJVFmTxw8DVI1bqBceOqMvqSO7MmvXJuv/PYI91nT17dlZ1Hm8YQLYYZj3xUw8NGWwjmOXK6lEujBQaa9UGpxh39y8+EPt/w4T7KVXEZHYAAAAASUVORK5CYII=" width=56 height=80 alt></dd>
+ <dd><span>Registered: 2012-10-16</span></dd>
+ <dd><span>Posts: 25,405</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: pacman and aria2 - better configuration?</h3>
+ <div class=postmsg>
+ <p>You are responding to a 9 year old post, none of these files and options are relevant to today.<p>The reason to use aria was parallel download support, which is part of baseline pacman now.<p>Closing this old thread, please don't necrobump:&nbsp; <a href=https://wiki.archlinux.org/title/General_guidelines#Old_threads/%22necro-bumping%22 rel=nofollow>https://wiki.archlinux.org/title/Genera … bumping%22</a></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div class=postlinksb>
+ <div class="inbox crumbsplus">
+ <div class=pagepost>
+ <p class="pagelink conl"><span class=pages-label>Pages: </span><strong class=item1>1</strong></p>
+ <p class="postlink conr">Topic closed</p>
+ </div>
+ <ul class=crumbs>
+ <li><a href=https://bbs.archlinux.org/index.php>Index</a></li>
+ <li><span>»&nbsp;</span><a href="https://bbs.archlinux.org/viewforum.php?id=44">Pacman &amp; Package Upgrade Issues</a></li>
+ <li><span>»&nbsp;</span><strong><a href="https://bbs.archlinux.org/viewtopic.php?id=192072">pacman and aria2 - better configuration?</a></strong></li>
+ </ul>
+ <div class=clearer></div>
+ </div>
+</div>
+</div>
+<div id=brdfooter class=block>
+ <h2><span>Board footer</span></h2>
+ <div class=box>
+ <div id=brdfooternav class=inbox>
+ <div class=conl>
+ <form id=qjump action=viewforum.php>
+ <div><label><span>Jump to<br></span>
+ <select name=id>
+ <optgroup label="Technical Issues and Assistance">
+ <option value=23>Newbie Corner</option>
+ <option value=17>Installation</option>
+ <option value=22>Kernel &amp; Hardware</option>
+ <option value=18>Applications &amp; Desktop Environments</option>
+ <option value=31>Laptop Issues</option>
+ <option value=8>Networking, Server, and Protection</option>
+ <option value=32>Multimedia and Games</option>
+ <option value=51>Arch Linux Guided Installer</option>
+ <option value=50>System Administration</option>
+ <option value=35>Other Architectures</option>
+ </optgroup>
+ <optgroup label=Arch-centric>
+ <option value=24>Announcements, Package &amp; Security Advisories</option>
+ <option value=1>Arch Discussion</option>
+ <option value=13>Forum &amp; Wiki discussion</option>
+ </optgroup>
+ <optgroup label="Pacman Upgrades, Packaging &amp; AUR">
+ <option value=44 selected>Pacman &amp; Package Upgrade Issues</option>
+ <option value=49>[testing] Repo Forum</option>
+ <option value=4>Creating &amp; Modifying Packages</option>
+ <option value=38>AUR Issues, Discussion &amp; PKGBUILD Requests</option>
+ </optgroup>
+ <optgroup label="Contributions &amp; Discussion">
+ <option value=20>GNU/Linux Discussion</option>
+ <option value=27>Community Contributions</option>
+ <option value=33>Programming &amp; Scripting</option>
+ <option value=30>Other Languages</option>
+ <option value=47>Artwork and Screenshots</option>
+ </optgroup>
+ </select></label>
+ <input type=submit value=" Go " accesskey=g>
+ </div>
+ </form>
+ </div>
+ <div class=conr>
+ <p id=feedlinks><span class=atom><a href="https://bbs.archlinux.org/extern.php?action=feed&amp;tid=192072&amp;type=atom">Atom topic feed</a></span></p>
+ <p id=poweredby>Powered by <a href=http://fluxbb.org/>FluxBB</a></p>
+ </div>
+ <div class=clearer></div>
+ </div>
+ </div>
+</div>
+</div>
+<div class=end-box></div>
+</div>
